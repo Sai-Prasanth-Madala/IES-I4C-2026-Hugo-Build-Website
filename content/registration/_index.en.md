@@ -18,7 +18,7 @@ The **IEEE IES Industrial Innovation Conclave (I4C) 2026** brings together stude
 
 ---
 
-# 🎟️ Zero Registration Fee
+#  Zero Registration Fee
 
 ## Registration is completely FREE!
 
@@ -78,15 +78,15 @@ Interact with professionals, researchers and academicians and explore opportunit
 
 Explore technologies, products, innovations and live demonstrations at the **Technology Exhibition & Industry Expo**, which will remain open throughout the conference.
 
-### 🛠️ Hands-on Workshops
+###  Hands-on Workshops
 
 Take part in practical learning experiences connecting technical concepts with real-world industrial applications.
 
-### 💬 Panel Discussions
+###  Panel Discussions
 
 Engage with diverse perspectives on Artificial Intelligence, industrial engineering and the future of technology.
 
-### 🚀 Speed Mentoring & Networking
+###  Speed Mentoring & Networking
 
 Connect with experts, professionals, researchers and fellow participants through networking and speed mentoring activities.
 
@@ -96,13 +96,13 @@ Connect with experts, professionals, researchers and fellow participants through
 
 Explore technologies shaping the future of industry:
 
-- 🤖 **Artificial Intelligence & Industry 5.0**
-- ⚡ **Electrification & Intelligent Industrial Drives**
-- 🚗 **Electric Vehicles & Smart Mobility**
-- 🔋 **Battery Technologies & Charging**
-- 🌱 **Renewable Energy & Smart Grids**
-- 💧 **Hydrogen & Fuel Cells**
-- 💻 **Digital Twins & Industrial Automation**
+-  **Artificial Intelligence & Industry 5.0**
+-  **Electrification & Intelligent Industrial Drives**
+-  **Electric Vehicles & Smart Mobility**
+-  **Battery Technologies & Charging**
+-  **Renewable Energy & Smart Grids**
+-  **Hydrogen & Fuel Cells**
+-  **Digital Twins & Industrial Automation**
 
 ---
 
