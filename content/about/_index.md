@@ -26,5 +26,5 @@ I4C 2026 aims to create meaningful connections between academia, industry, resea
 
 We look forward to welcoming you to Hyderabad for **I4C 2026**.
 
-For any inquiries, please contact us at **[Contact Email]**.
+For any inquiries, please contact us at **ieshubsandnodes.hyd@gmail.com**.
 +++
