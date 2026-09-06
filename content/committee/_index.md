@@ -1,107 +1,129 @@
 +++
 title = "Organising Committee"
 weight = 2
-linkTitle = "Organizing Committee"
+linkTitle = "Organising Committee"
 +++
 
 {{< pageHero
     title="Organising Committee"
-    subtitle="The team behind the conference."
+    subtitle="The team behind IEEE IES Industrial Innovation Conclave 2026."
 >}}
-
-## Honorary Chairs
-
-{{< imagesRow images=`[
-    {"src": "/images/sessions/emily_davis.jpeg", "alt": "Honorary Chair 1", "name": "Name 1", "company": "Company 1", "location": "Country 1"},
-    {"src": "/images/sessions/oliver_wang.jpg",  "alt": "Honorary Chair 2", "name": "Name 2", "company": "Company 2", "location": "Country 2"}
-]` width="220px" height="280px" >}}
-
-{{< spacer lines=2 >}}
 
 ## Conference Leadership
 
 {{< cards columns=2 >}}
 
-{{< card title="General Chairs" >}}
-- Lakshitha chamod Ransilu Samarasinghe Gunasekara, Australia
-- Member 6, Country 1
+{{< card title="General Chair" >}}
+- **Dr. Tripura Pidikiti**
+
+**Role:** Overall leadership, coordination and oversight of I4C 2026.
 {{< /card >}}
 
-{{< card title="Program Chairs" >}}
-- Member 7, Country 1
-- Member 8, Country 1
-- Member 9, Country 4
-{{< /card >}}
+{{< card title="Program Head" >}}
+- **Dr. Y S Kishore Babu**
 
-{{< card title="Organising Committee Chairs" >}}
-- Member 10, Country 2
-- Member 11, Country 1
-{{< /card >}}
-
-{{< card title="Local Arrangement Chairs" >}}
-- Member 12, Country 2
-- Member 13, Country 2
-{{< /card >}}
-
-{{< card title="Registration & Finance Chairs" >}}
-- Member 14, Country 2
-- Member 15, Country 1
-{{< /card >}}
-
-{{< card title="Special Session Chairs" >}}
-- Member 16, Country 1
-- Member 17, Country 5
-- Member 18, Country 1
-- Member 19, Country 1
-{{< /card >}}
-
-{{< card title="Publication Chairs" >}}
-- Member 20, Country 1
-- Member 21, Country 1
-- Member 22, Country 1
-- Member 23, Country 6
-{{< /card >}}
-
-{{< card title="Publicity Chairs" >}}
-- Member 24, Country 2
-- Member 25, Country 2
-- Member 26, Country 2
-{{< /card >}}
-
-{{< card title="Treasurers" >}}
-- Member 27, Country 7
-- Member 14, Country 2
-{{< /card >}}
-
-{{< card title="Secretary" >}}
-- Member 28, Country 2
+**Role:** Programme planning and academic and technical coordination.
 {{< /card >}}
 
 {{< /cards >}}
 
 {{< spacer lines=2 >}}
 
-## Organising Committee Members
+## Organising Committees
 
 {{< cards columns=2 >}}
 
-{{< card title="Members" >}}
-- Member 29, Country 1
-- Member 30, Country 8
-- Member 31, Country 6
-- Member 32, Country 1
-- Member 33, Country 9
-- Member 34, Country 2
-- Member 35, Country 10
+{{< card title="Registration & Participant Services" >}}
+**Lead:** Sathwik
+
+**Members:**
+- Rehan
+- Anjali
+- Sree Neha
+
+**Role:** Registration desk, participant coordination, badges and attendance.
 {{< /card >}}
 
-{{< card title="" >}}
-- Member 36, Country 6
-- Member 37, Country 8
-- Member 38, Country 2
-- Member 39, Country 6
-- Member 40, Country 2
-- Member 41, Country 2
+{{< card title="Designing, Venue & Protocol" >}}
+**Lead:** Joel
+
+**Members:**
+- Varun
+- Charith
+
+**Role:** Venue setup, signage, stage, seating and protocol.
+{{< /card >}}
+
+{{< card title="Technical & Audio-Visual" >}}
+**Lead:** Jeevan
+
+**Member:**
+- Likith
+
+**Role:** AV support, presentations, microphones, recording and technical coordination.
+{{< /card >}}
+
+{{< card title="Industry & Exhibition" >}}
+**Lead:** Hanvesh
+
+**Members:**
+- Anjali
+- Sree Neha
+
+**Role:** Exhibitor coordination, stalls and industry interaction.
+{{< /card >}}
+
+{{< card title="Hospitality & Guest Services" >}}
+**Lead:** Sathwik
+
+**Members:**
+- Jeevan
+- Charith
+- Likith
+
+**Role:** Guest reception, hospitality and speaker support.
+{{< /card >}}
+
+{{< card title="Publicity, Media & Communications" >}}
+**Lead:** Hanvesh
+
+**Members:**
+- Teja
+- Likith
+
+**Role:** Photography, social media, publicity and documentation.
+{{< /card >}}
+
+{{< card title="Networking & Mentoring" >}}
+**Lead:** Sathwik
+
+**Members:**
+- Charith
+- Sree Neha
+
+**Role:** Participant networking and mentoring activities.
+{{< /card >}}
+
+{{< card title="Web & Digital Communications" >}}
+**Lead:** Sai Prasanth
+
+**Members:**
+- Rishi
+- Jeevan
+
+**Role:** Website updates, digital content and online communication.
 {{< /card >}}
 
 {{< /cards >}}
+
+{{< spacer lines=2 >}}
+
+## Working Together
+
+The organising team brings together faculty leadership and student volunteers across programme coordination, participant services, venue management, technical operations, industry engagement, hospitality, communications, networking, and digital activities.
+
+Together, the committees work towards creating a seamless and engaging experience for **guests, speakers, exhibitors, participants and volunteers** at the IEEE IES Industrial Innovation Conclave 2026.
+
+### Connect · Collaborate · Innovate
+
+We look forward to welcoming you to **I4C 2026** in Hyderabad.
