@@ -1,75 +1,129 @@
-# `layouts/partials/topbar/area/end.html` override
+{{/* 
+  I4C 2026 — IEEE IES Industrial Innovation Conclave 2026
 
-- **File**: [`layouts/partials/topbar/area/end.html`](../../../../../layouts/partials/topbar/area/end.html)
-- **Shadows upstream**: `themes/hugo-theme-relearn/layouts/partials/topbar/area/end.html`
-- **Risk on Relearn upgrade**: 🟡 MEDIUM
+  Custom Relearn topbar override.
 
-## What this override does
+  Purpose:
+  - Displays the IEEE Industrial Electronics Society (IES) logo
+  - Displays the IEEE parent-organisation logo
+  - Keeps the standard Relearn topbar buttons
+  - Places the conference branding inside Relearn's existing
+    topbar-area-end section
 
-Prepends IEEE IES + IEEE parent-organisation brand logos to the right side of
-Relearn's topbar, then re-emits the upstream list of topbar buttons
-(edit, source, markdown, print, prev, next, more).
+  Conference:
+  IEEE IES Industrial Innovation Conclave 2026
+  22–23 September 2026
+  Engineering Staff College of India (ESCI)
+  Gachibowli, Hyderabad, Telangana, India
+*/}}
 
-## Why it exists
-
-Previous IES conference sites had partner logos in a separate strip above the
-content. Injecting them into Relearn 9.x's `<body>` directly broke the flex
-layout (row-reverse ordering pushed the strip off-screen). The cleanest
-integration is to place them inside the existing topbar, where Relearn
-already has a right-aligned area (`topbar-area-end`) that we override.
-
-## What's custom vs upstream
-
-Upstream is just a call list of button partials. We prepend one `<div>` with
-logos + scoped `<style>`, then re-emit the unchanged button list.
-
-The custom block at the top of the file:
-
-```html
 <div class="site-brand-logos">
-  <a href="https://www.ieee-ies.org/" target="_blank" rel="noopener" aria-label="IEEE IES">
-    <img src="{{ "images/ies.png" | relURL }}" alt="IEEE IES">
+
+  <!-- IEEE Industrial Electronics Society -->
+  <a
+    href="https://www.ieee-ies.org/"
+    target="_blank"
+    rel="noopener"
+    aria-label="IEEE Industrial Electronics Society"
+  >
+    <img
+      src="{{ "images/ies.png" | relURL }}"
+      alt="IEEE Industrial Electronics Society"
+    >
   </a>
-  <a href="https://www.ieee.org/" target="_blank" rel="noopener" aria-label="IEEE">
-    <img src="{{ "images/ieee.png" | relURL }}" alt="IEEE">
+
+  <!-- IEEE -->
+  <a
+    href="https://www.ieee.org/"
+    target="_blank"
+    rel="noopener"
+    aria-label="IEEE"
+  >
+    <img
+      src="{{ "images/ieee.png" | relURL }}"
+      alt="IEEE"
+    >
   </a>
+
 </div>
+
 <style>
-  .site-brand-logos { … }
+  /*
+    I4C 2026 — Topbar Conference Branding
+
+    The logos are intentionally kept inside Relearn's
+    existing topbar-area-end container so they participate
+    correctly in the topbar flex layout.
+  */
+
+  #R-topbar .site-brand-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  #R-topbar .site-brand-logos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 0;
+  }
+
+  #R-topbar .site-brand-logos img {
+    display: block;
+    width: auto;
+    height: 34px;
+    max-width: 100px;
+    object-fit: contain;
+  }
+
+  /*
+    Keep the branding compact on smaller screens.
+  */
+
+  @media (max-width: 768px) {
+    #R-topbar .site-brand-logos {
+      gap: 6px;
+      margin-right: 6px;
+    }
+
+    #R-topbar .site-brand-logos img {
+      height: 28px;
+      max-width: 82px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #R-topbar .site-brand-logos {
+      gap: 4px;
+      margin-right: 4px;
+    }
+
+    #R-topbar .site-brand-logos img {
+      height: 24px;
+      max-width: 68px;
+    }
+  }
 </style>
-```
 
-Sizing + responsive breakpoints for `.site-brand-logos` also live in
-[`static/css/custom.css`](../../../../../static/css/custom.css) (search for
-`#R-topbar .site-brand-logos`).
+{{/* 
+  Relearn topbar buttons.
 
-## Re-applying on upgrade
+  Keep this list synchronized with:
+  themes/hugo-theme-relearn/layouts/partials/topbar/area/end.html
 
-1. Diff upstream's topbar button list:
+  If the Relearn theme changes its button partials in a future
+  upgrade, update this section accordingly.
+*/}}
 
-   ```bash
-   git -C themes/hugo-theme-relearn diff <OLD>..<NEW> -- layouts/partials/topbar/area/end.html
-   ```
-
-2. If upstream added, removed, or renamed a button, update our copy's button
-   list (after the `<style>` block) to match the new upstream list. The
-   button partial names follow the pattern `topbar/button/<name>.html`.
-
-3. If upstream kept the same button list, nothing else to change.
-
-4. Verify: after build, the topbar should still show the IES + IEEE logos
-   on the right edge, followed by the Relearn topbar buttons (usually a
-   `more` ⋮ button collapsing the rest on mobile).
-
-## Related
-
-- `static/images/ies.png`, `static/images/ieee.png` — the two logo images
-- [`styles.md`](../../../../styles.md) — sizing for `.site-brand-logos`
-- Upstream list of available topbar button partials:
-  `themes/hugo-theme-relearn/layouts/partials/topbar/button/`
-
-## Template-customization note
-
-If a host institution needs to add their logo alongside IES + IEEE, uncomment
-the "Add additional partner/host logos here" block inside this override
-(e.g. La Trobe University logo in the irai2026 site).
+{{ partial "topbar/button/edit.html" . }}
+{{ partial "topbar/button/source.html" . }}
+{{ partial "topbar/button/markdown.html" . }}
+{{ partial "topbar/button/print.html" . }}
+{{ partial "topbar/button/prev.html" . }}
+{{ partial "topbar/button/next.html" . }}
+{{ partial "topbar/button/more.html" . }}
