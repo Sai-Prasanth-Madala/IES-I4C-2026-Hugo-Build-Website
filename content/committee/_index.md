@@ -9,114 +9,257 @@ linkTitle = "Organising Committee"
     subtitle="The team behind IEEE IES Industrial Innovation Conclave 2026."
 >}}
 
-## Conference Leadership
+## Conclave Leadership
 
-{{< cards columns=2 >}}
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/tripura_pidikiti.jpg",
+        "alt": "Dr. Tripura Pidikiti",
+        "name": "Dr. Tripura Pidikiti",
+        "company": "General Chair",
+        "location": "IEEE IES Industrial Innovation Conclave 2026"
+    },
+    {
+        "src": "/images/organizers/y_s_kishore_babu.jpg",
+        "alt": "Dr. Y S Kishore Babu",
+        "name": "Dr. Y S Kishore Babu",
+        "company": "Program Head",
+        "location": "IEEE IES Industrial Innovation Conclave 2026"
+    }
+]` width="220px" height="280px" >}}
 
-{{< card title="General Chair" >}}
-- **Dr. Tripura Pidikiti**
+---
 
-**Role:** Overall leadership, coordination and oversight of I4C 2026.
-{{< /card >}}
+## Registration & Participant Services
 
-{{< card title="Program Head" >}}
-- **Dr. Y S Kishore Babu**
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/sathwik.jpg",
+        "alt": "Sathwik",
+        "name": "Sathwik",
+        "company": "Committee Lead",
+        "location": "Registration & Participant Services"
+    },
+    {
+        "src": "/images/organizers/rehan.jpg",
+        "alt": "Rehan",
+        "name": "Rehan",
+        "company": "Committee Member",
+        "location": "Registration & Participant Services"
+    },
+    {
+        "src": "/images/organizers/anjali.jpg",
+        "alt": "Anjali",
+        "name": "Anjali",
+        "company": "Committee Member",
+        "location": "Registration & Participant Services"
+    },
+    {
+        "src": "/images/organizers/sree_neha.jpg",
+        "alt": "Sree Neha",
+        "name": "Sree Neha",
+        "company": "Committee Member",
+        "location": "Registration & Participant Services"
+    }
+]` width="220px" height="280px" >}}
 
-**Role:** Programme planning and academic and technical coordination.
-{{< /card >}}
+---
 
-{{< /cards >}}
+## Designing, Venue & Protocol
 
-{{< spacer lines=2 >}}
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/joel.jpg",
+        "alt": "Joel",
+        "name": "Joel",
+        "company": "Committee Lead",
+        "location": "Designing, Venue & Protocol"
+    },
+    {
+        "src": "/images/organizers/varun.jpg",
+        "alt": "Varun",
+        "name": "Varun",
+        "company": "Committee Member",
+        "location": "Designing, Venue & Protocol"
+    },
+    {
+        "src": "/images/organizers/charith.jpg",
+        "alt": "Charith",
+        "name": "Charith",
+        "company": "Committee Member",
+        "location": "Designing, Venue & Protocol"
+    }
+]` width="220px" height="280px" >}}
 
-## Organising Committees
+---
 
-{{< cards columns=2 >}}
+## Technical & Audio-Visual
 
-{{< card title="Registration & Participant Services" >}}
-**Lead:** Sathwik
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/jeevan.jpg",
+        "alt": "Jeevan",
+        "name": "Jeevan",
+        "company": "Committee Lead",
+        "location": "Technical & Audio-Visual"
+    },
+    {
+        "src": "/images/organizers/likith.jpg",
+        "alt": "Likith",
+        "name": "Likith",
+        "company": "Committee Member",
+        "location": "Technical & Audio-Visual"
+    }
+]` width="220px" height="280px" >}}
 
-**Members:**
-- Rehan
-- Anjali
-- Sree Neha
+---
 
-**Role:** Registration desk, participant coordination, badges and attendance.
-{{< /card >}}
+## Industry & Exhibition
 
-{{< card title="Designing, Venue & Protocol" >}}
-**Lead:** Joel
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/hanvesh.jpg",
+        "alt": "Hanvesh",
+        "name": "Hanvesh",
+        "company": "Committee Lead",
+        "location": "Industry & Exhibition"
+    },
+    {
+        "src": "/images/organizers/anjali.jpg",
+        "alt": "Anjali",
+        "name": "Anjali",
+        "company": "Committee Member",
+        "location": "Industry & Exhibition"
+    },
+    {
+        "src": "/images/organizers/sree_neha.jpg",
+        "alt": "Sree Neha",
+        "name": "Sree Neha",
+        "company": "Committee Member",
+        "location": "Industry & Exhibition"
+    }
+]` width="220px" height="280px" >}}
 
-**Members:**
-- Varun
-- Charith
+---
 
-**Role:** Venue setup, signage, stage, seating and protocol.
-{{< /card >}}
+## Hospitality & Guest Services
 
-{{< card title="Technical & Audio-Visual" >}}
-**Lead:** Jeevan
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/sathwik.jpg",
+        "alt": "Sathwik",
+        "name": "Sathwik",
+        "company": "Committee Lead",
+        "location": "Hospitality & Guest Services"
+    },
+    {
+        "src": "/images/organizers/jeevan.jpg",
+        "alt": "Jeevan",
+        "name": "Jeevan",
+        "company": "Committee Member",
+        "location": "Hospitality & Guest Services"
+    },
+    {
+        "src": "/images/organizers/charith.jpg",
+        "alt": "Charith",
+        "name": "Charith",
+        "company": "Committee Member",
+        "location": "Hospitality & Guest Services"
+    },
+    {
+        "src": "/images/organizers/likith.jpg",
+        "alt": "Likith",
+        "name": "Likith",
+        "company": "Committee Member",
+        "location": "Hospitality & Guest Services"
+    }
+]` width="220px" height="280px" >}}
 
-**Member:**
-- Likith
+---
 
-**Role:** AV support, presentations, microphones, recording and technical coordination.
-{{< /card >}}
+## Publicity, Media & Communications
 
-{{< card title="Industry & Exhibition" >}}
-**Lead:** Hanvesh
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/hanvesh.jpg",
+        "alt": "Hanvesh",
+        "name": "Hanvesh",
+        "company": "Committee Lead",
+        "location": "Publicity, Media & Communications"
+    },
+    {
+        "src": "/images/organizers/teja.jpg",
+        "alt": "Teja",
+        "name": "Teja",
+        "company": "Committee Member",
+        "location": "Publicity, Media & Communications"
+    },
+    {
+        "src": "/images/organizers/likith.jpg",
+        "alt": "Likith",
+        "name": "Likith",
+        "company": "Committee Member",
+        "location": "Publicity, Media & Communications"
+    }
+]` width="220px" height="280px" >}}
 
-**Members:**
-- Anjali
-- Sree Neha
+---
 
-**Role:** Exhibitor coordination, stalls and industry interaction.
-{{< /card >}}
+## Networking & Mentoring
 
-{{< card title="Hospitality & Guest Services" >}}
-**Lead:** Sathwik
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/sathwik.jpg",
+        "alt": "Sathwik",
+        "name": "Sathwik",
+        "company": "Committee Lead",
+        "location": "Networking & Mentoring"
+    },
+    {
+        "src": "/images/organizers/charith.jpg",
+        "alt": "Charith",
+        "name": "Charith",
+        "company": "Committee Member",
+        "location": "Networking & Mentoring"
+    },
+    {
+        "src": "/images/organizers/sree_neha.jpg",
+        "alt": "Sree Neha",
+        "name": "Sree Neha",
+        "company": "Committee Member",
+        "location": "Networking & Mentoring"
+    }
+]` width="220px" height="280px" >}}
 
-**Members:**
-- Jeevan
-- Charith
-- Likith
+---
 
-**Role:** Guest reception, hospitality and speaker support.
-{{< /card >}}
+## Web & Digital Communications
 
-{{< card title="Publicity, Media & Communications" >}}
-**Lead:** Hanvesh
+{{< imagesRow images=`[
+    {
+        "src": "/images/organizers/sai_prasanth.jpg",
+        "alt": "Sai Prasanth",
+        "name": "Sai Prasanth",
+        "company": "Committee Lead",
+        "location": "Web & Digital Communications"
+    },
+    {
+        "src": "/images/organizers/rishi.jpg",
+        "alt": "Rishi",
+        "name": "Rishi",
+        "company": "Committee Member",
+        "location": "Web & Digital Communications"
+    },
+    {
+        "src": "/images/organizers/jeevan.jpg",
+        "alt": "Jeevan",
+        "name": "Jeevan",
+        "company": "Committee Member",
+        "location": "Web & Digital Communications"
+    }
+]` width="220px" height="280px" >}}
 
-**Members:**
-- Teja
-- Likith
-
-**Role:** Photography, social media, publicity and documentation.
-{{< /card >}}
-
-{{< card title="Networking & Mentoring" >}}
-**Lead:** Sathwik
-
-**Members:**
-- Charith
-- Sree Neha
-
-**Role:** Participant networking and mentoring activities.
-{{< /card >}}
-
-{{< card title="Web & Digital Communications" >}}
-**Lead:** Sai Prasanth
-
-**Members:**
-- Rishi
-- Jeevan
-
-**Role:** Website updates, digital content and online communication.
-{{< /card >}}
-
-{{< /cards >}}
-
-{{< spacer lines=2 >}}
+---
 
 ## Working Together
 
