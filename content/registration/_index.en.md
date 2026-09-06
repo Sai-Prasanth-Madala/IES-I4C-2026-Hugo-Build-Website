@@ -184,7 +184,7 @@ For any queries regarding registration, participation or the I4C 2026 programme,
 
 For any queries regarding **I4C 2026, participation or the Willingness Form**, contact the organizing team:
 
-📧 **ieshubsandnodes.hyd@gmail.com**
+ **ieshubsandnodes.hyd@gmail.com**
 
 ---
 
