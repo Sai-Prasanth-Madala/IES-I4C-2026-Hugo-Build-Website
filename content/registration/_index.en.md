@@ -201,4 +201,4 @@ It is an opportunity to **meet experts, exchange ideas, discover opportunities, 
 **22–23 September 2026**  
 **Engineering Staff College of India (ESCI), Gachibowli, Hyderabad**
 
-### 🚀 Learn. Connect. Collaborate. Innovate.
+###  Learn. Connect. Collaborate. Innovate.
