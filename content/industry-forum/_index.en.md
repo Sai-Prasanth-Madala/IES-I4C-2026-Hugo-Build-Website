@@ -107,10 +107,10 @@ Explore the evolution of **Smart Manufacturing** and the emerging concepts of **
 ## Industry Talk 6
 
 {{< speaker
-    name="Kavinga Upalanayake"
+    name="Kavinga Upul Ekanayake"
     affiliation="Head of Hardware Engineering, ACCELR"
     title="Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up"
-    image="/images/kavinga_upalanayake.jpg"
+    image="/images/kavinga_upul_Ekanayake.jpg"
     when="Day 2, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
