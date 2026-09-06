@@ -5,70 +5,76 @@ weight = 1
 
 {{< pageHero
     title="News and Updates"
-    subtitle="Latest announcements from the organising committee."
+    subtitle="Latest announcements and updates from IEEE IES Industrial Innovation Conclave 2026."
 >}}
 
-The most recent updates appear at the top. Use the `{{</* newsItem */>}}`
-shortcode for each new post — pick a `type` to colour-code it
-(`update`, `deadline`, `announcement`, `call`, `warning`).
+Stay updated with the latest announcements, programme updates, participation
+information, and important news related to **IEEE IES Industrial Innovation
+Conclave (I4C) 2026**.
 
-{{< newsItem date="2026-04-12" type="deadline" title="Paper submission deadline extended" >}}
-Following many requests, the paper-submission deadline has been extended by
-two weeks to **30 April 2026**. No further extensions are planned. See the
-[For Authors](../for_authors/) page for the full timeline.
+{{< newsItem date="2026-09-06" type="announcement" title="I4C 2026 — Registration is Open" >}}
+Participation for **IEEE IES Industrial Innovation Conclave 2026** is now open.
+Registration is **completely free** for participants. The **Willingness /
+Expression of Interest Form** serves as the final participation form.
+
+[Register / Express Your Interest](../registration/)
 {{< /newsItem >}}
 
-{{< newsItem date="2026-03-28" type="announcement" title="Fourth keynote speaker confirmed" >}}
-We are delighted to announce the fourth keynote speaker, **Prof. Emily Davis**
-(InnovateCorp, Germany), presenting *The Digital Twin: The Why and the How*.
-Full keynote line-up on the [Program](../program/) page.
+{{< newsItem date="2026-09-06" type="announcement" title="I4C 2026 Programme Announced" >}}
+The two-day programme for **22–23 September 2026** features expert talks,
+industry sessions, a keynote address, panel discussion, hands-on workshop,
+networking and speed mentoring, along with the **Technology Exhibition &
+Industry Expo**.
+
+[View the Conference Programme](../program/)
 {{< /newsItem >}}
 
-{{< newsItem date="2026-03-15" type="call" title="Industry Forum call for talks is open" >}}
-The [Industry Forum](../industry-forum/) is accepting talk proposals from
-practitioners until **15 April 2026**. Talks emphasise real deployments and
-open challenges. Send a one-page abstract to the organising committee.
+{{< newsItem date="2026-09-06" type="update" title="Industry Talks & Expert Sessions" >}}
+I4C 2026 brings together experts from industry, academia and research to
+discuss emerging technologies including **Green Hydrogen, EV Charging,
+Electric Motor Technologies, Digital Grids, Digital Twins, Smart
+Manufacturing, Industry 5.0, RISC-V, FPGA and On-Premise AI**.
+
+[Explore Industry Talks](../industry-forum/)
 {{< /newsItem >}}
 
-{{< newsItem date="2026-02-20" type="update" >}}
-Tutorial programme has been finalised — three pre-conference tutorials will
-be offered on Day 0. Details on the [Tutorials](../tutorials/) page.
+{{< newsItem date="2026-09-06" type="announcement" title="Technology Exhibition & Industry Expo" >}}
+The **Technology Exhibition & Industry Expo** will be open throughout the
+conclave, providing an opportunity for participants to explore technologies,
+innovative solutions and industry applications.
+
 {{< /newsItem >}}
 
-{{< newsItem date="2026-01-10" type="announcement" title="Registration now open" >}}
-Registration is open at reduced early-bird rates until **15 May 2026**.
-Full fee table on the [Registration](../registration/) page.
+{{< newsItem date="2026-09-06" type="update" title="Venue Confirmed" >}}
+I4C 2026 will be hosted at **Engineering Staff College of India (ESCI),
+Gachibowli, Hyderabad, Telangana** on **22–23 September 2026**.
+
+[View Venue & Travel Information](../venue/)
 {{< /newsItem >}}
 
-{{< newsItem date="2025-11-14" type="call" >}}
-Several special sessions are accepting submissions — see the
-[Call for Special Sessions](../for_authors/#call-for-special-sessions).
+{{< newsItem date="2026-09-06" type="update" title="Networking & Speed Mentoring" >}}
+Participants will have opportunities to connect with professionals, experts,
+researchers and fellow participants through **Networking and Speed Mentoring**
+activities during the conclave.
 {{< /newsItem >}}
 
-{{< newsItem date="2025-10-22" type="update" >}}
-The paper-submission system is now [open](../for_authors/#manuscript-submission) for all tracks.
+{{< newsItem date="2026-09-02" type="announcement" title="Connect · Collaborate · Innovate" >}}
+I4C 2026 brings together **students, researchers, academicians, industry
+professionals, innovators and technology experts** to exchange knowledge,
+discover emerging technologies and build meaningful professional and
+research connections.
+
+We look forward to welcoming you to **Hyderabad** for I4C 2026.
 {{< /newsItem >}}
 
 ---
 
-### Adding a new post
+### Stay Updated
 
-Copy the template below to the top of this file (above the most recent item)
-and fill in your values. Then commit — the site rebuilds automatically.
+For participation-related questions and other conference enquiries, please
+contact:
 
-```
-{{</* newsItem date="YYYY-MM-DD" type="update" title="Optional headline" */>}}
-Your announcement in **Markdown**. Links, lists, emphasis all work.
-{{</* /newsItem */>}}
-```
+**ieshubsandnodes.hyd@gmail.com**
 
-- `date` — any human date (`2026-04-12`, `12 April 2026`, `Apr 12, 2026`)
-- `type` — `update`, `deadline`, `announcement`, `call`, or `warning`
-- `title` — optional short headline; omit for one-line posts
-
-Relearn's built-in `{{</* notice */>}}` is still available when you want a
-highlighted callout box inside a page (not a dated post), e.g.:
-
-{{% notice style="info" %}}
-Contact [info@your-conference.example](mailto:info@your-conference.example) for any questions.
-{{% /notice %}}
+Follow the official conference channels for further announcements and
+programme updates.
