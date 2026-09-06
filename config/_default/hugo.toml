@@ -29,7 +29,7 @@ title = "IEEE IES INDUSTRIAL INNOVATION CONCLAVE(I4C)-2026"
 #   • Set to ""        → no title under the logo (logo image only)
 #   • Remove this line → no title under the logo (logo image only)
 # Does NOT affect the browser tab or OpenGraph — those always use `title`.
-params.linkTitle = "IEEE I4C 2026"
+params.linkTitle = "IES I4C 2026"
 
 # OPTIONAL body font. Webfonts are served from fonts.bunny.net — a privacy-
 # respecting mirror of Google Fonts that doesn't log visitor IPs and sets no
