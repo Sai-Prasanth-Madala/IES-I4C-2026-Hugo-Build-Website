@@ -1,5 +1,5 @@
 +++
-title = "Conference Registration"
+title = "Conclave Registration"
 weight = 6
 linkTitle = "Registration"
 +++
