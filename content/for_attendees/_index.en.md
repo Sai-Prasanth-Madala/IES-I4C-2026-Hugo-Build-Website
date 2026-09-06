@@ -6,65 +6,161 @@ linkTitle = "For Attendees"
 
 {{< pageHero
     title="For Attendees"
-    subtitle="Visa, travel, accommodation and sightseeing information for delegates."
+    subtitle="Plan your visit to IEEE IES Industrial Innovation Conclave 2026 in Hyderabad."
 >}}
-
-# Visa Information
-The host country is a member of the European Union and part of the Schengen area.
-
-Everyone entering the host country must have a valid identification document. For EU citizens traveling within the Schengen Area, EU countries, and Switzerland, a photo identification complying with EU standards and allowing international travel will suffice. Please check what kind of ID is required by your airline carrier before traveling. Some airlines within Europe will only accept passport identification.
-
-Visas are required by delegates traveling from the rest of the world. We encourage all delegates to check the requirements for their originating country. Please contact the nearest Embassy for further information. You can also find more information on visa requirements for the host country at [Official Visa Information Website](https://um.fi/entering-finland).
-
-Please note that every delegate must apply for their own visa.
-
-## Need an Invitation Letter?
-You will receive a proof of registration soon after the registration fee has been received. The confirmation document will serve as your invitation letter when applying for the visa.
-
-If you need a formal letter of invitation, it can be provided by the conference organization. Please contact us. Letters of invitation will be sent in PDF format to the email address provided. Please send us all information you need for the letter (for example title, affiliation, etc. if needed) in the same format used for your visa application, and include the name and number of your paper.
-
-The organizing committee also reserves the right to ask for further information to ensure the validity of requests.
-
-Please note that the organizing committee is not responsible for starting the process for visa application; we will only be sending the invitation letter. You make your own visa application.
 
 # Travel Information
 
-The host city is well-connected to the rest of the world. You can easily reach it by plane, ferry, or train.
+IEEE IES Industrial Innovation Conclave 2026 will be held at:
 
-![Conference venue](/images/slideshow/2.jpg?width=600px&shadow&lightbox "Click to enlarge")
+**Engineering Staff College of India (ESCI)**  
+Gachibowli, Hyderabad, Telangana, India
 
-### Reaching the Conference Venue
-Please refer to our dedicated Conference Venue page.
+The venue is located in the Gachibowli area, one of Hyderabad's major technology and business hubs, with convenient access to major transport facilities, hotels, restaurants and other city attractions.
 
-### Reach the Host City by Plane
-The host city can be reached by plane smoothly from everywhere.
+![Conference venue](/images/slideshow/2.jpg?width=800px&shadow&lightbox "Engineering Staff College of India, Hyderabad")
 
-The host city's airport consistently ranks among the best airports in the world. It serves around 350 flights a day, including direct flights to 140 destinations and several direct flights a week to various international locations.
+### Reaching the Conclave Venue
 
-The airport is located 18 km from downtown and 22 km from the conference venue. A frequent train link connects the airport to downtown in about 35 minutes. More information about local transport can be found on our conference venue page.
+For detailed venue information, directions and map navigation, please refer to the **Conclave Venue** page.
 
-You can find the list of airlines operating at the airport on the airport's official website.
+**Venue:** Engineering Staff College of India (ESCI)  
+**Location:** Gachibowli, Hyderabad, Telangana, India
 
-### Reach the Host City by Ferry
-There are daily ferry services to the host city from several locations, including nearby countries. All ferry companies also offer the possibility to take a car with you.
+Participants are advised to plan their journey in advance and allow sufficient time for travel to the venue.
 
-Information on the different passenger terminals can be found on the Port of the Host City website.
+### Reach Hyderabad by Air
 
-### Reach the Host City by Train
-There are excellent train connections to the host city from all major towns in the country as well as from distant regions.
+Hyderabad is well connected to major cities across India and several international destinations through **Rajiv Gandhi International Airport (HYD)**.
 
-The Central Railway Station is located in the center of the city and is an architectural landmark in itself.
+The airport is located in Shamshabad, approximately 30–35 km from the ESCI campus, depending on the route and traffic conditions.
+
+From the airport, attendees can reach Gachibowli by:
+
+- Airport taxis and app-based cab services
+- Pre-booked private transportation
+- Other available airport transport services
+
+Travel time may vary depending on traffic conditions, particularly during peak hours.
+
+### Reach Hyderabad by Train
+
+Hyderabad has several major railway stations with connections to cities across India.
+
+Major railway stations include:
+
+- **Secunderabad Junction**
+- **Hyderabad Deccan (Nampally)**
+- **Kacheguda Railway Station**
+
+From the railway station, attendees can continue to Gachibowli using taxis, app-based cab services or local public transportation.
+
+### Local Transportation
+
+Gachibowli is well connected to different parts of Hyderabad through road transport and app-based mobility services.
+
+Attendees can use:
+
+- App-based cab services
+- Auto-rickshaws
+- Local buses
+- Private taxis
+- Metro rail combined with road transport, where convenient
+
+For the final journey to ESCI, attendees are encouraged to check the route and traffic conditions before starting their trip.
+
+---
 
 # Accommodation
 
-Our recommended accommodation options are divided into three categories:
+Hyderabad offers a wide range of accommodation options around Gachibowli and nearby areas.
 
-- Hotels at the conference venue or along the metro line
-- Hotels in downtown
-- Low budget accommodation
+For convenient access to the conference venue, attendees may consider staying in or around:
 
-We have booked capacity from some of the hotels. These capacity bookings expire about 1-1.5 months before the conference. Depending on the hotel, this booked capacity is utilized by following the link or using the code provided in the hotel's introductions below. Please note that the conference organizers cannot guarantee the availability of rooms in the hotels. The host city is very popular during the conference period!
+- **Gachibowli**
+- **Financial District**
+- **Nanakramguda**
+- **Kondapur**
+- **HITEC City**
 
-# Sightseeing
+Accommodation options include:
 
-{{< slideshow path="images/slideshow" largeText="Conference Venue, Host City, Host Country" smallText="Conference Dates" >}}
+- Hotels and business hotels
+- Budget hotels
+- Serviced apartments
+- Guest houses
+- Other short-stay accommodation options
+
+Attendees are encouraged to make accommodation arrangements early, particularly because September is an active period for conferences, business events and academic activities in Hyderabad.
+
+> **Note:** The conference organizers do not guarantee hotel room availability unless a specific accommodation arrangement is announced through the official conference channels.
+
+---
+
+# Nearby Places & Essentials
+
+The Gachibowli area provides convenient access to a variety of restaurants, shopping centres, hospitals, pharmacies and other essential services.
+
+Attendees can find several dining and everyday convenience options in and around:
+
+- Gachibowli
+- Kondapur
+- Financial District
+- HITEC City
+
+For transportation and navigation, attendees are encouraged to use their preferred map and navigation applications.
+
+---
+
+# Explore Hyderabad
+
+Hyderabad is a city where technology, history and culture come together. Attendees who have time before or after the conclave can explore some of the city's well-known attractions.
+
+Popular places to explore include:
+
+- **Charminar**
+- **Golconda Fort**
+- **Hussain Sagar Lake**
+- **Birla Mandir**
+- **Salar Jung Museum**
+- **Nehru Zoological Park**
+- **Qutb Shahi Tombs**
+
+These locations offer opportunities to experience Hyderabad's heritage, architecture and culture alongside the technical and professional experience of I4C 2026.
+
+{{< slideshow path="images/slideshow" largeText="Explore Hyderabad · Connect · Collaborate · Innovate" smallText="IEEE IES Industrial Innovation Conclave 2026 · 22–23 September 2026" >}}
+
+---
+
+# Conference Venue
+
+**Engineering Staff College of India (ESCI)**  
+Gachibowli, Hyderabad, Telangana, India
+
+The venue will host the two-day conclave featuring:
+
+- Expert Talks & Keynotes
+- Industry Talks
+- Hands-on Workshop
+- Panel Discussion
+- Technology Exhibition & Industry Expo
+- Networking & Speed Mentoring
+
+**Conference Dates:** 22–23 September 2026
+
+---
+
+# Plan Your Visit
+
+To make the most of your I4C 2026 experience:
+
+- Plan your travel to Hyderabad in advance.
+- Book accommodation early.
+- Check your route to ESCI before the event.
+- Allow additional travel time during peak traffic hours.
+- Keep your conference participation details readily available.
+- Explore the technology, networking and industry opportunities available during the conclave.
+
+## Connect · Collaborate · Innovate
+
+We look forward to welcoming students, researchers, academicians, industry professionals and innovators to **IEEE IES Industrial Innovation Conclave 2026** in Hyderabad.
