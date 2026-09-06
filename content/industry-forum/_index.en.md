@@ -25,7 +25,7 @@ Industry sessions are open to all I4C 2026 participants.
     name="Dr. Sankara Rao Mutyala"
     affiliation="Director & CTO, Nanosol Energy Private Limited, Hyderabad"
     title="Green Hydrogen and Industrial Electronics: Innovation for a NET-ZERO Industry"
-    image="/images/sessions/sankara_rao_mutyala.jpg"
+    image="/images/sankara_rao_mutyala.jpg"
     when="Day 1, 12:00 PM – 12:45 PM"
     where="I4C 2026"
 >}}
@@ -42,7 +42,7 @@ This session explores the role of **Green Hydrogen and Industrial Electronics** 
     name="Mr. Rajesh Sura"
     affiliation="CEO & Co-founder, Dynolt Technologies"
     title="Advanced Power Conversion Systems and Architectures for EV Charging"
-    image="/images/sessions/rajesh_sura.jpg"
+    image="/images/rajesh_sura.jpg"
     when="Day 1, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
@@ -59,7 +59,7 @@ This session focuses on advanced **power conversion systems and architectures fo
     name="Dr. Gowtham Vegireddy"
     affiliation="Manager R&D, IFB"
     title="Advanced Electrical Motor Topologies for Electric Vehicle Applications"
-    image="/images/sessions/gowtham_vegireddy.jpg"
+    image="/images/gowtham_vegireddy.jpg"
     when="Day 1, 4:15 PM – 5:00 PM"
     where="I4C 2026"
 >}}
@@ -76,7 +76,7 @@ The session explores advanced electrical motor topologies and their applications
     name="Dr. P. Balakrishna"
     affiliation="Senior Engineer, GE Energy"
     title="Navigating from Smart Grid to Digital Grid: Role of Digital Twin and Its Applications with a Case Study"
-    image="/images/sessions/p_balakrishna.jpg"
+    image="/images/p_balakrishna.jpg"
     when="Day 2, 11:15 AM – 12:00 PM"
     where="I4C 2026"
 >}}
@@ -93,7 +93,7 @@ This session examines the transition from **Smart Grid to Digital Grid**, with a
     name="Dr. Srinivasa Rao Perla"
     affiliation="Ex-Director, Technical Training at Cyient"
     title="Smart Manufacturing & Industry 5.0"
-    image="/images/sessions/srinivasa_rao_perla.jpg"
+    image="/images/srinivasa_rao_perla.jpg"
     when="Day 2, 12:00 PM – 12:45 PM"
     where="I4C 2026"
 >}}
@@ -110,7 +110,7 @@ Explore the evolution of **Smart Manufacturing** and the emerging concepts of **
     name="Kavinga Upalanayake"
     affiliation="Head of Hardware Engineering, ACCELR"
     title="Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up"
-    image="/images/sessions/kavinga_upalanayake.jpg"
+    image="/images/kavinga_upalanayake.jpg"
     when="Day 2, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
