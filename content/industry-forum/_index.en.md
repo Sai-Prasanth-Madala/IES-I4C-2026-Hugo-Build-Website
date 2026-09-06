@@ -42,7 +42,7 @@ This session explores the role of **Green Hydrogen and Industrial Electronics** 
     name="Mr. Rajesh Sura"
     affiliation="CEO & Co-founder, Dynolt Technologies"
     title="Advanced Power Conversion Systems and Architectures for EV Charging"
-    image="/images/rajesh_sura.jpg"
+    image="/images/rajesh_sura.jpeg"
     when="Day 1, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
@@ -59,7 +59,7 @@ This session focuses on advanced **power conversion systems and architectures fo
     name="Dr. Gowtham Vegireddy"
     affiliation="Manager R&D, IFB"
     title="Advanced Electrical Motor Topologies for Electric Vehicle Applications"
-    image="/images/gowtham_vegireddy.jpg"
+    image="/images/gowtham_vegireddy.jpeg"
     when="Day 1, 4:15 PM – 5:00 PM"
     where="I4C 2026"
 >}}
@@ -110,7 +110,7 @@ Explore the evolution of **Smart Manufacturing** and the emerging concepts of **
     name="Kavinga Upul Ekanayake"
     affiliation="Head of Hardware Engineering, ACCELR"
     title="Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up"
-    image="/images/kavinga_upul_Ekanayake.jpg"
+    image="/images/kavinga_upul_Ekanayake.jpeg"
     when="Day 2, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
