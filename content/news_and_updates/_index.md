@@ -49,7 +49,7 @@ innovative solutions and industry applications.
 I4C 2026 will be hosted at **Engineering Staff College of India (ESCI),
 Gachibowli, Hyderabad, Telangana** on **22–23 September 2026**.
 
-[View Venue & Travel Information](../venue/)
+[View Venue & Travel Information](../for_attendees/)
 {{< /newsItem >}}
 
 {{< newsItem date="2026-09-06" type="update" title="Networking & Speed Mentoring" >}}
