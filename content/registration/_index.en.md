@@ -5,7 +5,7 @@ linkTitle = "Registration"
 +++
 
 {{< pageHero
-    title="Conference Registration"
+    title="Conclave Registration"
     subtitle="Join the IEEE IES Industrial Innovation Conclave 2026 — Registration is Free."
 >}}
 
