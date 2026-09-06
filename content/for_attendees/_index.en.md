@@ -18,7 +18,7 @@ Gachibowli, Hyderabad, Telangana, India
 
 The venue is located in the Gachibowli area, one of Hyderabad's major technology and business hubs, with convenient access to major transport facilities, hotels, restaurants and other city attractions.
 
-![Conference venue](/images/slideshow/Conclave-Venue.jpg?width=800px&shadow&lightbox "Engineering Staff College of India, Hyderabad")
+![Conference venue](/images/slideshow/Conclave-Venue.png?width=800px&shadow&lightbox "Engineering Staff College of India, Hyderabad")
 
 ### Reaching the Conclave Venue
 
