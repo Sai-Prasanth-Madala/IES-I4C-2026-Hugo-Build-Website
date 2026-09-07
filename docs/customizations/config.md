@@ -9,17 +9,17 @@ Files covered:
 
 ---
 
-## Per-conference values (edit these when cloning the template)
+## Per-conclave values (I4C 2026)
 
-These four values make a template copy identify as a specific conference.
+These values identify this conference across the Hugo site and deployment configuration.
 
-| Value | File + key | Used for | Example |
+| Value | File + key | Used for | I4C 2026 |
 |---|---|---|---|
-| **baseURL** | `hugo.toml` → `baseURL` | Absolute URLs, RSS, sitemap, OpenGraph, auto-generated `/CNAME` | `https://irai2026.ieee-ies.org` |
-| **Full title** | `hugo.toml` → `title` | Browser tab suffix, OG `site_name`, RSS feed | `IEEE International Conference on Responsible AI 2026` |
-| **Short title / abbreviation** *(optional)* | `hugo.toml` → `params.linkTitle` | Sidebar header below the logo. Set to `""` or remove the line entirely to show only the logo image (no text under it). | `IEEE IRAI 2026` |
-| **Home-page hero title** | `content/_index.en.md` front matter → `title` | Browser tab prefix + home-page breadcrumb | `Welcome to IRAI 2026` |
-| **Description** | `content/_index.en.md` front matter → `description` | Meta description, OpenGraph / Twitter card description | `The IEEE conference on responsible AI, held in Melbourne, Sep 2026.` |
+| **baseURL** | `hugo.toml` → `baseURL` | Absolute URLs, RSS, sitemap, OpenGraph, and auto-generated `/CNAME` | `https://i4c2026.ieee-ies.org` |
+| **Full title** | `hugo.toml` → `title` | Browser tab suffix, OpenGraph `site_name`, and RSS feed | `IEEE IES Industrial Innovation Conclave 2026` |
+| **Short title / abbreviation** *(optional)* | `hugo.toml` → `params.linkTitle` | Sidebar header below the logo | `IEEE IES I4C 2026` |
+| **Home-page hero title** | `content/_index.en.md` → `title` | Browser tab prefix and home-page breadcrumb | `IEEE IES Industrial Innovation Conclave 2026` |
+| **Description** | `content/_index.en.md` → `description` | Meta description, OpenGraph, and Twitter card description | `IEEE IES Industrial Innovation Conclave 2026 — Advancing Electrification, Automation, AI, Renewable Energy & Smart Mobility.` |
 
 The first three live in `hugo.toml` (grouped in a banner block at the top of
 the file). The last two live in the home page's front matter — the user
