@@ -1,14 +1,22 @@
 {{- /*
-  I4C 2026 — Page Hero Shortcode
+  I4C 2026 — Animated Page Hero
 
-  Full-width hero/banner for section landing pages.
+  The hero automatically uses all JPG/JPEG/PNG images found in:
+
+    static/images/slideshow/
+
+  Current I4C 2026 images:
+
+    buddha-statue-hyd.jpg
+    Charminar.jpeg
+    Birla Mandir.jpg
+    Nehru-Zoological-Park.jpg
 
   Usage:
 
     {{< pageHero
-      title="About I4C 2026"
+      title="IEEE IES Industrial Innovation Conclave 2026"
       subtitle="Advancing Electrification, Automation, AI, Renewable Energy & Smart Mobility"
-      image="/images/hero/about.jpg"
       cta="Willingness Form"
       cta_url="https://docs.google.com/forms/d/e/1FAIpQLScF8Q1hEmqXrXALNGPCnLkEq8-RKQP8jCcERgl6EToDsxq9Ag/viewform"
       align="center"
@@ -16,163 +24,359 @@
 
   Parameters:
 
-    title     — main hero heading
-    subtitle  — supporting description
-    image     — optional background image
-    cta       — optional button text
-    cta_url   — optional button URL; required when using cta
-    align     — left or center; defaults to center
+    title
+      — main hero heading
 
-  I4C 2026:
-    Event: IEEE IES Industrial Innovation Conclave 2026
-    Dates: 22–23 September 2026
-    Venue: Engineering Staff College of India (ESCI),
-            Gachibowli, Hyderabad
+    subtitle
+      — supporting description
+
+    cta
+      — optional button text
+
+    cta_url
+      — optional button URL
+
+    align
+      — "left" or "center"
+      — defaults to "center"
+
+  Background images are automatically discovered from
+  static/images/slideshow/.
 */ -}}
+
 
 {{- $title := .Get "title" }}
 {{- $subtitle := .Get "subtitle" }}
-{{- $image := .Get "image" }}
 {{- $cta := .Get "cta" }}
 {{- $ctaUrl := .Get "cta_url" }}
 {{- $align := .Get "align" | default "center" }}
 
-<section
-  class="page-hero page-hero--{{ $align }}{{ if $image }} page-hero--has-image{{ end }}"
-  {{- if $image }}
-    style="background-image: url('{{ $image | relURL }}');"
+{{- $imagePath := "images/slideshow" }}
+{{- $validExtensions := slice ".jpg" ".jpeg" ".png" }}
+
+{{- $files := readDir (printf "static/%s" $imagePath) }}
+
+{{- $images := slice }}
+
+{{- range $files }}
+
+  {{- $ext := lower (path.Ext .Name) }}
+
+  {{- if in $validExtensions $ext }}
+
+    {{- $images = $images | append . }}
+
   {{- end }}
+
+{{- end }}
+
+
+<section
+  class="i4c-page-hero i4c-page-hero--{{ $align }}"
+  data-hero
 >
 
-  <div class="page-hero-inner">
+
+  <!-- ==========================================================
+       HERO BACKGROUND SLIDES
+       ========================================================== -->
+
+  <div class="i4c-hero-background" aria-hidden="true">
+
+    {{- range $index, $image := $images }}
+
+      <div
+        class="i4c-hero-background-slide{{ if eq $index 0 }} is-active{{ end }}"
+        data-hero-slide
+      >
+
+        <img
+          src="{{ printf "/%s/%s" $imagePath $image.Name | relURL }}"
+          alt=""
+          {{ if eq $index 0 }}
+            loading="eager"
+          {{ else }}
+            loading="lazy"
+          {{ end }}
+        >
+
+      </div>
+
+    {{- end }}
+
+  </div>
+
+
+  <!-- ==========================================================
+       HERO OVERLAY
+       ========================================================== -->
+
+  <div class="i4c-hero-overlay"></div>
+
+
+  <!-- ==========================================================
+       HERO CONTENT
+       ========================================================== -->
+
+  <div class="i4c-page-hero-inner">
 
     {{- with $title }}
-      <h1 class="page-hero-title">
+
+      <h1 class="i4c-page-hero-title">
         {{ . | safeHTML }}
       </h1>
+
     {{- end }}
+
 
     {{- with $subtitle }}
-      <p class="page-hero-subtitle">
+
+      <p class="i4c-page-hero-subtitle">
         {{ . | safeHTML }}
       </p>
+
     {{- end }}
 
+
     {{- if and $cta $ctaUrl }}
-      <p class="page-hero-cta">
+
+      <div class="i4c-page-hero-cta">
+
         <a
           href="{{ $ctaUrl }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="page-hero-cta-btn"
+          class="i4c-page-hero-cta-button"
         >
           {{ $cta }}
+
+          <span aria-hidden="true">↗</span>
+
         </a>
-      </p>
+
+      </div>
+
     {{- end }}
 
   </div>
+
+
+  <!-- ==========================================================
+       BACKGROUND SLIDE INDICATORS
+       ========================================================== -->
+
+  {{- if gt (len $images) 1 }}
+
+    <div
+      class="i4c-hero-indicators"
+      aria-hidden="true"
+    >
+
+      {{- range $index, $image := $images }}
+
+        <span
+          class="i4c-hero-indicator{{ if eq $index 0 }} is-active{{ end }}"
+          data-hero-indicator
+        ></span>
+
+      {{- end }}
+
+    </div>
+
+  {{- end }}
+
 
 </section>
 
 
 <style>
+
   /* ============================================================
-     I4C 2026 PAGE HERO
+     I4C 2026 — HERO
      ============================================================ */
 
-  article .page-hero {
+  article .i4c-page-hero {
+
     position: relative;
 
     width: 100%;
 
-    margin: 0 0 1.75rem;
+    min-height: 440px;
 
-    padding: 2.75rem 2.25rem;
+    margin: 0 0 2rem;
 
-    border-radius: 8px;
+    padding: 4rem 2rem;
 
     overflow: hidden;
 
-    background-color: var(
-      --SITE-BRAND-BLUE,
-      #0082ba
-    );
+    display: flex;
 
-    background-position: center;
+    align-items: center;
 
-    background-size: cover;
+    justify-content: center;
 
-    background-repeat: no-repeat;
+    border-radius: 8px;
+
+    background: #0f172a;
 
     color: #fff;
 
-    box-shadow:
-      0 1px 3px rgba(15, 23, 42, 0.06);
+    isolation: isolate;
+
   }
 
 
   /* ============================================================
-     IMAGE OVERLAY
+     BACKGROUND
      ============================================================ */
 
-  article .page-hero.page-hero--has-image::before {
-    content: "";
+  article .i4c-hero-background {
 
     position: absolute;
 
     inset: 0;
 
+    z-index: -3;
+
+  }
+
+
+  article .i4c-hero-background-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+      opacity 1s ease,
+      visibility 1s ease;
+
+  }
+
+
+  article .i4c-hero-background-slide.is-active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+  }
+
+
+  article .i4c-hero-background-slide img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+  }
+
+
+  /* ============================================================
+     DARK OVERLAY
+     ============================================================ */
+
+  article .i4c-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
     background:
       linear-gradient(
         120deg,
-        rgba(15, 23, 42, 0.82) 0%,
-        rgba(15, 23, 42, 0.62) 50%,
-        rgba(15, 23, 42, 0.35) 100%
+        rgba(15, 23, 42, 0.86) 0%,
+        rgba(15, 23, 42, 0.68) 45%,
+        rgba(15, 23, 42, 0.48) 100%
       );
+
   }
 
 
   /* ============================================================
-     CONTENT CONTAINER
+     SUBTLE BOTTOM GRADIENT
      ============================================================ */
 
-  article .page-hero .page-hero-inner {
+  article .i4c-page-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 35%;
+
+    z-index: -1;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(15, 23, 42, 0.42),
+        transparent
+      );
+
+    pointer-events: none;
+
+  }
+
+
+  /* ============================================================
+     CONTENT
+     ============================================================ */
+
+  article .i4c-page-hero-inner {
+
     position: relative;
 
-    z-index: 1;
+    z-index: 2;
 
-    max-width: 65ch;
+    width: 100%;
+
+    max-width: 900px;
+
   }
 
 
-  /* ============================================================
-     ALIGNMENT
-     ============================================================ */
+  article .i4c-page-hero--center {
 
-  article .page-hero.page-hero--center {
     text-align: center;
+
   }
 
-  article .page-hero.page-hero--center
-  .page-hero-inner {
+
+  article .i4c-page-hero--center
+  .i4c-page-hero-inner {
+
     margin-left: auto;
+
     margin-right: auto;
+
   }
 
-  article .page-hero.page-hero--left {
+
+  article .i4c-page-hero--left {
+
     text-align: left;
-  }
 
-
-  /* Prevent Relearn's paragraph alignment from
-     overriding the hero alignment. */
-
-  main#R-body-inner article .page-hero p,
-  main#R-body-inner article .page-hero h1,
-  main#R-body-inner article .page-hero .page-hero-title,
-  main#R-body-inner article .page-hero .page-hero-subtitle {
-    text-align: inherit;
   }
 
 
@@ -180,18 +384,27 @@
      TITLE
      ============================================================ */
 
-  article .page-hero .page-hero-title {
-    margin: 0 0 0.65rem;
+  article .i4c-page-hero-title {
+
+    margin: 0 0 1rem;
 
     color: #fff;
 
-    font-size: 2.35rem;
+    font-size: clamp(
+      2rem,
+      5vw,
+      3.5rem
+    );
 
-    font-weight: 700;
+    font-weight: 750;
 
-    line-height: 1.15;
+    line-height: 1.08;
 
-    letter-spacing: -0.015em;
+    letter-spacing: -0.025em;
+
+    text-shadow:
+      0 2px 5px rgba(0, 0, 0, 0.28);
+
   }
 
 
@@ -199,14 +412,34 @@
      SUBTITLE
      ============================================================ */
 
-  article .page-hero .page-hero-subtitle {
-    margin: 0;
+  article .i4c-page-hero-subtitle {
 
-    color: rgba(255, 255, 255, 0.93);
+    max-width: 760px;
 
-    font-size: 1.05rem;
+    margin: 0 auto;
 
-    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.94);
+
+    font-size: clamp(
+      0.95rem,
+      2vw,
+      1.15rem
+    );
+
+    line-height: 1.6;
+
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.25);
+
+  }
+
+
+  article .i4c-page-hero--left
+  .i4c-page-hero-subtitle {
+
+    margin-left: 0;
+    margin-right: 0;
+
   }
 
 
@@ -214,49 +447,144 @@
      CTA
      ============================================================ */
 
-  article .page-hero .page-hero-cta {
-    margin: 1.35rem 0 0;
+  article .i4c-page-hero-cta {
+
+    margin-top: 1.6rem;
+
   }
 
-  article .page-hero .page-hero-cta-btn {
-    display: inline-block;
 
-    padding: 0.6rem 1.25rem;
+  article .i4c-page-hero-cta-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    padding: 0.7rem 1.3rem;
+
+    border: 1px solid
+      rgba(255, 255, 255, 0.15);
 
     border-radius: 5px;
 
-    background: var(
-      --SITE-BRAND-ORANGE,
-      #ec8c00
-    );
+    background:
+      var(
+        --SITE-BRAND-ORANGE,
+        #ec8c00
+      );
 
     color: #fff;
 
     font-size: 0.92rem;
 
-    font-weight: 600;
+    font-weight: 650;
 
     line-height: 1.3;
 
     text-decoration: none;
 
+    box-shadow:
+      0 4px 12px
+      rgba(15, 23, 42, 0.2);
+
     transition:
       background 0.15s ease,
       transform 0.15s ease,
       box-shadow 0.15s ease;
+
   }
 
-  article .page-hero .page-hero-cta-btn:hover {
+
+  article .i4c-page-hero-cta-button:hover {
+
     background: #d97b00;
 
     color: #fff;
 
     text-decoration: none;
 
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 
     box-shadow:
-      0 4px 10px rgba(15, 23, 42, 0.18);
+      0 7px 16px
+      rgba(15, 23, 42, 0.25);
+
+  }
+
+
+  article .i4c-page-hero-cta-button:focus-visible {
+
+    outline: 2px solid #fff;
+
+    outline-offset: 3px;
+
+  }
+
+
+  /* ============================================================
+     INDICATORS
+     ============================================================ */
+
+  article .i4c-hero-indicators {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 1rem;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    transform: translateX(-50%);
+
+    padding: 0.3rem 0.45rem;
+
+    border-radius: 999px;
+
+    background:
+      rgba(15, 23, 42, 0.25);
+
+    backdrop-filter: blur(3px);
+
+    -webkit-backdrop-filter: blur(3px);
+
+  }
+
+
+  article .i4c-hero-indicator {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+      rgba(255, 255, 255, 0.5);
+
+    transition:
+      width 0.2s ease,
+      background 0.2s ease;
+
+  }
+
+
+  article .i4c-hero-indicator.is-active {
+
+    width: 22px;
+
+    border-radius: 4px;
+
+    background: #fff;
+
   }
 
 
@@ -266,56 +594,197 @@
 
   @media (max-width: 768px) {
 
-    article .page-hero {
-      margin: -0.5rem -1rem 1.25rem;
+    article .i4c-page-hero {
 
-      padding: 2rem 1.25rem;
+      min-height: 390px;
+
+      margin:
+        -0.5rem
+        -1rem
+        1.5rem;
+
+      padding:
+        3rem
+        1.25rem;
 
       border-radius: 0;
+
     }
 
-    article .page-hero .page-hero-title {
-      font-size: 1.75rem;
 
-      line-height: 1.2;
+    article .i4c-page-hero-title {
+
+      font-size: 2rem;
+
     }
 
-    article .page-hero .page-hero-subtitle {
-      font-size: 0.95rem;
+
+    article .i4c-page-hero-subtitle {
+
+      font-size: 0.92rem;
+
+    }
+
+
+    article .i4c-page-hero-cta {
+
+      margin-top: 1.25rem;
+
+    }
+
+
+  }
+
+
+  @media (max-width: 480px) {
+
+    article .i4c-page-hero {
+
+      min-height: 360px;
+
+      padding:
+        2.5rem
+        1rem;
+
+    }
+
+
+    article .i4c-page-hero-title {
+
+      font-size: 1.7rem;
+
+    }
+
+
+    article .i4c-page-hero-subtitle {
+
+      font-size: 0.85rem;
 
       line-height: 1.5;
+
     }
 
-    article .page-hero .page-hero-cta {
-      margin-top: 1rem;
-    }
 
-    article .page-hero .page-hero-cta-btn {
-      font-size: 0.88rem;
+    article .i4c-hero-indicators {
 
-      padding: 0.55rem 1rem;
+      bottom: 0.7rem;
+
     }
 
   }
 
 
   /* ============================================================
-     SMALL MOBILE
+     REDUCED MOTION
      ============================================================ */
 
-  @media (max-width: 480px) {
+  @media (prefers-reduced-motion: reduce) {
 
-    article .page-hero {
-      padding: 1.6rem 1rem;
+    article .i4c-hero-background-slide {
+
+      transition: none;
+
     }
 
-    article .page-hero .page-hero-title {
-      font-size: 1.5rem;
-    }
+    article .i4c-page-hero-cta-button {
 
-    article .page-hero .page-hero-subtitle {
-      font-size: 0.88rem;
+      transition: none;
+
     }
 
   }
+
 </style>
+
+
+<script>
+
+  (() => {
+
+    const hero =
+      document.querySelector(
+        "[data-hero]"
+      );
+
+    if (!hero) {
+      return;
+    }
+
+
+    const slides =
+      Array.from(
+        hero.querySelectorAll(
+          "[data-hero-slide]"
+        )
+      );
+
+
+    const indicators =
+      Array.from(
+        hero.querySelectorAll(
+          "[data-hero-indicator]"
+        )
+      );
+
+
+    if (slides.length <= 1) {
+      return;
+    }
+
+
+    let currentIndex = 0;
+
+
+    const changeSlide = () => {
+
+      slides[
+        currentIndex
+      ].classList.remove(
+        "is-active"
+      );
+
+
+      if (indicators.length) {
+
+        indicators[
+          currentIndex
+        ].classList.remove(
+          "is-active"
+        );
+
+      }
+
+
+      currentIndex =
+        (currentIndex + 1)
+        % slides.length;
+
+
+      slides[
+        currentIndex
+      ].classList.add(
+        "is-active"
+      );
+
+
+      if (indicators.length) {
+
+        indicators[
+          currentIndex
+        ].classList.add(
+          "is-active"
+        );
+
+      }
+
+    };
+
+
+    setInterval(
+      changeSlide,
+      4000
+    );
+
+  })();
+
+</script>
