@@ -1,232 +1,818 @@
-<div id="slideshow">
-    <div class="slides-container">
-        {{ $path := printf "/%s" (.Get "path") }}
-        {{ $largeText := .Get "largeText" }}
-        {{ $smallText := .Get "smallText" }}
-        {{ $validExtensions := slice ".jpg" ".jpeg" ".png" }}
-        {{ range $index, $element := (readDir (printf "static/%s" (.Get "path"))) }}
-            {{ $ext := path.Ext $element.Name }}
-            {{ if in $validExtensions $ext }}
-                <div class="slide">
-                    <img src="{{ $path }}/{{ $element.Name }}" alt="{{ $element.Name }}">
-                    {{ if or $largeText $smallText }}
-                        <div class="text-overlay">
-                            {{ if $largeText }}<div class="large-text">{{ $largeText }}</div>{{ end }}
-                            {{ if $smallText }}<div class="small-text">{{ $smallText }}</div>{{ end }}
-                        </div>
-                    {{ end }}
-                </div>
-            {{ end }}
-        {{ end }}
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    <div class="dot-container">
-        {{ range $index, $element := (readDir (printf "static/%s" (.Get "path"))) }}
-            <span class="dot" onclick="currentSlide({{ add $index 1 }})"></span>
-        {{ end }}
-    </div>
+{{- /*
+  I4C 2026 — Slideshow Shortcode
+
+  Displays the selected images from:
+
+    static/images/slideshow/
+
+  I4C 2026 slideshow order:
+
+    1. Esci-Top-View.jpg
+    2. Conclave-Venue.png
+    3. Esci-Auditorium.jpg
+    4. Techno-Hub.jpg
+
+  Usage:
+
+    {{< slideshow
+      path="images/slideshow"
+      largeText="I4C 2026"
+      smallText="Engineering Staff College of India, Hyderabad"
+    >}}
+
+  The image order is intentionally fixed so it does not depend
+  on filesystem/alphabetical ordering.
+*/ -}}
+
+{{- $path := .Get "path" | default "images/slideshow" }}
+{{- $largeText := .Get "largeText" }}
+{{- $smallText := .Get "smallText" }}
+
+{{- $images := slice
+    "Esci-Top-View.jpg"
+    "Conclave-Venue.png"
+    "Esci-Auditorium.jpg"
+    "Techno-Hub.jpg"
+}}
+
+<div
+  class="i4c-slideshow"
+  data-i4c-slideshow
+>
+
+  <div class="i4c-slides-container">
+
+    {{- range $index, $image := $images }}
+
+      <div
+        class="i4c-slide{{ if eq $index 0 }} is-active{{ end }}"
+        data-i4c-slide
+      >
+
+        <img
+          src="{{ printf "/%s/%s" $path $image | relURL }}"
+          alt="{{ $image }}"
+          {{ if eq $index 0 }}
+            loading="eager"
+          {{ else }}
+            loading="lazy"
+          {{ end }}
+        >
+
+        {{- if or $largeText $smallText }}
+
+          <div class="i4c-slideshow-overlay">
+
+            {{- with $largeText }}
+              <div class="i4c-slideshow-large-text">
+                {{ . }}
+              </div>
+            {{- end }}
+
+            {{- with $smallText }}
+              <div class="i4c-slideshow-small-text">
+                {{ . }}
+              </div>
+            {{- end }}
+
+          </div>
+
+        {{- end }}
+
+      </div>
+
+    {{- end }}
+
+  </div>
+
+
+  <!-- Previous -->
+  <button
+    type="button"
+    class="i4c-slideshow-prev"
+    data-i4c-prev
+    aria-label="Previous slide"
+  >
+    &#10094;
+  </button>
+
+
+  <!-- Next -->
+  <button
+    type="button"
+    class="i4c-slideshow-next"
+    data-i4c-next
+    aria-label="Next slide"
+  >
+    &#10095;
+  </button>
+
+
+  <!-- Indicators -->
+  <div
+    class="i4c-slideshow-dots"
+    aria-label="Slideshow navigation"
+  >
+
+    {{- range $index, $image := $images }}
+
+      <button
+        type="button"
+        class="i4c-slideshow-dot{{ if eq $index 0 }} is-active{{ end }}"
+        data-i4c-dot="{{ $index }}"
+        aria-label="Go to slide {{ add $index 1 }}"
+      ></button>
+
+    {{- end }}
+
+  </div>
+
 </div>
 
+
 <style>
-    /* Style the slideshow container */
-    #slideshow {
-        position: relative;
-        margin: auto;
-        max-width: 1120px; /* Maximum width of the slideshow */
-        height: auto; /* Adjust height automatically */
+  /* ============================================================
+     I4C 2026 SLIDESHOW
+     ============================================================ */
 
+  article .i4c-slideshow {
+    position: relative;
+
+    width: 100%;
+    max-width: 1120px;
+
+    margin: 1.5rem auto;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #0f172a;
+
+    box-shadow:
+      0 2px 6px rgba(15, 23, 42, 0.08),
+      0 8px 20px rgba(15, 23, 42, 0.06);
+  }
+
+
+  /* ------------------------------------------------------------
+     Slides container
+     ------------------------------------------------------------ */
+
+  article .i4c-slides-container {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1120 / 460;
+
+    overflow: hidden;
+  }
+
+
+  /* ------------------------------------------------------------
+     Individual slide
+     ------------------------------------------------------------ */
+
+  article .i4c-slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.8s ease,
+      visibility 0.8s ease;
+  }
+
+
+  article .i4c-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  /* ------------------------------------------------------------
+     Image
+     ------------------------------------------------------------ */
+
+  article .i4c-slide img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /* ------------------------------------------------------------
+     Dark image overlay
+     ------------------------------------------------------------ */
+
+  article .i4c-slide::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(15, 23, 42, 0.12) 0%,
+        rgba(15, 23, 42, 0.12) 45%,
+        rgba(15, 23, 42, 0.58) 100%
+      );
+
+    pointer-events: none;
+  }
+
+
+  /* ------------------------------------------------------------
+     Text overlay
+     ------------------------------------------------------------ */
+
+  article .i4c-slideshow-overlay {
+    position: absolute;
+
+    left: 2.5%;
+    bottom: 12%;
+
+    z-index: 2;
+
+    color: #fff;
+
+    text-align: left;
+
+    text-shadow:
+      0 2px 5px rgba(0, 0, 0, 0.35);
+  }
+
+
+  article .i4c-slideshow-large-text {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+  }
+
+
+  article .i4c-slideshow-small-text {
+    margin-top: 0.35rem;
+
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+    line-height: 1.4;
+
+    opacity: 0.95;
+  }
+
+
+  /* ------------------------------------------------------------
+     Navigation buttons
+     ------------------------------------------------------------ */
+
+  article .i4c-slideshow-prev,
+  article .i4c-slideshow-next {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 4;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+      rgba(15, 23, 42, 0.42);
+
+    color: #fff;
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+  }
+
+
+  article .i4c-slideshow-prev {
+    left: 0.75rem;
+  }
+
+
+  article .i4c-slideshow-next {
+    right: 0.75rem;
+  }
+
+
+  article .i4c-slideshow-prev:hover,
+  article .i4c-slideshow-next:hover {
+    background:
+      rgba(15, 23, 42, 0.68);
+
+    transform:
+      translateY(-50%)
+      scale(1.05);
+  }
+
+
+  article .i4c-slideshow-prev:focus-visible,
+  article .i4c-slideshow-next:focus-visible {
+    outline: 2px solid #fff;
+
+    outline-offset: 3px;
+  }
+
+
+  /* ------------------------------------------------------------
+     Dots
+     ------------------------------------------------------------ */
+
+  article .i4c-slideshow-dots {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0.85rem;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.35rem;
+
+    padding: 0.25rem 0.45rem;
+
+    border-radius: 999px;
+
+    background:
+      rgba(15, 23, 42, 0.28);
+
+    backdrop-filter: blur(3px);
+
+    -webkit-backdrop-filter: blur(3px);
+
+    transform: translateX(-50%);
+  }
+
+
+  article .i4c-slideshow-dot {
+    width: 16px;
+    height: 16px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+
+  article .i4c-slideshow-dot::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+      rgba(255, 255, 255, 0.55);
+
+    transition:
+      width 0.2s ease,
+      background 0.2s ease;
+  }
+
+
+  article .i4c-slideshow-dot:hover::before {
+    background:
+      rgba(255, 255, 255, 0.9);
+  }
+
+
+  article .i4c-slideshow-dot.is-active::before {
+    width: 22px;
+
+    border-radius: 4px;
+
+    background: #fff;
+  }
+
+
+  article .i4c-slideshow-dot:focus-visible {
+    outline: 2px solid #fff;
+
+    outline-offset: 2px;
+
+    border-radius: 50%;
+  }
+
+
+  /* ------------------------------------------------------------
+     Tablet / mobile
+     ------------------------------------------------------------ */
+
+  @media (max-width: 768px) {
+
+    article .i4c-slideshow {
+      border-radius: 6px;
+
+      margin:
+        1rem
+        0;
     }
 
-    /* Style for slides container */
-    .slides-container {
-        position: relative; 
-        width: 100%;
-        padding-top: (460 / 1120 * 100%);
-        overflow: hidden;
-        height: auto; /* Adjust height automatically */
+
+    article .i4c-slideshow-prev,
+    article .i4c-slideshow-next {
+      width: 38px;
+      height: 38px;
+
+      font-size: 1rem;
     }
 
-    /* Style for each slide */
-    .slide {
-        display: none;
-        width: 1120px; /* Set slide width */
-        height: 460px; /* Set slide height */
-        position: relative;
-        margin: auto; /* Center the slide */
-        overflow: hidden; /* Hide parts of the image that overflow the container */
+
+    article .i4c-slideshow-prev {
+      left: 0.5rem;
     }
 
-    /* Style for images */
-    .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Cover the container, may crop the image */
+
+    article .i4c-slideshow-next {
+      right: 0.5rem;
     }
 
-    /* Style for navigation arrows — semi-transparent pill with a soft hover */
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.25rem;
-        background: rgba(15, 23, 42, 0.35);
-        border-radius: 50%;
-        transition: background 0.2s ease, transform 0.15s ease;
-        user-select: none;
-        margin: 0 0.75rem;
-    }
-    .prev:hover, .next:hover {
-        background: rgba(15, 23, 42, 0.55);
-        transform: translateY(-50%) scale(1.05);
+
+    article .i4c-slideshow-overlay {
+      left: 4%;
+      bottom: 13%;
     }
 
-    .text-overlay {
-        position: absolute;
-        left: 2.5%; /* Adjust as needed */
-        top: 2.5%; /* Adjust as needed */
-        color: white;
-        text-align: left;
+
+    article .i4c-slideshow-dots {
+      bottom: 0.55rem;
     }
 
-    .large-text {
-        font-size: 20px; /* Adjust as needed */
-        font-weight: bold;
+  }
+
+
+  @media (max-width: 480px) {
+
+    article .i4c-slideshow-prev,
+    article .i4c-slideshow-next {
+      width: 32px;
+      height: 32px;
+
+      font-size: 0.85rem;
     }
 
-    .small-text {
-        font-size: 14px; /* Adjust as needed */
-    }    
-    
-    
-    .prev { left: 0; }
-    .next { right: 0; }
 
-    /* Style for dots container */
-    .dot-container {
-        position: absolute;
-        bottom: 18px;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        z-index: 2;
+    article .i4c-slideshow-overlay {
+      left: 5%;
+      bottom: 15%;
     }
 
-    /* Style for dots — subtler than the default bright-white circles.
-       Each dot has a 16px hit area but only an 8px visible pill, so they're
-       easy to click but don't dominate the slide. */
-    .dot {
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 16px;
-        height: 16px;
-        background: transparent;
-        border: none;
-        padding: 0;
-        transition: transform 0.15s ease;
-    }
-    .dot::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.55);
-        transition: background 0.2s ease, width 0.2s ease;
-    }
-    .dot:hover::before { background: rgba(255, 255, 255, 0.9); }
-    .dot.active::before {
-        background: #fff;
-        width: 22px;        /* active dot becomes a small pill */
-        border-radius: 4px;
+
+    article .i4c-slideshow-large-text {
+      font-size: 1rem;
     }
 
-    @media (max-width: 768px) {
-        .slide {
-            width: 100%; /* Make width responsive */
-            height: auto; /* Adjust height automatically */
-            aspect-ratio: 1120 / 460; /* Maintain aspect ratio */
-        }
 
-        #slideshow, .slides-container {
-            height: auto; /* Ensure the container can grow with the slide */
-        }   
-
-        .large-text {
-            font-size: 18px; /* Slightly smaller */
-        }
-
-        .small-text {
-            font-size: 12px; /* Slightly smaller */
-        }
-
-        .dot {
-            display: none; /* Hides the dots on mobile devices */
-        }
+    article .i4c-slideshow-small-text {
+      font-size: 0.72rem;
     }
 
-    /* Media query for devices with a max width of 480px */
-    @media (max-width: 480px) {
-        .large-text {
-            font-size: 16px; /* Even smaller */
-        }
 
-        .small-text {
-            font-size: 10px; /* Even smaller */
-        }
-
-        .dot {
-            display: none; /* Hides the dots on mobile devices */
-        }
+    article .i4c-slideshow-dot {
+      width: 14px;
+      height: 14px;
     }
+
+  }
+
+
+  /* ------------------------------------------------------------
+     Reduced motion
+     ------------------------------------------------------------ */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    article .i4c-slide {
+      transition: none;
+    }
+
+    article .i4c-slideshow-prev,
+    article .i4c-slideshow-next,
+    article .i4c-slideshow-dot::before {
+      transition: none;
+    }
+
+  }
 
 </style>
 
+
 <script>
-    let slideIndex = 1;
-    let slides = document.getElementsByClassName("slide");
-    let dots = document.getElementsByClassName("dot");
-    let slideInterval = setInterval(nextSlide, 4000);
+  (() => {
 
-    showSlides(slideIndex);
+    const slideshows =
+      document.querySelectorAll(
+        "[data-i4c-slideshow]"
+      );
 
-    function plusSlides(n) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 4000);
-        showSlides(slideIndex += n);
+    if (!slideshows.length) {
+      return;
     }
 
-    function currentSlide(n) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 4000);
-        showSlides(slideIndex = n);
-    }
 
-    function nextSlide() {
-        showSlides(slideIndex += 1);
-    }
+    slideshows.forEach((slideshow) => {
 
-    function showSlides(n) {
-        let i;
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+      const slides =
+        Array.from(
+          slideshow.querySelectorAll(
+            "[data-i4c-slide]"
+          )
+        );
+
+      const dots =
+        Array.from(
+          slideshow.querySelectorAll(
+            "[data-i4c-dot]"
+          )
+        );
+
+      const previous =
+        slideshow.querySelector(
+          "[data-i4c-prev]"
+        );
+
+      const next =
+        slideshow.querySelector(
+          "[data-i4c-next]"
+        );
+
+
+      if (!slides.length) {
+        return;
+      }
+
+
+      let currentIndex = 0;
+
+      let intervalId = null;
+
+
+      /* --------------------------------------------------------
+         Show slide
+         -------------------------------------------------------- */
+
+      const showSlide = (index) => {
+
+        if (index < 0) {
+          index = slides.length - 1;
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+
+        if (index >= slides.length) {
+          index = 0;
         }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
+
+        currentIndex = index;
+
+
+        slides.forEach(
+          (slide, slideIndex) => {
+
+            slide.classList.toggle(
+              "is-active",
+              slideIndex === currentIndex
+            );
+
+          }
+        );
+
+
+        dots.forEach(
+          (dot, dotIndex) => {
+
+            dot.classList.toggle(
+              "is-active",
+              dotIndex === currentIndex
+            );
+
+          }
+        );
+
+      };
+
+
+      /* --------------------------------------------------------
+         Next / Previous
+         -------------------------------------------------------- */
+
+      const nextSlide = () => {
+
+        showSlide(
+          currentIndex + 1
+        );
+
+      };
+
+
+      const previousSlide = () => {
+
+        showSlide(
+          currentIndex - 1
+        );
+
+      };
+
+
+      /* --------------------------------------------------------
+         Automatic slideshow
+         -------------------------------------------------------- */
+
+      const startAutoPlay = () => {
+
+        if (slides.length <= 1) {
+          return;
+        }
+
+        clearInterval(intervalId);
+
+        intervalId =
+          window.setInterval(
+            nextSlide,
+            4000
+          );
+
+      };
+
+
+      const restartAutoPlay = () => {
+
+        clearInterval(intervalId);
+
+        startAutoPlay();
+
+      };
+
+
+      /* --------------------------------------------------------
+         Buttons
+         -------------------------------------------------------- */
+
+      if (previous) {
+
+        previous.addEventListener(
+          "click",
+          () => {
+
+            previousSlide();
+
+            restartAutoPlay();
+
+          }
+        );
+
+      }
+
+
+      if (next) {
+
+        next.addEventListener(
+          "click",
+          () => {
+
+            nextSlide();
+
+            restartAutoPlay();
+
+          }
+        );
+
+      }
+
+
+      /* --------------------------------------------------------
+         Dots
+         -------------------------------------------------------- */
+
+      dots.forEach(
+        (dot) => {
+
+          dot.addEventListener(
+            "click",
+            () => {
+
+              const index =
+                Number(
+                  dot.dataset.i4cDot
+                );
+
+              showSlide(index);
+
+              restartAutoPlay();
+
+            }
+          );
+
+        }
+      );
+
+
+      /* --------------------------------------------------------
+         Keyboard navigation
+         -------------------------------------------------------- */
+
+      slideshow.addEventListener(
+        "keydown",
+        (event) => {
+
+          if (event.key === "ArrowLeft") {
+
+            previousSlide();
+
+            restartAutoPlay();
+
+          }
+
+          if (event.key === "ArrowRight") {
+
+            nextSlide();
+
+            restartAutoPlay();
+
+          }
+
+        }
+      );
+
+
+      /* --------------------------------------------------------
+         Pause while hovering
+         -------------------------------------------------------- */
+
+      slideshow.addEventListener(
+        "mouseenter",
+        () => {
+
+          clearInterval(intervalId);
+
+        }
+      );
+
+
+      slideshow.addEventListener(
+        "mouseleave",
+        () => {
+
+          startAutoPlay();
+
+        }
+      );
+
+
+      /* --------------------------------------------------------
+         Initial state
+         -------------------------------------------------------- */
+
+      showSlide(0);
+
+      startAutoPlay();
+
+    });
+
+  })();
 </script>
