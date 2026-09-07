@@ -1,50 +1,97 @@
 {{- /*
-  Override of Relearn's topbar/area/end.html. Prepends the IEEE IES and IEEE
-  parent-org logos to the right side of the existing topbar, then renders the
-  standard Relearn topbar buttons unchanged. Keeps logos in the SAME header bar
-  as breadcrumbs / topbar controls (no extra row).
+  I4C 2026 — Relearn Topbar End Override
 
-  When bumping Relearn: re-check that the button list below matches upstream
-  (themes/hugo-theme-relearn/layouts/partials/topbar/area/end.html) and keep
-  this override in sync.
+  Adds IEEE IES and IEEE logos to the right side of the
+  existing Relearn topbar.
+
+  No theme button partials are called here.
 */ -}}
+
 <div class="site-brand-logos">
-  <a href="https://www.ieee-ies.org/" target="_blank" rel="noopener" aria-label="IEEE IES">
-    <img src="{{ "images/ies.png" | relURL }}" alt="IEEE IES">
+
+  <a
+    href="https://www.ieee-ies.org/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="IEEE Industrial Electronics Society"
+  >
+    <img
+      src="{{ "images/ies.png" | relURL }}"
+      alt="IEEE Industrial Electronics Society"
+    >
   </a>
-  <a href="https://www.ieee.org/" target="_blank" rel="noopener" aria-label="IEEE">
-    <img src="{{ "images/ieee.png" | relURL }}" alt="IEEE">
+
+  <a
+    href="https://www.ieee.org/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="IEEE"
+  >
+    <img
+      src="{{ "images/ieee.png" | relURL }}"
+      alt="IEEE"
+    >
   </a>
-  {{- /* Add additional partner/host logos here as needed, e.g.:
-  <a href="https://www.your-host-university.example/" target="_blank" rel="noopener" aria-label="Host Logo">
-    <img src="{{ "images/host-logo.png" | relURL }}" alt="Host Logo">
-  </a>
-  */ -}}
+
 </div>
+
 <style>
+
   .site-brand-logos {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0 0.5rem;
+    justify-content: center;
+    gap: 0.7rem;
     height: 100%;
+    padding: 0 0.5rem;
+    flex-shrink: 0;
   }
-  .site-brand-logos a { display: flex; align-items: center; }
+
+  .site-brand-logos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+    opacity: 0.92;
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .site-brand-logos a:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+
   .site-brand-logos img {
-    max-height: 2rem;
-    height: 2rem;
-    width: auto;
     display: block;
+    width: auto;
+    height: 2rem;
+    max-width: 7rem;
+    object-fit: contain;
   }
+
   @media (max-width: 576px) {
-    .site-brand-logos img { max-height: 1.5rem; height: 1.5rem; }
-    .site-brand-logos { gap: 0.4rem; padding: 0 0.25rem; }
+
+    .site-brand-logos {
+      gap: 0.4rem;
+      padding: 0 0.25rem;
+    }
+
+    .site-brand-logos img {
+      height: 1.5rem;
+      max-width: 5rem;
+    }
+
   }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .site-brand-logos a {
+      transition: none;
+    }
+
+  }
+
 </style>
-{{- partial "topbar/button/edit.html" (dict "page" .) }}
-{{- partial "topbar/button/source.html" (dict "page" .) }}
-{{- partial "topbar/button/markdown.html" (dict "page" .) }}
-{{- partial "topbar/button/print.html" (dict "page" .) }}
-{{- partial "topbar/button/prev.html" (dict "page" .) }}
-{{- partial "topbar/button/next.html" (dict "page" .) }}
-{{- partial "topbar/button/more.html" (dict "page" .) }}
