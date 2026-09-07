@@ -106,6 +106,6 @@ Verify by building and checking the warnings count drops to zero.
 
 ## Related
 
-- [`config.md`](config.md) — the other 3 per-conference values (baseURL, full title, short title)
+- [`config.md`](config.md) — the other 3 per-conclave values (baseURL, full title, short title)
 - [`shortcodes.md`](shortcodes.md) — the shortcodes called from content
 - [`layouts/partials/menu.md`](layouts/partials/menu.md) — how the sidebar reads `linkTitle`
