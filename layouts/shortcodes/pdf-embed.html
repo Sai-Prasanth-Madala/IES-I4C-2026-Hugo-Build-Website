@@ -1,85 +1,391 @@
 {{- /*
-  {{< pdf-embed type="external" url="..." >}}
-  {{< pdf-embed type="local" url="/docs/paper.pdf" >}}
+  I4C 2026 — PDF Embed Shortcode
 
-  Refreshed: wrapped in a card-like container with a thin border, subtle
-  shadow and a header row that shows an "Open in new tab" link (useful fallback
-  when iframe PDF viewers misbehave on mobile/Safari). Default aspect ratio
-  16:9 (overridable with ratio="4:3" etc).
+  Usage:
 
-  Params:
-    type  — "external" (Google Docs viewer) or "local" (direct iframe)
-    url   — PDF URL (required)
-    ratio — "16:9" (default) | "4:3" | "a4" | custom "W:H"
+    {{< pdf-embed
+      type="external"
+      url="https://example.org/document.pdf"
+    >}}
+
+    {{< pdf-embed
+      type="local"
+      url="/docs/programme.pdf"
+    >}}
+
+  Parameters:
+
+    type
+      — "external" → Google Docs PDF viewer
+      — "local"    → browser PDF viewer
+
+    url
+      — required PDF URL
+
+    ratio
+      — optional display ratio
+      — "16:9" (default)
+      — "4:3"
+      — "a4"
+      — custom ratio such as "3:2"
+
+  The component follows the I4C 2026 visual language:
+  restrained borders, IEEE blue links, light surfaces,
+  minimal shadow and responsive presentation.
 */ -}}
-{{- $type  := .Get "type" }}
-{{- $url   := .Get "url" | absURL }}
+
+{{- $type := .Get "type" | default "local" }}
+{{- $url := .Get "url" | absURL }}
 {{- $ratio := .Get "ratio" | default "16:9" }}
+
 {{- $padPct := "56.25%" }}
-{{- if eq $ratio "4:3" }}{{ $padPct = "75%" }}
-{{- else if eq $ratio "a4" }}{{ $padPct = "141.4%" }}
+
+{{- if eq $ratio "4:3" }}
+
+  {{- $padPct = "75%" }}
+
+{{- else if eq $ratio "a4" }}
+
+  {{- $padPct = "141.4%" }}
+
 {{- else if in $ratio ":" }}
+
   {{- $parts := split $ratio ":" }}
-  {{- if and (ge (len $parts) 2) (gt (float (index $parts 0)) 0.0) }}
-    {{- $padPct = printf "%.2f%%" (mul (div (float (index $parts 1)) (float (index $parts 0))) 100.0) }}
+
+  {{- if and
+      (ge (len $parts) 2)
+      (gt (float (index $parts 0)) 0.0)
+  }}
+
+    {{- $padPct = printf
+        "%.2f%%"
+        (mul
+          (div
+            (float (index $parts 1))
+            (float (index $parts 0))
+          )
+          100.0
+        )
+    }}
+
   {{- end }}
+
 {{- end }}
+
+
 <figure class="pdf-embed">
+
   <div class="pdf-embed-meta">
-    <span class="pdf-embed-label">📄 PDF document</span>
-    <a href="{{ $url }}" target="_blank" rel="noopener" class="pdf-embed-link">Open in new tab ↗</a>
+
+    <div class="pdf-embed-label">
+      <span class="pdf-embed-icon" aria-hidden="true">
+        PDF
+      </span>
+
+      <span>
+        PDF Document
+      </span>
+    </div>
+
+    <a
+      href="{{ $url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="pdf-embed-link"
+    >
+      Open in new tab
+      <span aria-hidden="true">↗</span>
+    </a>
+
   </div>
-  <div class="pdf-embed-frame" style="--pdf-ratio: {{ $padPct }};">
+
+
+  <div
+    class="pdf-embed-frame"
+    style="--pdf-ratio: {{ $padPct }};"
+  >
+
     {{- if eq $type "external" }}
-    <iframe src="https://docs.google.com/gview?url={{ $url }}&embedded=true" frameborder="0" loading="lazy" title="Embedded PDF"></iframe>
+
+      <iframe
+        src="https://docs.google.com/gview?url={{ $url }}&embedded=true"
+        frameborder="0"
+        loading="lazy"
+        title="Embedded PDF document"
+      ></iframe>
+
     {{- else if eq $type "local" }}
-    <iframe src="{{ $url }}" type="application/pdf" frameborder="0" loading="lazy" title="Embedded PDF"></iframe>
+
+      <iframe
+        src="{{ $url }}"
+        type="application/pdf"
+        frameborder="0"
+        loading="lazy"
+        title="Embedded PDF document"
+      ></iframe>
+
     {{- else }}
-    <p class="pdf-embed-error">Invalid <code>type</code> on pdf-embed. Use <code>type="external"</code> or <code>type="local"</code>.</p>
+
+      <div class="pdf-embed-error">
+
+        <strong>Unable to display PDF</strong>
+
+        <p>
+          Invalid <code>type</code>.
+          Use <code>type="external"</code> or
+          <code>type="local"</code>.
+        </p>
+
+      </div>
+
     {{- end }}
+
   </div>
+
 </figure>
 
+
 <style>
+  /* ============================================================
+     I4C 2026 — PDF EMBED
+     ============================================================ */
+
   article .pdf-embed {
-    margin: 1rem 0;
-    border: 1px solid var(--SITE-BORDER, #e2e8f0);
-    border-radius: 8px;
+    width: 100%;
+
+    margin: 1.25rem 0;
+
+    border: 1px solid var(
+      --SITE-BORDER,
+      #e2e8f0
+    );
+
+    border-radius: 7px;
+
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+
+    background: #fff;
+
+    box-shadow:
+      0 1px 3px rgba(15, 23, 42, 0.06);
   }
+
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+
   article .pdf-embed .pdf-embed-meta {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
-    padding: 0.5rem 0.9rem;
-    background: var(--SITE-SURFACE, #f8fafc);
-    border-bottom: 1px solid var(--SITE-BORDER, #e2e8f0);
-    font-size: 0.85rem;
-    color: var(--SITE-TEXT-MUTED, #64748b);
+
+    gap: 1rem;
+
+    padding: 0.65rem 0.9rem;
+
+    background: var(
+      --SITE-SURFACE,
+      #f8fafc
+    );
+
+    border-bottom: 1px solid var(
+      --SITE-BORDER,
+      #e2e8f0
+    );
+
+    font-size: 0.82rem;
+
+    line-height: 1.4;
   }
-  article .pdf-embed .pdf-embed-label { font-weight: 500; }
+
+
+  /* ============================================================
+     PDF LABEL
+     ============================================================ */
+
+  article .pdf-embed .pdf-embed-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    color: var(
+      --SITE-TEXT,
+      #334155
+    );
+
+    font-weight: 600;
+  }
+
+
+  /* Small PDF indicator */
+
+  article .pdf-embed .pdf-embed-icon {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 2rem;
+
+    padding: 0.18rem 0.35rem;
+
+    border-radius: 3px;
+
+    background: var(
+      --SITE-BRAND-BLUE,
+      #0082ba
+    );
+
+    color: #fff;
+
+    font-size: 0.62rem;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+  }
+
+
+  /* ============================================================
+     OPEN LINK
+     ============================================================ */
+
   article .pdf-embed .pdf-embed-link {
-    color: var(--SITE-BRAND-BLUE, #0082ba);
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.25rem;
+
+    color: var(
+      --SITE-BRAND-BLUE,
+      #0082ba
+    );
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
     text-decoration: none;
+
+    white-space: nowrap;
   }
-  article .pdf-embed .pdf-embed-link:hover { text-decoration: underline; }
+
+  article .pdf-embed .pdf-embed-link:hover {
+    text-decoration: underline;
+  }
+
+
+  /* ============================================================
+     PDF FRAME
+     ============================================================ */
+
   article .pdf-embed .pdf-embed-frame {
     position: relative;
+
     width: 100%;
+
     height: 0;
-    padding-bottom: var(--pdf-ratio, 56.25%);
+
+    padding-bottom: var(
+      --pdf-ratio,
+      56.25%
+    );
+
     background: #fff;
+
+    overflow: hidden;
   }
+
+
   article .pdf-embed .pdf-embed-frame iframe {
     position: absolute;
+
     inset: 0;
+
     width: 100%;
+
     height: 100%;
+
     border: 0;
+
+    display: block;
   }
+
+
+  /* ============================================================
+     ERROR
+     ============================================================ */
+
   article .pdf-embed .pdf-embed-error {
-    padding: 1rem;
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 1.5rem;
+
+    text-align: center;
+
     color: #b91c1c;
+
+    background: #fff;
+  }
+
+  article .pdf-embed .pdf-embed-error p {
+    margin: 0.4rem 0 0;
+
+    font-size: 0.9rem;
+
+    color: var(
+      --SITE-TEXT-MUTED,
+      #64748b
+    );
+  }
+
+
+  /* ============================================================
+     MOBILE
+     ============================================================ */
+
+  @media (max-width: 640px) {
+
+    article .pdf-embed {
+      margin: 1rem 0;
+
+      border-radius: 5px;
+    }
+
+    article .pdf-embed .pdf-embed-meta {
+      padding: 0.55rem 0.7rem;
+
+      font-size: 0.75rem;
+    }
+
+    article .pdf-embed .pdf-embed-icon {
+      min-width: 1.8rem;
+
+      font-size: 0.56rem;
+    }
+
+    article .pdf-embed .pdf-embed-link {
+      font-size: 0.72rem;
+    }
+
   }
 </style>
