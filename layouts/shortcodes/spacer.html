@@ -1,1 +1,17 @@
-<div style="margin-top: {{ mul (default 1 (int (.Get "lines"))) 1.5 }}rem;"></div>
+{{- /*
+  I4C 2026 — Spacer Shortcode
+
+  Usage:
+
+    {{< spacer lines=2 >}}
+
+  Each line adds approximately 1.5rem of vertical spacing.
+*/ -}}
+
+{{- $lines := default 1 (int (.Get "lines")) -}}
+
+<div
+  class="i4c-spacer"
+  style="height: {{ mul $lines 1.5 }}rem;"
+  aria-hidden="true"
+></div>
