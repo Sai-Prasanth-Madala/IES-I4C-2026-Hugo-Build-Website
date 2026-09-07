@@ -1,106 +1,44 @@
 # Custom shortcodes
 
 - **Files**: [`layouts/shortcodes/*.html`](../../layouts/shortcodes/)
-- **Shadows upstream**: none — all six are brand-new shortcodes added for
-  IES conference needs
+- **Purpose**: Custom reusable components developed for the I4C 2026 website
+- **Shadows upstream**: These are site-level custom shortcodes maintained by
+  the I4C 2026 website.
 - **Risk on Relearn upgrade**: 🟢 LOW (self-contained Hugo templates)
 
-Relearn 9.0.3 ships its own set of shortcodes (`notice`, `tabs`, `expand`,
-`button`, etc.) which remain available. We add six more for
-conference-specific content patterns:
+Relearn 9.0.3 provides its own shortcodes such as `notice`, `tabs`, `expand`,
+`button`, and others. The I4C 2026 website additionally provides twelve
+custom shortcodes for conference-specific layouts, speakers, dates, news,
+images, documents, and interactive content.
 
 | Shortcode | File | Purpose |
 |---|---|---|
-| `slideshow` | [`slideshow.html`](../../layouts/shortcodes/slideshow.html) | Auto-advancing image carousel with overlay text, dots, arrows |
-| `card` | [`card.html`](../../layouts/shortcodes/card.html) | Bootstrap-style card with coloured header and body |
-| `imagesRow` | [`imagesRow.html`](../../layouts/shortcodes/imagesRow.html) | Responsive row of portraits / logos with captions |
-| `imageWithOverlay` | [`imageWithOverlay.html`](../../layouts/shortcodes/imageWithOverlay.html) | Single image with overlaid text |
-| `pdf-embed` | [`pdf-embed.html`](../../layouts/shortcodes/pdf-embed.html) | Inline PDF viewer (external or internal URL) |
-| `spacer` | [`spacer.html`](../../layouts/shortcodes/spacer.html) | Vertical whitespace in units of line-height |
-
-## `slideshow`
-
-```hugo
-{{< slideshow path="images/slideshow" largeText="Conference Location" smallText="Conference Dates" >}}
-```
-
-- Renders every `.jpg`, `.jpeg`, `.png` under the given path.
-- Fits a 1120 × 460 frame preserving aspect ratio.
-- Auto-advances every 4 s; left/right arrows + dot pagination.
-- Responsive (scales on mobile).
-- All styling is scoped inline via `<style>` and ids like `#slideshow`.
-
-## `card`
-
-```hugo
-{{< card title="Topics of Interest" >}}
-- Adaptive and Intelligent Control Systems
-- Autonomous Robotic Systems, AI, and Machine Learning
-{{< /card >}}
-```
-
-Renders a card with a blue header containing `title` and the inner markdown
-as the card body.
-
-## `imagesRow`
-
-```hugo
-{{< imagesRow images=`[
-  {"src": "/images/sessions/a.jpeg", "alt": "…", "name": "Jane Doe", "company": "University X", "location": "City, Country"},
-  {"src": "/images/sessions/b.jpg",  "alt": "…", "name": "John Doe", "company": "University Y", "location": "City, Country"}
-]` >}}
-```
-
-Each entry renders as a thumbnail with name + affiliation + location below.
-Accepts the `images` array as a raw-string argument containing JSON.
-
-## `imageWithOverlay`
-
-Simple image + text-overlay component. See the source for the exact syntax.
-
-## `pdf-embed`
-
-```hugo
-{{< pdf-embed type="external" url="https://example.org/paper.pdf" >}}
-```
-
-- `type` can be `external` (embed by URL) or `internal` (relative path).
-- Renders via `<iframe>` or `<embed>`.
-
-## `spacer`
-
-```hugo
-{{< spacer lines=2 >}}
-```
-
-Adds `n` line-heights of vertical space. Useful between sections on pages
-that don't warrant a visual divider.
+| `card` | [`card.html`](../../layouts/shortcodes/card.html) | Displays a styled content card with a title and body |
+| `cards` | [`cards.html`](../../layouts/shortcodes/cards.html) | Provides a container/layout for displaying multiple cards |
+| `imageWithOverlay` | [`imageWithOverlay.html`](../../layouts/shortcodes/imageWithOverlay.html) | Displays an image with text overlaid on top |
+| `imagesRow` | [`imagesRow.html`](../../layouts/shortcodes/imagesRow.html) | Displays a responsive row of images with captions and participant details |
+| `keyDates` | [`keyDates.html`](../../layouts/shortcodes/keyDates.html) | Displays important conference dates and milestones |
+| `newsItem` | [`newsItem.html`](../../layouts/shortcodes/newsItem.html) | Displays an individual conference news or announcement item |
+| `pageHero` | [`pageHero.html`](../../layouts/shortcodes/pageHero.html) | Provides a reusable hero section for conference pages |
+| `pdf-embed` | [`pdf-embed.html`](../../layouts/shortcodes/pdf-embed.html) | Embeds internal or external PDF documents |
+| `popup` | [`popup.html`](../../layouts/shortcodes/popup.html) | Displays additional content in a popup/modal interface |
+| `slideshow` | [`slideshow.html`](../../layouts/shortcodes/slideshow.html) | Displays an auto-advancing image slideshow with navigation |
+| `spacer` | [`spacer.html`](../../layouts/shortcodes/spacer.html) | Adds configurable vertical spacing between sections |
+| `speaker` | [`speaker.html`](../../layouts/shortcodes/speaker.html) | Displays speaker information in a consistent conference layout |
 
 ---
 
-## Re-applying on upgrade
+## `card`
 
-Nothing to re-apply at Relearn upgrade time — shortcodes don't shadow
-theme files. However:
+The `card` shortcode displays a styled content card with a title and
+Markdown body content.
 
-- **Check for collisions.** If Relearn ships a shortcode named (say)
-  `card`, our `layouts/shortcodes/card.html` wins — users expecting
-  upstream behaviour get ours. Unlikely, but worth grepping after a
-  major Relearn bump:
+### Example
 
-  ```bash
-  for f in layouts/shortcodes/*.html; do
-    name=$(basename "$f" .html)
-    [ -f "themes/hugo-theme-relearn/layouts/shortcodes/${name}.html" ] && \
-      echo "COLLISION: $name (ours shadows upstream)"
-  done
-  ```
-
-- **Verify inline CSS/JS still works.** Each shortcode contains its own
-  scoped `<style>` and sometimes `<script>`. Those rely on basic CSS /
-  vanilla JS and shouldn't break, but visual spot-check after major
-  browser/Hugo version changes.
-
-## Related
-
-- [`content.md`](content.md) — content files that call these shortcodes
+```hugo
+{{< card title="Topics of Interest" >}}
+- AI & Industry 5.0
+- Electrification & Intelligent Industrial Drives
+- EVs & Smart Mobility
+- Battery Technologies & Charging
+{{< /card >}}
