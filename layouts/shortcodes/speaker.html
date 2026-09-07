@@ -1,148 +1,710 @@
 {{- /*
-  Speaker / keynote / tutorial / invited talk block. Two-column on desktop
-  (photo on the left, info on the right), single-column on mobile.
+  I4C 2026 — Speaker / Keynote / Tutorial / Invited Talk Card
 
-  Usage (block form so the abstract + bio can be Markdown):
+  Usage:
 
-      < speaker
-          name="Prof. Jane Doe"
-          affiliation="University of Example"
-          title="Real-time Data, Privacy, and the Distributed Grid"
-          image="/images/keynotes/jane.jpg"
-          when="13 May 2026, 09:00-10:00"
-          where="Auditorium A"
-          homepage="https://example.org/~jane"
-      >
-      Abstract paragraph here. Supports **markdown**.
+    {{< speaker
+      name="Prof. Juan José Rodríguez-Andina"
+      affiliation="IEEE Industrial Electronics Society"
+      category="Global IES Speaker"
+      title="AI for Power Electronics"
+      image="/images/Prof._Andina.jpg"
+      when="22 September 2026 · 11:15–12:00"
+      where="Engineering Staff College of India (ESCI), Hyderabad"
+    >}}
 
-      **Bio** - biography paragraph here.
-      < /speaker >
+    Speaker abstract / biography can be written here using Markdown.
 
-  Replace each `<` with the doubled curly + percent and `>` with percent +
-  doubled curly when calling. Only `name` is required; the rest are optional.
-  All shortcode invocation symbols are intentionally written without their
-  template braces here so Hugo doesn't try to parse this docstring.
+    {{< /speaker >}}
+
+  Parameters:
+
+    name
+      — speaker name (required)
+
+    affiliation
+      — institution / company / organization
+
+    category
+      — "Global IES Speaker" or "Distinguished Speaker"
+
+    title
+      — talk / keynote / workshop title
+
+    image
+      — speaker image path
+
+    when
+      — date and time
+
+    where
+      — venue / location
+
+    homepage
+      — optional external profile URL
+
+  The shortcode is intentionally content-neutral.
 */ -}}
+
 {{- $name        := .Get "name" }}
 {{- $affiliation := .Get "affiliation" }}
+{{- $category    := .Get "category" }}
 {{- $title       := .Get "title" }}
 {{- $image       := .Get "image" }}
 {{- $when        := .Get "when" }}
 {{- $where       := .Get "where" }}
 {{- $homepage    := .Get "homepage" }}
-<section class="speaker-card">
+
+<section
+  class="i4c-speaker-card"
+  data-speaker-category="{{ $category }}"
+>
+
   {{- with $image }}
-  <div class="speaker-photo">
-    <img src="{{ . | relURL }}" alt="{{ $name }}" loading="lazy">
-  </div>
+    <div class="i4c-speaker-photo">
+      <img
+        src="{{ . | relURL }}"
+        alt="{{ $name }}"
+        loading="lazy"
+      >
+    </div>
   {{- end }}
-  <div class="speaker-body">
-    {{- with $title }}<h3 class="speaker-title">{{ . | safeHTML }}</h3>{{ end }}
-    <div class="speaker-meta">
+
+  <div class="i4c-speaker-body">
+
+    {{- with $category }}
+      <div class="i4c-speaker-category">
+        {{ . }}
+      </div>
+    {{- end }}
+
+    {{- with $title }}
+      <h3 class="i4c-speaker-title">
+        {{ . | safeHTML }}
+      </h3>
+    {{- end }}
+
+    <div class="i4c-speaker-meta">
+
       {{- with $name }}
-        <span class="speaker-name">
-          {{- if $homepage -}}
-            <a href="{{ $homepage }}" target="_blank" rel="noopener">{{ . }} ↗</a>
-          {{- else -}}
+        <span class="i4c-speaker-name">
+
+          {{- if $homepage }}
+            <a
+              href="{{ $homepage }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ . }}
+              <span aria-hidden="true">↗</span>
+            </a>
+          {{- else }}
             {{ . }}
-          {{- end -}}
+          {{- end }}
+
         </span>
       {{- end }}
-      {{- with $affiliation }}<span class="speaker-affiliation">{{ . }}</span>{{ end }}
+
+      {{- with $affiliation }}
+        <span class="i4c-speaker-affiliation">
+          {{ . }}
+        </span>
+      {{- end }}
+
     </div>
+
     {{- if or $when $where }}
-    <div class="speaker-when-where">
-      {{- with $when }}<span class="speaker-when"><i class="fa-fw far fa-calendar-alt" aria-hidden="true"></i> {{ . }}</span>{{ end }}
-      {{- with $where }}<span class="speaker-where"><i class="fa-fw fas fa-map-marker-alt" aria-hidden="true"></i> {{ . }}</span>{{ end }}
-    </div>
+
+      <div class="i4c-speaker-when-where">
+
+        {{- with $when }}
+          <span class="i4c-speaker-when">
+            <i
+              class="fa-fw far fa-calendar-alt"
+              aria-hidden="true"
+            ></i>
+            {{ . }}
+          </span>
+        {{- end }}
+
+        {{- with $where }}
+          <span class="i4c-speaker-where">
+            <i
+              class="fa-fw fas fa-map-marker-alt"
+              aria-hidden="true"
+            ></i>
+            {{ . }}
+          </span>
+        {{- end }}
+
+      </div>
+
     {{- end }}
-    <div class="speaker-content">
+
+    <div class="i4c-speaker-content">
       {{ .Inner | .Page.RenderString }}
     </div>
+
   </div>
+
 </section>
 
+
 <style>
-  article .speaker-card {
+
+  /*
+   * ------------------------------------------------------------
+   * I4C 2026 Speaker Card
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-card {
+
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 1.25rem;
+
+    grid-template-columns:
+      180px
+      minmax(0, 1fr);
+
+    gap: 1.35rem;
+
     align-items: start;
+
+    margin: 1.25rem 0;
+
     padding: 1.25rem;
-    margin: 1rem 0;
-    background: #fff;
-    border: 1px solid var(--SITE-BORDER, #e2e8f0);
-    border-left: 3px solid var(--SITE-BRAND-BLUE, #0082ba);
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+
+    background: #ffffff;
+
+    border:
+      1px solid
+      var(--SITE-BORDER, #e2e8f0);
+
+    border-left:
+      4px solid
+      var(--SITE-BRAND-BLUE, #0082ba);
+
+    border-radius: 7px;
+
+    box-shadow:
+      0 1px 3px rgba(15, 23, 42, 0.05);
+
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+
   }
-  article .speaker-card:not(:has(.speaker-photo)) {
-    grid-template-columns: 1fr;     /* no photo → single column */
+
+
+  article .i4c-speaker-card:hover {
+
+    transform:
+      translateY(-2px);
+
+    box-shadow:
+      0 6px 16px rgba(15, 23, 42, 0.08);
+
   }
-  article .speaker-card .speaker-photo {
+
+
+  /*
+   * ------------------------------------------------------------
+   * Speaker Photo
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-photo {
+
     width: 180px;
+
     height: 180px;
-    border-radius: 6px;
+
     overflow: hidden;
-    background: var(--SITE-SURFACE, #f8fafc);
+
+    border-radius: 6px;
+
+    background:
+      var(
+        --SITE-SURFACE,
+        #f8fafc
+      );
+
   }
-  article .speaker-card .speaker-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+
+  article .i4c-speaker-photo img {
+
     display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
   }
-  article .speaker-card .speaker-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--SITE-HEADING, #0f172a);
-    margin: 0 0 0.4rem;
+
+
+  /*
+   * ------------------------------------------------------------
+   * Content
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-body {
+
+    min-width: 0;
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * Category
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-category {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    margin-bottom: 0.45rem;
+
+    padding:
+      0.22rem
+      0.6rem;
+
+    border-radius: 999px;
+
+    background:
+      rgba(0, 130, 186, 0.09);
+
+    border:
+      1px solid
+      rgba(0, 130, 186, 0.2);
+
+    color:
+      var(
+        --SITE-BRAND-BLUE,
+        #0082ba
+      );
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
     line-height: 1.3;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.045em;
+
   }
-  article .speaker-card .speaker-meta {
+
+
+  /*
+   * Global IES category
+   */
+
+  article
+  .i4c-speaker-card[data-speaker-category="Global IES Speaker"]
+  .i4c-speaker-category {
+
+    background:
+      rgba(0, 130, 186, 0.1);
+
+    color:
+      #0069a1;
+
+  }
+
+
+  /*
+   * Distinguished Speaker category
+   */
+
+  article
+  .i4c-speaker-card[data-speaker-category="Distinguished Speaker"]
+  .i4c-speaker-category {
+
+    background:
+      rgba(236, 140, 0, 0.1);
+
+    border-color:
+      rgba(236, 140, 0, 0.25);
+
+    color:
+      #b45309;
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * Talk Title
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-title {
+
+    margin:
+      0 0
+      0.45rem;
+
+    color:
+      var(
+        --SITE-HEADING,
+        #0f172a
+      );
+
+    font-size:
+      1.18rem;
+
+    font-weight:
+      650;
+
+    line-height:
+      1.35;
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * Speaker Name + Affiliation
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-meta {
+
     display: flex;
+
     flex-wrap: wrap;
+
     align-items: baseline;
-    gap: 0.25rem 0.65rem;
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
+
+    gap:
+      0.25rem
+      0.7rem;
+
+    margin-bottom:
+      0.45rem;
+
+    font-size:
+      0.95rem;
+
   }
-  article .speaker-card .speaker-name {
-    font-weight: 600;
-    color: var(--SITE-TEXT, #334155);
+
+
+  article .i4c-speaker-name {
+
+    color:
+      var(
+        --SITE-TEXT,
+        #334155
+      );
+
+    font-weight:
+      650;
+
   }
-  article .speaker-card .speaker-name a {
-    color: var(--SITE-BRAND-BLUE, #0082ba);
-    text-decoration: none;
+
+
+  article .i4c-speaker-name a {
+
+    color:
+      var(
+        --SITE-BRAND-BLUE,
+        #0082ba
+      );
+
+    text-decoration:
+      none;
+
   }
-  article .speaker-card .speaker-name a:hover { text-decoration: underline; }
-  article .speaker-card .speaker-affiliation {
-    color: var(--SITE-TEXT-MUTED, #64748b);
-    font-style: italic;
+
+
+  article .i4c-speaker-name a:hover {
+
+    text-decoration:
+      underline;
+
   }
-  article .speaker-card .speaker-when-where {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1rem;
-    font-size: 0.85rem;
-    color: var(--SITE-TEXT-MUTED, #64748b);
-    margin-bottom: 0.75rem;
+
+
+  article .i4c-speaker-affiliation {
+
+    color:
+      var(
+        --SITE-TEXT-MUTED,
+        #64748b
+      );
+
+    font-style:
+      italic;
+
   }
-  article .speaker-card .speaker-when-where i {
-    color: var(--SITE-BRAND-BLUE, #0082ba);
-    font-size: 0.82rem;
-    margin-right: 0.15rem;
-    width: 1em;
+
+
+  /*
+   * ------------------------------------------------------------
+   * Date / Venue
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-when-where {
+
+    display:
+      flex;
+
+    flex-wrap:
+      wrap;
+
+    gap:
+      0.4rem
+      1rem;
+
+    margin-bottom:
+      0.8rem;
+
+    color:
+      var(
+        --SITE-TEXT-MUTED,
+        #64748b
+      );
+
+    font-size:
+      0.82rem;
+
+    line-height:
+      1.45;
+
   }
-  article .speaker-card .speaker-content {
-    color: var(--SITE-TEXT, #334155);
-    font-size: 0.95rem;
-    line-height: 1.55;
+
+
+  article .i4c-speaker-when-where span {
+
+    display:
+      inline-flex;
+
+    align-items:
+      center;
+
   }
-  article .speaker-card .speaker-content > :first-child { margin-top: 0; }
-  article .speaker-card .speaker-content > :last-child  { margin-bottom: 0; }
+
+
+  article .i4c-speaker-when-where i {
+
+    width:
+      1.1rem;
+
+    margin-right:
+      0.2rem;
+
+    color:
+      var(
+        --SITE-BRAND-BLUE,
+        #0082ba
+      );
+
+    font-size:
+      0.8rem;
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * Markdown Content
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-content {
+
+    color:
+      var(
+        --SITE-TEXT,
+        #334155
+      );
+
+    font-size:
+      0.94rem;
+
+    line-height:
+      1.6;
+
+  }
+
+
+  article .i4c-speaker-content > :first-child {
+
+    margin-top:
+      0;
+
+  }
+
+
+  article .i4c-speaker-content > :last-child {
+
+    margin-bottom:
+      0;
+
+  }
+
+
+  article .i4c-speaker-content strong {
+
+    color:
+      var(
+        --SITE-HEADING,
+        #0f172a
+      );
+
+  }
+
+
+  article .i4c-speaker-content a {
+
+    color:
+      var(
+        --SITE-BRAND-BLUE,
+        #0082ba
+      );
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * No-image cards
+   * ------------------------------------------------------------
+   */
+
+  article .i4c-speaker-card:not(:has(.i4c-speaker-photo)) {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * Responsive
+   * ------------------------------------------------------------
+   */
+
   @media (max-width: 700px) {
-    article .speaker-card { grid-template-columns: 1fr; padding: 1rem; }
-    article .speaker-card .speaker-photo { width: 100%; height: 220px; }
+
+    article .i4c-speaker-card {
+
+      grid-template-columns:
+        1fr;
+
+      gap:
+        1rem;
+
+      padding:
+        1rem;
+
+    }
+
+
+    article .i4c-speaker-photo {
+
+      width:
+        100%;
+
+      height:
+        230px;
+
+    }
+
+
+    article .i4c-speaker-title {
+
+      font-size:
+        1.05rem;
+
+    }
+
+
+    article .i4c-speaker-meta {
+
+      font-size:
+        0.9rem;
+
+    }
+
   }
+
+
+  @media (max-width: 480px) {
+
+    article .i4c-speaker-card {
+
+      margin:
+        1rem 0;
+
+      padding:
+        0.9rem;
+
+    }
+
+
+    article .i4c-speaker-photo {
+
+      height:
+        210px;
+
+    }
+
+
+    article .i4c-speaker-category {
+
+      font-size:
+        0.62rem;
+
+    }
+
+
+    article .i4c-speaker-title {
+
+      font-size:
+        1rem;
+
+    }
+
+
+    article .i4c-speaker-content {
+
+      font-size:
+        0.9rem;
+
+    }
+
+  }
+
+
+  /*
+   * ------------------------------------------------------------
+   * Reduced Motion
+   * ------------------------------------------------------------
+   */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    article .i4c-speaker-card {
+
+      transition:
+        none;
+
+    }
+
+  }
+
 </style>
