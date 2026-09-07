@@ -11,7 +11,7 @@ Files covered:
 
 ## Per-conclave values (I4C 2026)
 
-These values identify this conference across the Hugo site and deployment configuration.
+These values identify this conclave across the Hugo site and deployment configuration.
 
 | Value | File + key | Used for | I4C 2026 |
 |---|---|---|---|
