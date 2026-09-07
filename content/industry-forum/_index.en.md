@@ -9,130 +9,207 @@ weight = 8
     subtitle="Connecting industry expertise, emerging technologies and real-world innovation."
 >}}
 
-The **Industry Forum at IEEE IES Industrial Innovation Conclave 2026 (I4C)** brings together industry leaders, technology experts, researchers, academicians and students to explore emerging industrial technologies and their real-world applications.
+The **Industry Forum at IEEE IES Industrial Innovation Conclave 2026 (I4C 2026)** brings together global IES experts, industry leaders, technology specialists, researchers, academicians and students to explore emerging technologies and their real-world industrial applications.
 
-The programme features expert industry talks covering **Green Hydrogen, Industrial Electronics, EV Charging, Electric Motors, Digital Grids, Digital Twins, Smart Manufacturing, Industry 5.0, RISC-V, FPGA systems and on-premise AI accelerators**.
+The programme brings together experts working across **Green Hydrogen, Industrial Electronics, EV Charging, Electric Motors, Digital Grids, Digital Twins, Smart Manufacturing, Industry 5.0, RISC-V, FPGA systems and on-premise AI accelerators**.
 
-Industry sessions are open to all I4C 2026 participants.
+The forum provides opportunities to learn directly from experts, understand emerging technologies, explore industry applications and build meaningful connections across industry and academia.
 
 {{< spacer lines=2 >}}
 
-# Industry Talks
 
-## Industry Talk 1
+# Global IES Speakers
+
+The Industry Forum features distinguished Global IES speakers who bring international perspectives on emerging technologies and the changing landscape of industrial engineering.
+
+{{< speaker
+    name="Prof. Juan José Rodríguez-Andina"
+    category="Global IES Speaker"
+    title="AI for Power Electronics"
+    image="/images/Prof._Andina.jpg"
+    when="22 September 2026, 11:15 AM – 12:00 PM"
+    where="I4C 2026"
+>}}
+
+**Keynote Speaker**
+
+Prof. Juan José Rodríguez-Andina will deliver a keynote on **AI for Power Electronics**, exploring the growing role of artificial intelligence in modern power-electronic systems.
+
+{{< /speaker >}}
+
+
+{{< speaker
+    name="Prof. Stamatis Karnouskos"
+    category="Global IES Speaker"
+    title="From Engineers to AI Supervisors? The Future of Industrial Engineering"
+    image="/images/Prof._Stamatis.jpg"
+    when="22 September 2026, 2:30 PM – 3:15 PM"
+    where="I4C 2026"
+>}}
+
+**Panel Moderator**
+
+Prof. Stamatis Karnouskos will moderate the panel discussion **“From Engineers to AI Supervisors? The Future of Industrial Engineering”**, exploring how artificial intelligence is transforming industrial engineering and the evolving role of engineers.
+
+{{< /speaker >}}
+
+
+{{< spacer lines=2 >}}
+
+
+# Distinguished Speakers
+
+I4C 2026 brings together experts from industry and academia to share practical insights, technical knowledge and real-world perspectives across emerging areas of industrial innovation.
 
 {{< speaker
     name="Dr. Sankara Rao Mutyala"
-    affiliation="Director & CTO, Nanosol Energy Private Limited, Hyderabad"
+    affiliation="Director and CTO, Nanosol Energy Private Limited, Hyderabad"
+    category="Distinguished Speaker"
     title="Green Hydrogen and Industrial Electronics: Innovation for a NET-ZERO Industry"
     image="/images/sankara_rao_mutyala.jpg"
-    when="Day 1, 12:00 PM – 12:45 PM"
+    when="22 September 2026, 12:00 PM – 12:45 PM"
     where="I4C 2026"
 >}}
+
+**Industry Talk**
 
 This session explores the role of **Green Hydrogen and Industrial Electronics** in enabling the transition towards a net-zero industrial future.
 
 {{< /speaker >}}
 
----
-
-## Industry Talk 2
 
 {{< speaker
     name="Mr. Rajesh Sura"
-    affiliation="CEO & Co-founder, Dynolt Technologies"
+    affiliation="CEO and Cofounder, Dynolt Technologies"
+    category="Distinguished Speaker"
     title="Advanced Power Conversion Systems and Architectures for EV Charging"
     image="/images/rajesh_sura.jpeg"
-    when="Day 1, 12:45 PM – 1:30 PM"
+    when="22 September 2026, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
+
+**Industry Talk**
 
 This session focuses on advanced **power conversion systems and architectures for electric vehicle charging**, highlighting technologies supporting the growing EV ecosystem.
 
 {{< /speaker >}}
 
----
 
-## Industry Talk 3
+{{< speaker
+    name="Dr. Deepak Ronanki"
+    affiliation="IIT Madras"
+    category="Distinguished Speaker"
+    title="Electric Vehicle Charging Infrastructure in the Indian Context: Overview and Challenges"
+    when="22 September 2026, 3:15 PM – 4:00 PM"
+    where="I4C 2026"
+>}}
+
+**Academic Talk**
+
+This session provides an overview of **electric vehicle charging infrastructure in the Indian context**, examining key challenges and considerations for the continued growth of electric mobility.
+
+{{< /speaker >}}
+
 
 {{< speaker
     name="Dr. Gowtham Vegireddy"
     affiliation="Manager R&D, IFB"
+    category="Distinguished Speaker"
     title="Advanced Electrical Motor Topologies for Electric Vehicle Applications"
     image="/images/gowtham_vegireddy.jpeg"
-    when="Day 1, 4:15 PM – 5:00 PM"
+    when="22 September 2026, 4:15 PM – 5:00 PM"
     where="I4C 2026"
 >}}
 
-The session explores advanced electrical motor topologies and their applications in the rapidly evolving electric vehicle industry.
+**Industry Talk**
+
+The session explores advanced **electrical motor topologies** and their applications in the rapidly evolving electric vehicle industry.
 
 {{< /speaker >}}
 
----
 
-## Industry Talk 4
+{{< speaker
+    name="Mrs. Ponnganti Chandana"
+    affiliation="Product Manager - MathWorks · ARKANCE IN Private Limited"
+    category="Distinguished Speaker"
+    title="Rapid EV Prototyping: Accelerating Development Workflows with Simulink"
+    when="23 September 2026, 9:30 AM – 11:00 AM"
+    where="I4C 2026"
+>}}
+
+**Hands-on Workshop**
+
+This hands-on workshop focuses on **rapid EV prototyping** and development workflows using **Simulink**, providing participants with practical exposure to simulation-based development.
+
+{{< /speaker >}}
+
 
 {{< speaker
     name="Dr. P. Balakrishna"
-    affiliation="Senior Engineer, GE Energy"
+    affiliation="Senior Engineer, GE ENERGY"
+    category="Distinguished Speaker"
     title="Navigating from Smart Grid to Digital Grid: Role of Digital Twin and Its Applications with a Case Study"
     image="/images/p_balakrishna.jpg"
-    when="Day 2, 11:15 AM – 12:00 PM"
+    when="23 September 2026, 11:15 AM – 12:00 PM"
     where="I4C 2026"
 >}}
+
+**Industry Talk**
 
 This session examines the transition from **Smart Grid to Digital Grid**, with a focus on the role of **Digital Twins** and their practical applications through a case study.
 
 {{< /speaker >}}
 
----
-
-## Industry Talk 5
 
 {{< speaker
     name="Dr. Srinivasa Rao Perla"
     affiliation="Ex-Director, Technical Training at Cyient"
+    category="Distinguished Speaker"
     title="Smart Manufacturing & Industry 5.0"
     image="/images/srinivasa_rao_perla.jpg"
-    when="Day 2, 12:00 PM – 12:45 PM"
+    when="23 September 2026, 12:00 PM – 12:45 PM"
     where="I4C 2026"
 >}}
 
-Explore the evolution of **Smart Manufacturing** and the emerging concepts of **Industry 5.0**, focusing on the future of intelligent and human-centric industrial systems.
+**Industry Talk**
+
+This session explores the evolution of **Smart Manufacturing** and the emerging concepts of **Industry 5.0**, focusing on intelligent and human-centric industrial systems.
 
 {{< /speaker >}}
 
----
-
-## Industry Talk 6
 
 {{< speaker
     name="Kavinga Upul Ekanayake"
-    affiliation="Head of Hardware Engineering, ACCELR"
+    affiliation="Head of Hardware Engineering at ACCELR"
+    category="Distinguished Speaker"
     title="Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up"
     image="/images/kavinga_upul_Ekanayake.jpeg"
-    when="Day 2, 12:45 PM – 1:30 PM"
+    when="23 September 2026, 12:45 PM – 1:30 PM"
     where="I4C 2026"
 >}}
+
+**Industry Talk**
 
 This session explores **RISC-V and FPGA-based heterogeneous computing architectures** for developing low-power, on-premise Large Language Model accelerators.
 
 {{< /speaker >}}
 
+
 {{< spacer lines=2 >}}
+
 
 # Industry & Technology Focus
 
-The Industry Forum sessions at I4C 2026 cover several technologies shaping the future of industrial innovation:
+The Industry Forum sessions at I4C 2026 cover several technologies shaping the future of industrial innovation.
 
 {{< cards columns=3 >}}
 
 {{< card title="Green Hydrogen" >}}
-Exploring Green Hydrogen and Industrial Electronics for a **NET-ZERO industrial future**.
+Exploring **Green Hydrogen and Industrial Electronics** for a NET-ZERO industrial future.
 {{< /card >}}
 
 {{< card title="Electric Mobility" >}}
-Advanced power conversion systems, EV charging technologies and electrical motor topologies for electric vehicles.
+Advanced power conversion systems, EV charging technologies and electrical motor topologies for the future of electric mobility.
 {{< /card >}}
 
 {{< card title="Digital Grids" >}}
@@ -153,7 +230,9 @@ Emerging industrial electronics technologies connecting electrification, automat
 
 {{< /cards >}}
 
+
 {{< spacer lines=2 >}}
+
 
 # Industry–Academia Interaction
 
@@ -169,7 +248,9 @@ Participants can engage with experts, exchange ideas, explore emerging technolog
 - Innovation partnerships
 - Startup and entrepreneurship opportunities
 
+
 {{< spacer lines=2 >}}
+
 
 # Panel Discussion
 
@@ -186,11 +267,13 @@ The programme features a dedicated panel discussion exploring how **Artificial I
 - **Mr. Rajesh Sura**
 - **Dr. Gowtham Vegireddy**
 
-**Day 1:** 2:30 PM – 3:15 PM
+**22 September 2026 · 2:30 PM – 3:15 PM**
 
-The panel is part of the main I4C 2026 programme. :contentReference[oaicite:2]{index=2}
+The panel brings together perspectives from global IES expertise, industry and engineering research to discuss the future of industrial engineering in an increasingly AI-driven environment.
+
 
 {{< spacer lines=2 >}}
+
 
 # Technology Exhibition & Industry Expo
 
@@ -207,17 +290,20 @@ The Expo provides an additional platform for:
 - Networking
 - Student engagement
 
+
 {{< spacer lines=2 >}}
+
 
 # Connect · Collaborate · Innovate
 
-The Industry Forum at I4C 2026 is designed to bring **real-world industrial challenges, emerging technologies and academic perspectives** together in one platform.
+The Industry Forum at I4C 2026 brings together **global expertise, real-world industrial challenges, emerging technologies and academic perspectives** on one platform.
 
-From **Green Hydrogen and EV technologies** to **Digital Twins, Smart Manufacturing and AI accelerators**, the programme provides participants with an opportunity to understand how emerging technologies are shaping the future of industry.
+From **Green Hydrogen and EV technologies** to **Digital Twins, Smart Manufacturing, RISC-V, FPGA systems and AI accelerators**, the programme provides participants with an opportunity to understand how emerging technologies are shaping the future of industry.
 
 ### Learn from Industry. Connect with Experts. Explore What's Next.
 
 **IEEE IES Industrial Innovation Conclave 2026**
 
-**22–23 September 2026**  
+**22–23 September 2026**
+
 **Engineering Staff College of India (ESCI), Gachibowli, Hyderabad**
