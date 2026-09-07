@@ -14,21 +14,24 @@ that identify the specific conference:
 ```toml
 +++
 archetype = "home"
-title = "Welcome to the IEEE Conference"           # hero / browser-tab prefix
-description = "IEEE International Conference"       # meta description, OG/Twitter card
+title = "IEEE IES Industrial Innovation Conclave 2026"  # hero / browser-tab prefix
+description = "IEEE IES Industrial Innovation Conclave 2026 — Advancing Electrification, Automation, AI, Renewable Energy & Smart Mobility."  # meta description, OG/Twitter card
 +++
 ```
 
 - **`title`** — goes into the browser tab (before the site-level title) and
-  the home-page breadcrumb. Conference-specific, e.g. `"Welcome to IRAI 2026"`.
+  the home-page breadcrumb. Conclave-specific. For I4C 2026, use
+  `"IEEE IES Industrial Innovation Conclave 2026"`.
+
 - **`description`** — meta description + OpenGraph / Twitter card.
-  Conference-specific tagline.
+  Conclave-specific tagline. For I4C 2026, use
+  `"IEEE IES Industrial Innovation Conclave 2026 — Advancing Electrification, Automation, AI, Renewable Energy & Smart Mobility."`
 
 These are edited alongside the home page content anyway, so the user isn't
 editing an "extra" file — they're writing `_index.en.md` to set up the home
 hero.
 
-See [`config.md`](config.md) for the other three per-conference values that
+See [`config.md`](config.md) for the other three per-conclave values that
 live in `hugo.toml`.
 
 ---
