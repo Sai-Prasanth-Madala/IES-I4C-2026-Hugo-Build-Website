@@ -1,7 +1,7 @@
 # `static/css/custom.css` — Custom Styles
 
-- **File**: [`static/css/custom.css`](../static/css/custom.css)
-- **Loaded by**: [`layouts/partials/custom-header.html`](layouts/partials/custom-header.html)
+- **File**: [`static/css/custom.css`](../../static/css/custom.css)
+- **Loaded by**: [`layouts/partials/custom-header.html`](../../layouts/partials/custom-header.html)
 - **Risk on Relearn upgrade**: 🟡 **MEDIUM** — several rules target Relearn internal selectors that may change between theme versions.
 
 The custom stylesheet provides surgical visual overrides for the I4C 2026 website. It does not contain global resets or broad theme replacements.
