@@ -6,34 +6,27 @@
 
 ## What this override does
 
-Deliberately empty placeholder. Exists only to document that **the visible
-site footer is NOT here** — it's in
-[`site-footer.html`](site-footer.md), injected from the baseof.html override.
+This file is intentionally kept as an empty placeholder.
+
+The visible I4C 2026 site footer is **not rendered here**. It is implemented
+in [`site-footer.html`](site-footer.md) and injected into the page content
+through the `baseof.html` override.
+
+The current file contains only a Hugo documentation comment.
 
 ## Why it exists
 
 Relearn 9.x calls `custom-footer.html` at the very end of `<body>`, outside
-`#R-body`. Content placed here ends up as a body-level flex item, which the
-row-reverse layout pushes out of view. It's meant for trailing `<script>`
-tags only.
+the main `#R-body` content area.
 
-An earlier revision of this template put the visible footer HTML in this
-file (carried over from a Relearn 6.x idiom) — and it was visually invisible.
-We moved the footer to `site-footer.html` and left this one empty, with the
-explanation baked in as a comment.
+The partial is intended for content that belongs at the end of the document,
+such as trailing `<script>` tags.
 
-## What's custom vs upstream
+The visible site footer was previously placed here, following an older
+Relearn 6.x pattern. In Relearn 9.x this caused the footer to behave as a
+body-level flex item and become visually hidden/out of position.
 
-Upstream has a short comment scaffold for "add trailing scripts here". Ours
-is the same idea plus a longer doc-comment explaining where the visible
-footer lives. No functional difference.
+The visible footer was therefore moved to:
 
-## Re-applying on upgrade
-
-Nothing to re-apply. If you need to add trailing-of-body `<script>` tags
-(for analytics, etc.), this is the correct file to put them in.
-
-## Related
-
-- [`_default/baseof.md`](../_default/baseof.md) — where `site-footer.html` gets injected instead
-- [`site-footer.md`](site-footer.md) — the visible site footer
+```text
+layouts/partials/site-footer.html
