@@ -57,13 +57,17 @@ The programme covers key areas including **Artificial Intelligence, Power Electr
 | **12:45 PM – 1:30 PM** | **Industry Talk 6: Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up** | **Kavinga Upalanayake** — Head of Hardware Engineering, ACCELR |
 | **1:30 PM – 2:30 PM** | **Lunch** | — |
 
-## Closing Session
+## Closing Ceremony
 
 | Time | Session | Details |
 |---|---|---|
-| **2:30 PM – 3:30 PM** | **Closing Ceremony** | Sponsor Recognition · Volunteer Appreciation · Certificates · Vote of Thanks |
+| **2:30 PM – 3:00 PM** | **Closing Ceremony** | Sponsor Recognition · Volunteer Appreciation · Certificates · Vote of Thanks |
 
----
+## IES Hubs & Nodes Session
+
+| Time | Session | Speaker |
+|---|---|---|
+| **3:00 PM – 4:00 PM** | **Session on IES Hubs and Nodes Initiative** | **Dr. Tripura Pidikiti** — Hyderabad Hub Leader |
 
 # Technology Exhibition & Industry Expo
 
