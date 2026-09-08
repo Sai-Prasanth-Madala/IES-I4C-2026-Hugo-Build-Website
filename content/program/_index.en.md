@@ -69,6 +69,8 @@ The programme covers key areas including **Artificial Intelligence, Power Electr
 |---|---|---|
 | **3:00 PM – 4:00 PM** | **Session on IES Hubs and Nodes Initiative** | **Dr. Tripura Pidikiti** — Hyderabad Hub Leader |
 
+---
+
 # Technology Exhibition & Industry Expo
 
 The **Technology Exhibition & Industry Expo** will remain open **throughout the conference**, providing participants with opportunities to explore technologies, products, innovations and industry solutions.
