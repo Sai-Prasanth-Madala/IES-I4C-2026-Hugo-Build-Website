@@ -1,28 +1,35 @@
 {{- /*
-  Relearn 9.x calls this partial inside <head>. Only head-legal content belongs
-  here (links, meta, <style>, <script>). Body content (e.g. the site-wide
-  navbar with IES/IEEE logos) lives in layouts/partials/site-navbar.html and is
-  injected via the baseof.html override.
+  I4C 2026 — Custom Header
 
-  Preserve Relearn 9.x convention: auto-load static/css/custom.css and
-  static/js/custom.js if present, so future custom styling can just drop a file
-  into static/css/ or static/js/ without further template edits.
+  Relearn 9.x calls this partial inside <head>. Only head-legal content
+  belongs here, such as <link>, <meta>, <style>, and <script> elements.
+
+  Site-wide visible elements such as the IEEE IES / IEEE branding belong
+  in their dedicated layout partials, not in this head-only partial.
+
+  This partial also auto-loads:
+    static/css/custom.css
+    static/js/custom.js
+
+  If either file exists, Hugo loads it automatically without requiring
+  further template changes.
 */ -}}
 
-{{- /* Body font. Configurable via params.fontFamily in hugo.toml.
-       Fonts loaded from fonts.bunny.net — a privacy-respecting, GDPR-safe
-       drop-in for Google Fonts (same fonts, no IP logging, no cookies → no
-       consent banner required). Setting to "system" skips the network
-       request entirely and uses the native OS font stack.
+{{- /*
+  Body font.
 
-       Supported values (keep in sync with the per-conference comment in
-       hugo.toml):
-         "inter"         — clean, modern, the default; used by Stripe, GitHub
-         "dm-sans"       — geometric, friendly, slightly softer curves
-         "source-sans-3" — Adobe's classic humanist sans; neutral, highly legible
-         "ibm-plex-sans" — IBM's technical-document typeface; fits IEEE well
-         "system"        — no webfont, use native OS fonts (fastest) */ -}}
+  Configurable through params.fontFamily in hugo.toml.
+
+  Supported values:
+    "inter"         — clean, modern default
+    "dm-sans"       — geometric and friendly
+    "source-sans-3" — humanist sans-serif
+    "ibm-plex-sans" — technical/document-oriented typeface
+    "system"        — native operating-system font stack; no webfont request
+*/ -}}
+
 {{- $font := site.Params.fontFamily | default "inter" }}
+
 {{- $fontUrls := dict
     "inter"         "https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap"
     "dm-sans"       "https://fonts.bunny.net/css?family=dm-sans:400,500,700&display=swap"
@@ -30,6 +37,7 @@
     "ibm-plex-sans" "https://fonts.bunny.net/css?family=ibm-plex-sans:400,500,600,700&display=swap"
     "system"        ""
 }}
+
 {{- $fontStacks := dict
     "inter"         "\"Inter\","
     "dm-sans"       "\"DM Sans\","
@@ -37,32 +45,48 @@
     "ibm-plex-sans" "\"IBM Plex Sans\","
     "system"        ""
 }}
+
 {{- $fontUrl := index $fontUrls $font }}
 {{- $fontStack := index $fontStacks $font }}
+
 {{- with $fontUrl }}
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
 <link href="{{ . }}" rel="stylesheet">
 {{- end }}
+
 <style>
   :root {
     --SITE-FONT-STACK: {{ $fontStack | safeCSS }}"Aptos", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   }
 </style>
 
+{{- /*
+  Automatically load project CSS with Hugo asset processing when available.
+*/ -}}
+
 {{- $assetBusting := partialCached "assetbusting.gotmpl" site.Home }}
+
 {{- $filePath := "css/custom.css" }}
+
 {{- with (resources.Get (printf "/%s" $filePath)) }}
-    <link href="{{ .RelPermalink }}{{ $assetBusting }}" rel="stylesheet">
+<link href="{{ .RelPermalink }}{{ $assetBusting }}" rel="stylesheet">
 {{- else }}
   {{- if (fileExists (printf "static/%s" $filePath)) }}
-    <link href="{{ printf "%s" $filePath | relURL }}{{ $assetBusting }}" rel="stylesheet">
+<link href="{{ printf "%s" $filePath | relURL }}{{ $assetBusting }}" rel="stylesheet">
   {{- end }}
 {{- end }}
+
+{{- /*
+  Automatically load project JavaScript with Hugo asset processing
+  when available.
+*/ -}}
+
 {{- $filePath = "js/custom.js" }}
+
 {{- with (resources.Get (printf "/%s" $filePath)) }}
-    <script src="{{ .RelPermalink }}{{ $assetBusting }}" defer></script>
+<script src="{{ .RelPermalink }}{{ $assetBusting }}" defer></script>
 {{- else }}
   {{- if (fileExists (printf "static/%s" $filePath)) }}
-    <script src="{{ printf "%s" $filePath | relURL }}{{ $assetBusting }}" defer></script>
+<script src="{{ printf "%s" $filePath | relURL }}{{ $assetBusting }}" defer></script>
   {{- end }}
 {{- end }}
