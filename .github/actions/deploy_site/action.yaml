@@ -1,9 +1,11 @@
 name: Deploy site
 description: Deploys a built site on GitHub-Pages
+
 inputs:
   github_token:
     description: Secret GitHub token
     required: true
+
 runs:
   using: composite
   steps:
