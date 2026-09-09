@@ -15,8 +15,7 @@
 author.name = "IEEE IES Industrial Innovation Conclave 2026"
 
 # Social media image of the site.
-# Update this if you have a dedicated I4C 2026 banner image.
-images = [ "images/banner.jpg" ]
+images = ["images/banner.jpg"]
 
 # The description of the site lives in:
 # content/_index.en.md
@@ -33,7 +32,6 @@ social.twitter = ""
 ###############################################################################
 # Relearn Theme
 ###############################################################################
-# These options are specific to the Relearn theme.
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Branding
@@ -55,17 +53,12 @@ themeVariantModifier = ""
 # General
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# Avoid new asset URLs on build.
 disableAssetsBusting = false
-
-# Avoid generator meta tags.
 disableGeneratorVersion = false
-
-# Avoid unique IDs.
 disableRandomIds = false
 
 # Multilanguage content.
-additionalContentLanguage = [ "en" ]
+additionalContentLanguage = ["en"]
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -81,11 +74,7 @@ disableBreadcrumb = true
 # Hide Next and Previous navigation buttons.
 disableNextPrev = true
 
-# URL prefix to edit a page.
-#
-# Uncomment this only if you want the website's Edit button to point
-# to your I4C 2026 GitHub repository.
-#
+# Uncomment if you want an Edit button pointing to the GitHub repository.
 # editURL = "https://github.com/ieee-ies/i4c2026.ieee-ies.org/blob/main/content/"
 
 
@@ -167,7 +156,6 @@ highlightWrap = true
 # Images
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# Image effects.
 imageEffects.border = true
 imageEffects.lightbox = true
 imageEffects.shadow = false
@@ -188,7 +176,6 @@ disableExplicitIndexURLs = false
 # MathJax
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# MathJax initialization options.
 mathJaxInitialize = "{}"
 
 # Only load MathJax when required.
@@ -206,7 +193,7 @@ customMathJaxURL = ""
 mermaidZoom = true
 
 # Mermaid initialization options.
-mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
+mermaidInitialize = '{ "securityLevel": "loose" }'
 
 # Only load Mermaid when required.
 mermaid.disable = true
@@ -226,7 +213,10 @@ openapi.disable = true
 customOpenapiURL = ""
 
 
-# Include table of contents.
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Table of Contents
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 includeTOC = true
 
 
