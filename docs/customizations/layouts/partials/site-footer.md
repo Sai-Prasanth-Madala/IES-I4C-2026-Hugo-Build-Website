@@ -1,58 +1,51 @@
 # `layouts/partials/site-footer.html` (NEW partial)
 
-- **File**: [`layouts/partials/site-footer.html`](../../../../layouts/partials/site-footer.html)
-- **Shadows upstream**: nothing — this is a new partial we added
-- **Risk on Relearn upgrade**: 🟢 LOW
+- **File:** [`layouts/partials/site-footer.html`](../../../../layouts/partials/site-footer.html)
+- **Shadows upstream:** None — this is a project-specific partial
+- **Risk on Relearn upgrade:** 🟢 LOW
 
 ## What this partial does
 
-Renders the visible site footer that appears at the bottom of every page's
-content area. Contains:
+This partial renders the **visible I4C 2026 site footer** at the bottom of
+the main page content.
 
-- A "Powered by the Web & Information Committee of the IEEE Industrial
-  Electronics Society" line.
-- Social media icon links (Facebook, Twitter, LinkedIn, YouTube) pointing to
-  the IES channels.
-- An orange "Invitation to join IEEE IES" CTA button.
-- A copyright line.
+The footer is separate from Relearn's built-in sidebar footer and contains
+the conference's site-wide footer information and branding.
 
-Scoped inline `<style>` gives it a top border, max-height social icons,
-flex-column layout on small viewports, and the brand orange
-(`#ec8c00`) for the CTA.
+The footer is rendered inside `#R-body` through the
+[`baseof.html` override](../_default/baseof.md).
 
 ## Why it exists
 
-Relearn 9.x doesn't provide a slot for a visible site footer — its
-`custom-footer.html` is intended for trailing `<script>` tags and, due to
-the `body { flex-direction: row-reverse }` layout, can't show visible
-content anyway. We introduced this partial and wired it into the
-[baseof.html override](../_default/baseof.md) so the footer lands inside
-`#R-body`, at the bottom of the main scrollable column.
+The project needs a visible footer inside the main content area rather than
+using Relearn's `custom-footer.html` slot.
+
+The `custom-footer.html` partial is called at the end of the document and is
+used by this project as an empty hook for trailing scripts.
+
+Therefore, the project introduced `site-footer.html` and explicitly
+includes it inside the main page layout.
+
+This ensures that the footer appears below the page content instead of
+behaving as a separate body-level layout element.
 
 ## What's custom vs upstream
 
-Entirely ours — no upstream counterpart.
+This is an entirely project-specific partial. Relearn does not provide an
+upstream `site-footer.html` equivalent used by this project.
 
-## Re-applying on upgrade
+The partial can be customized independently without modifying the Relearn
+theme.
 
-Nothing to do at Relearn upgrade time. The only coupling is:
+## Re-applying on a Relearn upgrade
 
-- [`_default/baseof.md`](../_default/baseof.md) must still have the
-  `{{- partial "site-footer.html" . }}` line inside `#R-body`. If the
-  baseof override is re-synced to upstream, don't forget this line.
-- CSS in this file uses class names like `.footer-section`, `.social-section`,
-  `.btn-primary` that are local to this file — no risk of Relearn collisions.
+There is normally nothing to re-apply because this is a project-owned
+partial and does not shadow an upstream template.
 
-## Related
+However, verify the connection to `baseof.html` after a Relearn upgrade.
 
-- [`_default/baseof.md`](../_default/baseof.md) — wires this partial into the page layout
-- [`custom-footer.md`](custom-footer.md) — the other ("upstream-level") footer slot, intentionally empty
-- External images: social icons are fetched from
-  `https://www.ieee-ies.org/modules/mod_ieeesocialmedia/icons/*.png` —
-  if IES moves those, update the `<img src>` here.
+The following line must remain inside the appropriate `#R-body` content
+area:
 
-## Template-customization note
-
-The "Powered by the Web & Information Committee…" line and copyright are
-generic IEEE IES boilerplate. You may want to add a conference-specific
-line above or below (e.g., venue sponsor, dates). Edit the `<div class="footer-content">`.
+```go-template
+{{- partial "site-footer.html" . }}
