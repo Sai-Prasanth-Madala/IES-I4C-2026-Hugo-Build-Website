@@ -1,11 +1,10 @@
 # Apple
 .DS_Store
 
-# Generated files by hugo
+# Generated files by Hugo
 /public/
 /resources/_gen/
 .hugo_build.lock
 
-# static/CNAME is generated at build time by .github/actions/build_site from
-# baseURL in config/_default/hugo.toml — don't commit it.
+# Generated at build time from baseURL in config/_default/hugo.toml
 /static/CNAME
