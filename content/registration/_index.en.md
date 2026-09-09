@@ -24,7 +24,7 @@ The **IEEE IES Industrial Innovation Conclave (I4C) 2026** brings together stude
 
 There is **no registration fee** to participate in the **IEEE IES Industrial Innovation Conclave 2026**.
 
-All interested participants are invited to complete the official **Willingness / Expression of Interest Form**.
+**Important:** **No spot registrations will be accepted. Please complete the Willingness / Expression of Interest Form before attending the conclave.**
 
 ---
 
