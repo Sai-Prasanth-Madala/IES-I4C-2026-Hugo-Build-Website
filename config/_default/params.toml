@@ -38,7 +38,7 @@ social.twitter = ""
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Logo shown at the top of the sidebar menu.
-logo = { src = "/images/logo.png" }
+logo = { src = "/images/HubsandNodes_Logo.jpg" }
 
 # Theme color variant.
 themeVariant = [
