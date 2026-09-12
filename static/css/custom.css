@@ -624,6 +624,22 @@ article .card:hover {
   }
 }
 
+/* ==========================================================================
+ * Committee / Speaker Images
+ * Show the complete photo without cropping
+ * ========================================================================== */
+
+article .speaker img,
+article .card img,
+.speaker img,
+.card img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #f5f7fa;
+}
 
 /* ============================================================================
  * MAIN CONFERENCE CONTENT
