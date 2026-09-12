@@ -4,11 +4,6 @@ weight = 2
 linkTitle = "Organising Committee"
 +++
 
-{{< pageHero
-    title="Organising Committee"
-    subtitle="The team behind IEEE IES Industrial Innovation Conclave 2026."
->}}
-
 ## Conclave Leadership
 
 {{< imagesRow images=`[
