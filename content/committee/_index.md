@@ -13,7 +13,7 @@ linkTitle = "Organising Committee"
 
 {{< imagesRow images=`[
     {
-        "src": "",
+        "src": "/images/footer/organizers/tripura_pidikiti.jpg",
         "alt": "Dr. Tripura Pidikiti",
         "name": "Dr. Tripura Pidikiti",
         "company": "General Chair",
