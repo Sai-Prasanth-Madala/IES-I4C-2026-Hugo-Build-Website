@@ -637,6 +637,39 @@ main#R-body-inner article p {
   text-align: justify;
 }
 
+/* ==========================================================================
+ * I4C 2026 — Main Content Layout Fix
+ *
+ * Prevent Relearn or inherited styles from flowing the article into
+ * multiple CSS columns. Conference pages such as the programme,
+ * committee and industry forum must use a normal single-column layout.
+ * ========================================================================== */
+
+#R-body-inner,
+#R-body-inner article,
+#R-body-inner .flex-block-wrapper {
+    column-count: 1 !important;
+    column-width: auto !important;
+    column-gap: normal !important;
+    columns: auto !important;
+}
+
+/* Keep normal block flow inside the article. */
+#R-body-inner article > * {
+    break-inside: auto;
+    page-break-inside: auto;
+}
+
+/* Prevent tables and wide content from forcing the article itself
+   into an unexpected layout. */
+#R-body-inner article table {
+    width: 100%;
+    max-width: 100%;
+}
+
+#R-body-inner article {
+    overflow-x: visible;
+}
 
 /* ============================================================================
  * END OF IEEE IES CONFERENCE / EVENT CUSTOM STYLES
