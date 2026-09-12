@@ -13,6 +13,13 @@ linkTitle = "Organising Committee"
 
 {{< imagesRow images=`[
     {
+        "src": "/images/footer/organizers/Prof_Milos_Manic.jpg",
+        "alt": "Prof. Milos Manic",
+        "name": "Prof. Milos Manic",
+        "company": "President",
+        "location": "IEEE IES Hubs and Nodes"
+    },
+    {
         "src": "/images/footer/organizers/tripura_pidikiti.jpg",
         "alt": "Dr. Tripura Pidikiti",
         "name": "Dr. Tripura Pidikiti",
