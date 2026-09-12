@@ -89,4 +89,4 @@ See you at **I4C 2026**!
 
 **Organizing Committee**  
 IEEE IES Industrial Innovation Conclave 2026  
-**Contact:** [Contact Email]
+**Contact Mail :** ieshubsandnodes.hyd@gmail.com
