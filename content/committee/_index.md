@@ -11,7 +11,7 @@ linkTitle = "Organising Committee"
         "src": "/images/footer/organizers/Prof_Milos_Manic.jpg",
         "alt": "Prof. Milos Manic",
         "name": "Prof. Milos Manic",
-        "company": "President",
+        "company": "Chair",
         "location": "IEEE IES Hubs and Nodes"
     },
     {
@@ -40,13 +40,6 @@ linkTitle = "Organising Committee"
         "alt": "Marpu Sri Sathwik",
         "name": "Marpu Sri Sathwik",
         "company": "Committee Lead",
-        "location": "Registration & Participant Services"
-    },
-    {
-        "src": "/images/footer/organizers/rehan.jpg",
-        "alt": "Rehan Mohammad",
-        "name": "Rehan Mohammad",
-        "company": "Committee Member",
         "location": "Registration & Participant Services"
     },
     {
@@ -85,32 +78,11 @@ linkTitle = "Organising Committee"
         "location": "Designing, Venue & Protocol"
     },
     {
-        "src": "/images/footer/organizers/charith.jpg",
-        "alt": "Kasi Sai Sree Charith ",
-        "name": "Kasi Sai Sree Charith",
+        "src": "/images/footer/organizers/Muppana_Jeevan.jpeg",
+        "alt": "Muppana Jeevan ",
+        "name": "Muppana Jeevan ",
         "company": "Committee Member",
         "location": "Designing, Venue & Protocol"
-    }
-]` width="220px" height="280px" >}}
-
----
-
-## Technical & Audio-Visual
-
-{{< imagesRow images=`[
-    {
-        "src": "/images/footer/organizers/jeevan.jpg",
-        "alt": "Jeevan",
-        "name": "Jeevan",
-        "company": "Committee Lead",
-        "location": "Technical & Audio-Visual"
-    },
-    {
-        "src": "/images/footer/organizers/likith.jpg",
-        "alt": "Aekula Likith Sai Naidu",
-        "name": "Aekula Likith Sai Naidu",
-        "company": "Committee Member",
-        "location": "Technical & Audio-Visual"
     }
 ]` width="220px" height="280px" >}}
 
@@ -127,16 +99,9 @@ linkTitle = "Organising Committee"
         "location": "Industry & Exhibition"
     },
     {
-        "src": "/images/footer/organizers/anjali.jpg",
-        "alt": "Pentakota Anjali Devi",
-        "name": "Pentakota Anjali Devi",
-        "company": "Committee Member",
-        "location": "Industry & Exhibition"
-    },
-    {
-        "src": "/images/footer/organizers/sree_neha.jpg",
-        "alt": "Zampani Sree Neha",
-        "name": "Zampani Sree Neha",
+        "src": "/images/footer/organizers/rehan.jpg",
+        "alt": "Rehan Mohammad",
+        "name": "Rehan Mohammad",
         "company": "Committee Member",
         "location": "Industry & Exhibition"
     }
@@ -155,23 +120,9 @@ linkTitle = "Organising Committee"
         "location": "Hospitality & Guest Services"
     },
     {
-        "src": "/images/footer/organizers/jeevan.jpg",
-        "alt": "Jeevan",
-        "name": "Jeevan",
-        "company": "Committee Member",
-        "location": "Hospitality & Guest Services"
-    },
-    {
         "src": "/images/footer/organizers/charith.jpg",
         "alt": "Kasi Sai Sree Charith",
         "name": "Kasi Sai Sree Charith",
-        "company": "Committee Member",
-        "location": "Hospitality & Guest Services"
-    },
-    {
-        "src": "/images/footer/organizers/likith.jpg",
-        "alt": "Aekula Likith Sai Naidu",
-        "name": "Aekula Likith Sai Naidu",
         "company": "Committee Member",
         "location": "Hospitality & Guest Services"
     }
@@ -183,18 +134,25 @@ linkTitle = "Organising Committee"
 
 {{< imagesRow images=`[
     {
-        "src": "/images/footer/organizers/hanvesh.jpg",
-        "alt": "Hanvesh Upputuri",
-        "name": "Hanvesh Upputuri",
+        "src": "/images/footer/organizers/rishi.jpg",
+        "alt": "Veda Phani Rishi",
+        "name": "Veda Phani Rishi",
         "company": "Committee Lead",
         "location": "Publicity, Media & Communications"
     },
     {
-        "src": "/images/footer/organizers/teja.jpg",
-        "alt": "Borsu Teja",
-        "name": "Borsu Teja",
+        "src": "/images/footer/organizers/hanvesh.jpg",
+        "alt": "Hanvesh Upputuri",
+        "name": "Hanvesh Upputuri",
         "company": "Committee Member",
         "location": "Publicity, Media & Communications"
+    },
+    {
+        "src": "/images/footer/organizers/rehan.jpg",
+        "alt": "Rehan Mohammad",
+        "name": "Rehan Mohammad",
+        "company": "Committee Member",
+        "location": "Industry & Exhibition"
     },
     {
         "src": "/images/footer/organizers/likith.jpg",
@@ -207,33 +165,6 @@ linkTitle = "Organising Committee"
 
 ---
 
-## Networking & Mentoring
-
-{{< imagesRow images=`[
-    {
-        "src": "/images/footer/organizers/sathwik.jpg",
-        "alt": "Marpu Sri Sathwik",
-        "name": "Marpu Sri Sathwik",
-        "company": "Committee Lead",
-        "location": "Networking & Mentoring"
-    },
-    {
-        "src": "/images/footer/organizers/charith.jpg",
-        "alt": "Kasi Sai Sree Charith",
-        "name": "Kasi Sai Sree Charith",
-        "company": "Committee Member",
-        "location": "Networking & Mentoring"
-    },
-    {
-        "src": "/images/footer/organizers/sree_neha.jpg",
-        "alt": "Zampani Sree Neha",
-        "name": "Zampani Sree Neha",
-        "company": "Committee Member",
-        "location": "Networking & Mentoring"
-    }
-]` width="220px" height="280px" >}}
-
----
 
 ## Web & Digital Communications
 
@@ -243,20 +174,6 @@ linkTitle = "Organising Committee"
         "alt": "Sai Prasanth Madala",
         "name": "Sai Prasanth Madala",
         "company": "Committee Lead",
-        "location": "Web & Digital Communications"
-    },
-    {
-        "src": "/images/footer/organizers/rishi.jpg",
-        "alt": "Veda Phani Rishi",
-        "name": "Veda Phani Rishi",
-        "company": "Committee Member",
-        "location": "Web & Digital Communications"
-    },
-    {
-        "src": "/images/footer/organizers/jeevan.jpg",
-        "alt": "Jeevan",
-        "name": "Jeevan",
-        "company": "Committee Member",
         "location": "Web & Digital Communications"
     }
 ]` width="220px" height="280px" >}}

@@ -5,113 +5,85 @@ linkTitle = "Conclave Sponsors"
 +++
 
 {{< pageHero
-    title="Conclave Sponsor"
-    subtitle="Supported by the IEEE Industrial Electronics Society"
+  title="Conclave Sponsor"
+  subtitle="Supported by the IEEE Industrial Electronics Society"
 >}}
 
-# IEEE Industrial Electronics Society
+{{< featureCard title="IEEE Industrial Electronics Society" >}}
 
-<div style="max-width: 1100px; margin: 0 auto;">
+![IEEE Industrial Electronics Society](/images/ies.png "IEEE Industrial Electronics Society")
 
-  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin: 40px 0;">
+The <strong>IEEE Industrial Electronics Society (IES)</strong> is a global professional community advancing the application of electronics, electrical sciences, intelligent systems, automation, control, instrumentation, communications, computational intelligence, and power electronics in industrial and manufacturing environments.
 
-    <div style="flex: 0 0 260px; text-align: center;">
-      <img
-        src="/images/IES_IEEE.png"
-        alt="IEEE Industrial Electronics Society"
-        style="max-width: 240px; width: 100%; height: auto; margin: 0 auto;"
-      >
-    </div>
+IES supports technological innovation, professional development, knowledge exchange, research, and collaboration across academia and industry. Its technical activities address emerging areas including industrial automation, robotics, intelligent control systems, power electronics, industrial communications, flexible manufacturing, data acquisition, signal processing, vision systems, and related technologies.
 
-    <div style="flex: 1; min-width: 280px;">
+Through its worldwide community of professionals, researchers, academicians, students, and industry experts, IEEE IES contributes to the development and application of technologies that advance modern industry.
 
-      <h2>IEEE Industrial Electronics Society (IES)</h2>
+{{< /featureCard >}}
 
-      <p>
-        The <strong>IEEE Industrial Electronics Society (IES)</strong> is a
-        global professional community advancing the application of electronics,
-        electrical sciences, intelligent systems, automation, control,
-        instrumentation, communications, computational intelligence, and power
-        electronics in industrial and manufacturing environments.
-      </p>
+---
 
-      <p>
-        IES supports technological innovation, professional development,
-        knowledge exchange, research, and collaboration across academia and
-        industry. Its technical activities address emerging areas including
-        industrial automation, robotics, intelligent control systems,
-        power electronics, industrial communications, flexible manufacturing,
-        data acquisition, signal processing, vision systems, and related
-        technologies.
-      </p>
+{{< featureCard title="Supporting I4C 2026" icon="✓" >}}
 
-      <p>
-        Through its worldwide community of professionals, researchers,
-        academicians, students, and industry experts, IEEE IES contributes to
-        the development and application of technologies that advance modern
-        industry.
-      </p>
+The <strong>IEEE Industrial Electronics Society</strong> supports the <strong>IEEE IES Industrial Innovation Conclave (I4C) 2026</strong>, bringing together students, researchers, academicians, industry professionals, innovators, and technology experts for two days of knowledge sharing and collaboration.
 
-    </div>
+The conclave provides a platform to explore emerging technologies and industrial applications across:
 
-  </div>
+<ul>
+  <li><strong>Artificial Intelligence &amp; Industry 5.0</strong></li>
+  <li><strong>Industrial Automation &amp; Intelligent Control</strong></li>
+  <li><strong>Electrification &amp; Power Electronics</strong></li>
+  <li><strong>Electric Vehicles &amp; Smart Mobility</strong></li>
+  <li><strong>Renewable Energy &amp; Smart Grids</strong></li>
+  <li><strong>Green Hydrogen &amp; Fuel Cells</strong></li>
+  <li><strong>Digital Twins &amp; Industrial Systems</strong></li>
+  <li><strong>Advanced Manufacturing &amp; Industrial IoT</strong></li>
+</ul>
 
-</div>
+{{< /featureCard >}}
 
-# Supporting I4C 2026
+---
 
-The **IEEE Industrial Electronics Society** supports the
-**IEEE IES Industrial Innovation Conclave (I4C) 2026**, bringing together
-students, researchers, academicians, industry professionals, innovators,
-and technology experts for two days of knowledge sharing and collaboration.
+{{< featureCard title="IEEE IES Hyderabad Hubs & Nodes" >}}
 
-The conclave provides a platform to explore emerging technologies and
-industrial applications across:
-
-- **Artificial Intelligence & Industry 5.0**
-- **Industrial Automation & Intelligent Control**
-- **Electrification & Power Electronics**
-- **Electric Vehicles & Smart Mobility**
-- **Renewable Energy & Smart Grids**
-- **Green Hydrogen & Fuel Cells**
-- **Digital Twins & Industrial Systems**
-- **Advanced Manufacturing & Industrial IoT**
-
-# IEEE IES Hyderabad Hubs & Nodes
-
-I4C 2026 is organized through the **IEEE Industrial Electronics Society Hyderabad Hubs & Nodes**, creating a platform for meaningful interaction between academia, industry, researchers, professionals, and students.
+<div style="display:flex">
+<div>
+I4C 2026 is organized through the <strong>IEEE Industrial Electronics Society Hyderabad Hubs &amp; Nodes</strong>, creating a platform for meaningful interaction between academia, industry, researchers, professionals, and students.
 
 The event brings together participants to:
 
-- Exchange technical knowledge and industry insights
-- Explore emerging technologies
-- Connect with experts and professionals
-- Encourage Industry–Academia interaction
-- Discover research and collaboration opportunities
-- Showcase innovative technologies and solutions
-- Build professional networks
+<ul>
+  <li>Exchange technical knowledge and industry insights</li>
+  <li>Explore emerging technologies</li>
+  <li>Connect with experts and professionals</li>
+  <li>Encourage Industry–Academia interaction</li>
+  <li>Discover research and collaboration opportunities</li>
+  <li>Showcase innovative technologies and solutions</li>
+  <li>Build professional networks</li>
+</ul>
+</div>
+<img style="width:300px" src="/images/HubsandNodes_Hyd.png">
+</div>
+{{< /featureCard >}}
 
-# Connect · Collaborate · Innovate
+---
 
-The IEEE IES Industrial Innovation Conclave 2026 reflects the IES commitment to
-fostering technological innovation, professional development, knowledge
-exchange, and collaboration within the industrial electronics community.
+{{< featureCard title="Connect · Collaborate · Innovate" icon="↗" >}}
 
-**Conclave Dates:** 22–23 September 2026  
-**Venue:** Engineering Staff College of India (ESCI), Gachibowli, Hyderabad
+The <strong>IEEE IES Industrial Innovation Conclave 2026</strong> reflects the IES commitment to fostering technological innovation, professional development, knowledge exchange, and collaboration within the industrial electronics community.
+
+<strong>Conclave Dates:</strong> 22–23 September 2026
+
+<strong>Venue:</strong> Engineering Staff College of India (ESCI), Gachibowli, Hyderabad
+
+{{< /featureCard >}}
 
 ---
 
 ## Conclave Sponsor
 
-<div style="text-align: center; margin: 50px 0 30px;">
+![IEEE Industrial Electronics Society](/images/ies.png "IEEE Industrial Electronics Society")
 
-  <img
-    src="/images/IES_IEEE.png"
-    alt="IEEE Industrial Electronics Society"
-    style="max-width: 300px; width: 100%; height: auto; margin: 0 auto;"
-  >
+### IEEE Industrial Electronics Society
 
-  <h3>IEEE Industrial Electronics Society</h3>
-
-</div>
+The <strong>IEEE Industrial Electronics Society</strong> is the supporting society for the IEEE IES Industrial Innovation Conclave 2026.

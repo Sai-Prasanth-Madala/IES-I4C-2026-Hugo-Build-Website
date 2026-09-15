@@ -1,386 +1,584 @@
 {{- /*
-  I4C 2026 — Timeline News / Announcement Shortcode
+  I4C 2026 — News & Updates Timeline
 
   Usage:
 
-    {{< newsItem
-      date="2026-09-01"
-      type="announcement"
-      title="I4C 2026 Registration is Open"
-    >}}
-    Registration for IEEE IES Industrial Innovation Conclave 2026 is now open.
-    {{< /newsItem >}}
+  {{< newsItem
+    date="2026-09-02"
+    type="announcement"
+    title="I4C 2026 — Registration Closed"
+  >}}
+
+  Content goes here.
+
+  {{< /newsItem >}}
 
   Supported types:
-    update
-    announcement
-    deadline
-    call
-    warning
-
-  Params:
-    date  — required; event/update date
-    type  — optional; defaults to "update"
-    title — optional; news headline
-
-  The shortcode is intentionally content-neutral.
-  I4C 2026-specific announcements should be written in the
-  corresponding content/*.md file.
+  announcement
+  update
+  deadline
+  call
+  warning
 */ -}}
 
-{{- $date := .Get "date" }}
-{{- $type := .Get "type" | default "update" }}
-{{- $title := .Get "title" }}
+{{- $date := .Get "date" | default "" -}}
+{{- $type := lower (.Get "type" | default "update") -}}
+{{- $title := .Get "title" | default "News Update" -}}
 
-{{- $parsed := time $date }}
-{{- $pretty := $date }}
+{{- $typeLabel := "Update" -}}
 
-{{- if $parsed }}
-  {{- $pretty = $parsed.Format "02 Jan 2006" }}
-{{- end }}
+{{- if eq $type "announcement" -}}
+  {{- $typeLabel = "Announcement" -}}
+{{- else if eq $type "deadline" -}}
+  {{- $typeLabel = "Deadline" -}}
+{{- else if eq $type "call" -}}
+  {{- $typeLabel = "Call" -}}
+{{- else if eq $type "warning" -}}
+  {{- $typeLabel = "Important" -}}
+{{- end -}}
 
-<article class="news-item news-item--{{ $type }}">
 
-  <div class="news-item-meta">
+<div class="i4c-news-timeline-item i4c-news-{{ $type }}">
 
-    <time
-      class="news-item-date"
-      {{- if $parsed }}
-        datetime="{{ $parsed.Format "2006-01-02" }}"
-      {{- end }}
-    >
-      {{ $pretty }}
-    </time>
+  <!-- ========================================================
+       TIMELINE
+       ======================================================== -->
 
-    <span class="news-item-type news-item-type--{{ $type }}">
-      {{ $type }}
-    </span>
+  <div class="i4c-news-timeline">
+
+    <span class="i4c-news-dot"></span>
 
   </div>
 
-  <div class="news-item-body">
 
-    {{- with $title }}
-      <h3 class="news-item-title">{{ . }}</h3>
-    {{- end }}
+  <!-- ========================================================
+       NEWS CONTENT
+       ======================================================== -->
 
-    <div class="news-item-content">
+  <div class="i4c-news-entry">
+
+    <!-- DATE -->
+
+    <div class="i4c-news-date">
+
+      {{- if $date -}}
+        {{ time.Format "02 Jan 2006" (time.AsTime $date) }}
+      {{- end -}}
+
+    </div>
+
+
+    <!-- TYPE -->
+
+    <div class="i4c-news-type">
+      {{ $typeLabel }}
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h3 class="i4c-news-title">
+      {{ $title }}
+    </h3>
+
+
+    <!-- CONTENT -->
+
+    <div class="i4c-news-body">
       {{ .Inner | .Page.RenderString }}
     </div>
 
   </div>
 
-</article>
+</div>
+
 
 <style>
-  /* ============================================================
-     I4C 2026 NEWS ITEM
-     ============================================================ */
 
-  article .news-item {
-    display: grid;
-    grid-template-columns: 8rem minmax(0, 1fr);
+/* ============================================================
+   I4C 2026 — NEWS TIMELINE
+   ============================================================ */
 
-    gap: 1.25rem;
+article .i4c-news-timeline-item {
 
-    margin: 0;
+  position: relative;
 
-    padding: 1.1rem 0;
+  display: grid;
 
-    border-bottom: 1px solid var(--SITE-BORDER, #e2e8f0);
+  grid-template-columns: 28px minmax(0, 1fr);
 
-    position: relative;
+  column-gap: 1.25rem;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0 0 2.5rem;
+
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   TIMELINE COLUMN
+   ============================================================ */
+
+article .i4c-news-timeline {
+
+  position: relative;
+
+  width: 28px;
+
+  height: 100%;
+
+  min-height: 100px;
+
+}
+
+
+/* ============================================================
+   VERTICAL LINE
+   ============================================================ */
+
+article .i4c-news-timeline::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 8px;
+
+  bottom: -2.5rem;
+
+  left: 50%;
+
+  width: 2px;
+
+  background: #dbe4ee;
+
+  transform: translateX(-50%);
+}
+
+
+/* ============================================================
+   DOT
+   ============================================================ */
+
+article .i4c-news-dot {
+
+  position: absolute;
+
+  top: 5px;
+  left: 50%;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #145da0;
+
+  border: 3px solid #ffffff;
+
+  box-shadow:
+    0 0 0 2px #145da0;
+
+  transform: translateX(-50%);
+
+  z-index: 2;
+
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+article .i4c-news-entry {
+
+  min-width: 0;
+
+  padding: 0 0 0.25rem;
+}
+
+
+/* ============================================================
+   DATE
+   ============================================================ */
+
+article .i4c-news-date {
+
+  margin: 0 0 0.4rem;
+
+  color: #64748b;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   TYPE
+   ============================================================ */
+
+article .i4c-news-type {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  margin-bottom: 0.5rem;
+
+  padding: 0.28rem 0.65rem;
+
+  border-radius: 999px;
+
+  background: #eaf2fb;
+
+  color: #145da0;
+
+  font-size: 0.66rem;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+article .i4c-news-title {
+
+  margin: 0;
+
+  color: #0a1e3d;
+
+  font-size: 1.2rem;
+
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+article .i4c-news-body {
+
+  margin-top: 0.55rem;
+
+  max-width: 850px;
+
+  color: #475569;
+
+  font-size: 0.92rem;
+
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   BODY PARAGRAPHS
+   ============================================================ */
+
+article .i4c-news-body p {
+
+  margin: 0 0 0.65rem;
+
+  text-align: left !important;
+}
+
+article .i4c-news-body p:last-child {
+
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+article .i4c-news-body a {
+
+  color: #145da0 !important;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(20, 93, 160, 0.3);
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+article .i4c-news-body a:hover {
+
+  color: #0a1e3d !important;
+
+  border-bottom-color: #0a1e3d;
+}
+
+
+/* ============================================================
+   STRONG TEXT
+   ============================================================ */
+
+article .i4c-news-body strong {
+
+  color: #0a1e3d;
+
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+
+article .i4c-news-body ul,
+article .i4c-news-body ol {
+
+  margin: 0.6rem 0;
+
+  padding-left: 1.25rem;
+}
+
+article .i4c-news-body li {
+
+  margin: 0.25rem 0;
+}
+
+
+/* ============================================================
+   ANNOUNCEMENT
+   ============================================================ */
+
+article .i4c-news-announcement .i4c-news-dot {
+
+  background: #145da0;
+
+  box-shadow:
+    0 0 0 2px #145da0;
+}
+
+article .i4c-news-announcement .i4c-news-type {
+
+  background: #eaf2fb;
+
+  color: #145da0;
+}
+
+
+/* ============================================================
+   UPDATE
+   ============================================================ */
+
+article .i4c-news-update .i4c-news-dot {
+
+  background: #17a2a0;
+
+  box-shadow:
+    0 0 0 2px #17a2a0;
+}
+
+article .i4c-news-update .i4c-news-type {
+
+  background: #e7f7f6;
+
+  color: #147f7c;
+}
+
+
+/* ============================================================
+   DEADLINE
+   ============================================================ */
+
+article .i4c-news-deadline .i4c-news-dot {
+
+  background: #d97706;
+
+  box-shadow:
+    0 0 0 2px #d97706;
+}
+
+article .i4c-news-deadline .i4c-news-type {
+
+  background: #fff4df;
+
+  color: #a85d00;
+}
+
+
+/* ============================================================
+   CALL
+   ============================================================ */
+
+article .i4c-news-call .i4c-news-dot {
+
+  background: #7c3aed;
+
+  box-shadow:
+    0 0 0 2px #7c3aed;
+}
+
+article .i4c-news-call .i4c-news-type {
+
+  background: #f1eafd;
+
+  color: #6d28d9;
+}
+
+
+/* ============================================================
+   WARNING
+   ============================================================ */
+
+article .i4c-news-warning .i4c-news-dot {
+
+  background: #dc2626;
+
+  box-shadow:
+    0 0 0 2px #dc2626;
+}
+
+article .i4c-news-warning .i4c-news-type {
+
+  background: #fef0f0;
+
+  color: #b91c1c;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  article .i4c-news-timeline-item {
+
+    grid-template-columns: 22px minmax(0, 1fr);
+
+    column-gap: 1rem;
+
+    padding-bottom: 2rem;
   }
 
-  article .news-item:last-child {
-    border-bottom: 0;
+  article .i4c-news-timeline {
+
+    width: 22px;
   }
 
+  article .i4c-news-dot {
 
-  /* ============================================================
-     DATE / META
-     ============================================================ */
-
-  article .news-item-meta {
-    display: flex;
-    flex-direction: column;
-
-    gap: 0.4rem;
-
-    padding-top: 0.15rem;
-    padding-right: 1rem;
-
-    border-right: 1px solid var(--SITE-BORDER, #e2e8f0);
-
-    position: relative;
+    width: 12px;
+    height: 12px;
   }
 
+  article .i4c-news-title {
 
-  /* Timeline marker */
-
-  article .news-item-meta::after {
-    content: "";
-
-    position: absolute;
-
-    right: -5px;
-    top: 0.45rem;
-
-    width: 9px;
-    height: 9px;
-
-    border-radius: 50%;
-
-    background: #ffffff;
-
-    border: 2px solid var(
-      --SITE-BRAND-BLUE,
-      #0082ba
-    );
-
-    box-sizing: border-box;
-
-    z-index: 2;
+    font-size: 1.08rem;
   }
 
+  article .i4c-news-body {
 
-  /* ============================================================
-     DATE
-     ============================================================ */
-
-  article .news-item-date {
-    font-size: 0.82rem;
-
-    line-height: 1.3;
-
-    font-weight: 600;
-
-    color: var(
-      --SITE-HEADING,
-      #0f172a
-    );
-
-    white-space: nowrap;
+    font-size: 0.9rem;
   }
 
+}
 
-  /* ============================================================
-     TYPE BADGE
-     ============================================================ */
 
-  article .news-item-type {
-    display: inline-flex;
+/* ============================================================
+   MOBILE
+   ============================================================ */
 
-    align-items: center;
-    justify-content: center;
+@media (max-width: 480px) {
 
-    width: max-content;
+  article .i4c-news-timeline-item {
 
-    padding: 0.18rem 0.5rem;
+    grid-template-columns: 18px minmax(0, 1fr);
 
-    border-radius: 999px;
+    column-gap: 0.8rem;
 
-    font-size: 0.65rem;
-
-    line-height: 1.25;
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.05em;
+    padding-bottom: 1.75rem;
   }
 
+  article .i4c-news-timeline {
 
-  /* Update */
-
-  article .news-item-type--update {
-    background: rgba(100, 116, 139, 0.1);
-
-    color: #475569;
-
-    border: 1px solid rgba(100, 116, 139, 0.25);
+    width: 18px;
   }
 
+  article .i4c-news-timeline::before {
 
-  /* Announcement */
-
-  article .news-item-type--announcement {
-    background: rgba(0, 130, 186, 0.1);
-
-    color: #0069a1;
-
-    border: 1px solid rgba(0, 130, 186, 0.25);
+    width: 2px;
   }
 
+  article .i4c-news-dot {
 
-  /* Deadline */
+    width: 11px;
+    height: 11px;
 
-  article .news-item-type--deadline {
-    background: rgba(234, 88, 12, 0.1);
-
-    color: #c2410c;
-
-    border: 1px solid rgba(234, 88, 12, 0.25);
+    border-width: 2px;
   }
 
+  article .i4c-news-date {
 
-  /* Call */
-
-  article .news-item-type--call {
-    background: rgba(22, 163, 74, 0.1);
-
-    color: #15803d;
-
-    border: 1px solid rgba(22, 163, 74, 0.25);
+    font-size: 0.7rem;
   }
 
+  article .i4c-news-type {
 
-  /* Warning */
+    font-size: 0.6rem;
 
-  article .news-item-type--warning {
-    background: rgba(220, 38, 38, 0.1);
-
-    color: #b91c1c;
-
-    border: 1px solid rgba(220, 38, 38, 0.25);
+    padding: 0.25rem 0.55rem;
   }
 
+  article .i4c-news-title {
 
-  /* ============================================================
-     TIMELINE MARKER COLOURS
-     ============================================================ */
-
-  article .news-item--announcement .news-item-meta::after {
-    border-color: #0069a1;
+    font-size: 1rem;
   }
 
-  article .news-item--deadline .news-item-meta::after {
-    border-color: #c2410c;
-  }
+  article .i4c-news-body {
 
-  article .news-item--call .news-item-meta::after {
-    border-color: #15803d;
-  }
-
-  article .news-item--warning .news-item-meta::after {
-    border-color: #b91c1c;
-  }
-
-
-  /* ============================================================
-     CONTENT
-     ============================================================ */
-
-  article .news-item-body {
-    min-width: 0;
-
-    padding-top: 0.05rem;
-
-    color: var(
-      --SITE-TEXT,
-      #334155
-    );
-
-    font-size: 0.94rem;
+    font-size: 0.86rem;
 
     line-height: 1.6;
   }
 
+}
 
-  /* ============================================================
-     TITLE
-     ============================================================ */
 
-  article .news-item-title {
-    margin: 0 0 0.4rem;
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 
-    font-size: 1.05rem;
+@media (prefers-reduced-motion: reduce) {
 
-    line-height: 1.35;
+  article .i4c-news-body a {
 
-    font-weight: 650;
-
-    color: var(
-      --SITE-HEADING,
-      #0f172a
-    );
+    transition: none;
   }
 
+}
 
-  /* ============================================================
-     BODY CONTENT
-     ============================================================ */
-
-  article .news-item-content > :first-child {
-    margin-top: 0;
-  }
-
-  article .news-item-content > :last-child {
-    margin-bottom: 0;
-  }
-
-  article .news-item-content a {
-    color: var(
-      --SITE-BRAND-BLUE,
-      #0082ba
-    );
-  }
-
-
-  /* ============================================================
-     MOBILE
-     ============================================================ */
-
-  @media (max-width: 640px) {
-
-    article .news-item {
-      grid-template-columns: 1fr;
-
-      gap: 0.45rem;
-
-      padding: 1rem 0;
-    }
-
-
-    article .news-item-meta {
-      flex-direction: row;
-
-      align-items: center;
-
-      gap: 0.6rem;
-
-      padding: 0 0 0.25rem;
-
-      border-right: 0;
-    }
-
-
-    article .news-item-meta::after {
-      display: none;
-    }
-
-
-    article .news-item-date {
-      font-size: 0.78rem;
-    }
-
-
-    article .news-item-type {
-      font-size: 0.62rem;
-
-      padding: 0.16rem 0.45rem;
-    }
-
-
-    article .news-item-title {
-      font-size: 1rem;
-    }
-
-
-    article .news-item-body {
-      font-size: 0.9rem;
-    }
-
-  }
 </style>

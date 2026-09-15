@@ -15,7 +15,7 @@
 author.name = "IEEE IES Industrial Innovation Conclave 2026"
 
 # Social media image of the site.
-images = ["images/banner.jpg"]
+images = ["images/Event-Poster.jpeg"]
 
 # The description of the site lives in:
 # content/_index.en.md
@@ -38,7 +38,7 @@ social.twitter = ""
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Logo shown at the top of the sidebar menu.
-logo = { src = "/images/HubsandNodes_Logo.jpg" }
+logo = { src = "/images/HubsandNodes_Hyd.png" }
 
 # Theme color variant.
 themeVariant = [

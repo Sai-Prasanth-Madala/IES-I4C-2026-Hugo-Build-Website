@@ -43,7 +43,7 @@
   */ -}}
 
   <div id="R-sidebar-search">
-    {{ partial "search.html" . }}
+    {{- partial "dependencies.html" (dict "page" . "location" "search") }}
   </div>
 
   {{- /*

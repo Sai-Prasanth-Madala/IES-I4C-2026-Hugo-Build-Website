@@ -5,162 +5,303 @@ linkTitle = "For Attendees"
 +++
 
 {{< pageHero
-    title="For Attendees"
-    subtitle="Plan your visit to IEEE IES Industrial Innovation Conclave 2026 in Hyderabad."
+  title="For Attendees"
+  subtitle="Plan your visit to IEEE IES Industrial Innovation Conclave 2026 in Hyderabad."
 >}}
 
-# Travel Information
+## Travel Information
 
-IEEE IES Industrial Innovation Conclave 2026 will be held at:
+{{< featureCard title="Conference Venue" >}}
 
-**Engineering Staff College of India (ESCI)**  
+The <strong>IEEE IES Industrial Innovation Conclave 2026</strong> will be held at:
+
+<strong>Engineering Staff College of India (ESCI)</strong><br>
 Gachibowli, Hyderabad, Telangana, India
 
 The venue is located in the Gachibowli area, one of Hyderabad's major technology and business hubs, with convenient access to major transport facilities, hotels, restaurants and other city attractions.
 
+{{< /featureCard >}}
+
 ![Conference venue](/images/slideshow/Conclave-Venue.png?width=800px&shadow&lightbox "Engineering Staff College of India, Hyderabad")
+
+### Find the Venue
+
+<iframe
+  src="https://www.google.com/maps?q=Engineering+Staff+College+of+India,+Gachibowli,+Hyderabad,+Telangana+500032&output=embed"
+  width="100%"
+  height="450"
+  style="border:0; border-radius:10px; margin:1rem 0 2rem; box-shadow:0 4px 16px rgba(15,23,42,0.10);"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
 
 ### Reaching the Conclave Venue
 
-For detailed venue information, directions and map navigation, please refer to the **Conclave Venue** page.
+{{< featureCard title="Venue & Navigation" >}}
 
-**Venue:** Engineering Staff College of India (ESCI)  
-**Location:** Gachibowli, Hyderabad, Telangana, India
+For detailed venue information, directions and map navigation, please refer to the <strong>Conclave Venue</strong> page.
+
+<strong>Venue:</strong> Engineering Staff College of India (ESCI)<br>
+<strong>Location:</strong> Gachibowli, Hyderabad, Telangana, India
 
 Participants are advised to plan their journey in advance and allow sufficient time for travel to the venue.
 
-### Reach Hyderabad by Air
+{{< /featureCard >}}
 
-Hyderabad is well connected to major cities across India and several international destinations through **Rajiv Gandhi International Airport (HYD)**.
+---
+
+## Reach Hyderabad by Air
+
+{{< featureCard title="Rajiv Gandhi International Airport" icon="✈" >}}
+
+Hyderabad is well connected to major cities across India and several international destinations through <strong>Rajiv Gandhi International Airport (HYD)</strong>.
 
 The airport is located in Shamshabad, approximately 30–35 km from the ESCI campus, depending on the route and traffic conditions.
 
 From the airport, attendees can reach Gachibowli by:
 
-- Airport taxis and app-based cab services
-- Pre-booked private transportation
-- Other available airport transport services
+<ul>
+  <li>Airport taxis and app-based cab services</li>
+  <li>Pre-booked private transportation</li>
+  <li>Other available airport transport services</li>
+</ul>
 
 Travel time may vary depending on traffic conditions, particularly during peak hours.
 
-### Reach Hyderabad by Train
+{{< /featureCard >}}
+
+---
+
+## Reach Hyderabad by Train
+
+{{< featureCard title="Major Railway Stations" icon="🚉" >}}
 
 Hyderabad has several major railway stations with connections to cities across India.
 
 Major railway stations include:
 
-- **Secunderabad Junction**
-- **Hyderabad Deccan (Nampally)**
-- **Kacheguda Railway Station**
+<ul>
+  <li><strong>Secunderabad Junction</strong></li>
+  <li><strong>Hyderabad Deccan (Nampally)</strong></li>
+  <li><strong>Kacheguda Railway Station</strong></li>
+</ul>
 
 From the railway station, attendees can continue to Gachibowli using taxis, app-based cab services or local public transportation.
 
-### Local Transportation
-
-Gachibowli is well connected to different parts of Hyderabad through road transport and app-based mobility services.
-
-Attendees can use:
-
-- App-based cab services
-- Auto-rickshaws
-- Local buses
-- Private taxis
-- Metro rail combined with road transport, where convenient
-
-For the final journey to ESCI, attendees are encouraged to check the route and traffic conditions before starting their trip.
+{{< /featureCard >}}
 
 ---
 
-# Accommodation
+## Local Transportation
+
+{{< cards columns=2 >}}
+
+{{< card title="Getting Around Hyderabad" >}}
+
+Gachibowli is well connected to different parts of Hyderabad through road transport and app-based mobility services.
+
+{{< /card >}}
+
+{{< card title="Available Options" >}}
+
+<ul>
+  <li>App-based cab services</li>
+  <li>Auto-rickshaws</li>
+  <li>Local buses</li>
+  <li>Private taxis</li>
+  <li>Metro rail combined with road transport, where convenient</li>
+</ul>
+
+{{< /card >}}
+
+{{< /cards >}}
+
+{{< featureCard title="Travel Tip" >}}
+
+For the final journey to ESCI, attendees are encouraged to check the route and traffic conditions before starting their trip.
+
+{{< /featureCard >}}
+
+---
+
+## Accommodation
+
+{{< featureCard title="Where to Stay" icon="🏠" >}}
 
 Hyderabad offers a wide range of accommodation options around Gachibowli and nearby areas.
 
 For convenient access to the conference venue, attendees may consider staying in or around:
 
-- **Gachibowli**
-- **Financial District**
-- **Nanakramguda**
-- **Kondapur**
-- **HITEC City**
+<ul>
+  <li><strong>Gachibowli</strong></li>
+  <li><strong>Financial District</strong></li>
+  <li><strong>Nanakramguda</strong></li>
+  <li><strong>Kondapur</strong></li>
+  <li><strong>HITEC City</strong></li>
+</ul>
 
-Accommodation options include:
+{{< /featureCard >}}
 
-- Hotels and business hotels
-- Budget hotels
-- Serviced apartments
-- Guest houses
-- Other short-stay accommodation options
+{{< cards columns=2 >}}
+
+{{< card title="Accommodation Options" >}}
+
+<ul>
+  <li>Hotels and business hotels</li>
+  <li>Budget hotels</li>
+  <li>Serviced apartments</li>
+  <li>Guest houses</li>
+  <li>Other short-stay accommodation options</li>
+</ul>
+
+{{< /card >}}
+
+{{< card title="Plan Early" >}}
 
 Attendees are encouraged to make accommodation arrangements early, particularly because September is an active period for conferences, business events and academic activities in Hyderabad.
 
-> **Note:** The conference organizers do not guarantee hotel room availability unless a specific accommodation arrangement is announced through the official conference channels.
+{{< /card >}}
+
+{{< /cards >}}
+
+{{< featureCard title="Important Note" >}}
+
+The conference organizers do not guarantee hotel room availability unless a specific accommodation arrangement is announced through the official conference channels.
+
+{{< /featureCard >}}
 
 ---
 
-# Nearby Places & Essentials
+## Nearby Places & Essentials
+
+{{< featureCard title="Everything You Need Nearby" >}}
 
 The Gachibowli area provides convenient access to a variety of restaurants, shopping centres, hospitals, pharmacies and other essential services.
 
 Attendees can find several dining and everyday convenience options in and around:
 
-- Gachibowli
-- Kondapur
-- Financial District
-- HITEC City
+<ul>
+  <li>Gachibowli</li>
+  <li>Kondapur</li>
+  <li>Financial District</li>
+  <li>HITEC City</li>
+</ul>
 
 For transportation and navigation, attendees are encouraged to use their preferred map and navigation applications.
 
+{{< /featureCard >}}
+
 ---
 
-# Explore Hyderabad
+## Explore Hyderabad
+
+{{< featureCard title="Discover Hyderabad" >}}
 
 Hyderabad is a city where technology, history and culture come together. Attendees who have time before or after the conclave can explore some of the city's well-known attractions.
 
-Popular places to explore include:
+{{< /featureCard >}}
 
-- **Charminar**
-- **Golconda Fort**
-- **Hussain Sagar Lake**
-- **Birla Mandir**
-- **Salar Jung Museum**
-- **Nehru Zoological Park**
-- **Qutb Shahi Tombs**
+{{< cards columns=3 >}}
 
-These locations offer opportunities to experience Hyderabad's heritage, architecture and culture alongside the technical and professional experience of I4C 2026.
+{{< card title="Charminar" >}}
 
-{{< slideshow path="images/slideshow" largeText="Explore Hyderabad · Connect · Collaborate · Innovate" smallText="IEEE IES Industrial Innovation Conclave 2026 · 22–23 September 2026" >}}
+Experience one of Hyderabad's most iconic historical landmarks.
+
+{{< /card >}}
+
+{{< card title="Golconda Fort" >}}
+
+Explore the historic fort and its remarkable architecture.
+
+{{< /card >}}
+
+{{< card title="Hussain Sagar Lake" >}}
+
+Visit the famous lake connecting Hyderabad and Secunderabad.
+
+{{< /card >}}
+
+{{< card title="Birla Mandir" >}}
+
+Explore the well-known hilltop temple overlooking Hyderabad.
+
+{{< /card >}}
+
+{{< card title="Salar Jung Museum" >}}
+
+Discover one of India's notable collections of art and historical artefacts.
+
+{{< /card >}}
+
+{{< card title="Nehru Zoological Park" >}}
+
+Explore one of Hyderabad's major zoological parks.
+
+{{< /card >}}
+
+{{< card title="Qutb Shahi Tombs" >}}
+
+Visit the historic tomb complex showcasing distinctive Indo-Islamic architecture.
+
+{{< /card >}}
+
+{{< /cards >}}
+
+{{< featureCard title="Experience Hyderabad" >}}
+
+These locations offer opportunities to experience Hyderabad's heritage, architecture and culture alongside the technical and professional experience of <strong>I4C 2026</strong>.
+
+{{< /featureCard >}}
 
 ---
 
-# Conference Venue
+## Conclave Venue
 
-**Engineering Staff College of India (ESCI)**  
-Gachibowli, Hyderabad, Telangana, India
+{{< featureCard title="Engineering Staff College of India (ESCI)" icon="📍" >}}
+
+<strong>Gachibowli, Hyderabad, Telangana, India</strong>
 
 The venue will host the two-day conclave featuring:
 
-- Expert Talks & Keynotes
-- Industry Talks
-- Hands-on Workshop
-- Panel Discussion
-- Technology Exhibition & Industry Expo
-- Networking & Speed Mentoring
+<ul>
+  <li>Expert Talks & Keynotes</li>
+  <li>Industry Talks</li>
+  <li>Hands-on Workshop</li>
+  <li>Panel Discussion</li>
+  <li>Technology Exhibition & Industry Expo</li>
+  <li>Networking & Speed Mentoring</li>
+</ul>
 
-**Conference Dates:** 22–23 September 2026
+<strong>Conclave Dates:</strong> 22–23 September 2026
+
+{{< /featureCard >}}
 
 ---
 
-# Plan Your Visit
+## Plan Your Visit
+
+{{< featureCard title="Make the Most of I4C 2026" icon="✓" >}}
 
 To make the most of your I4C 2026 experience:
 
-- Plan your travel to Hyderabad in advance.
-- Book accommodation early.
-- Check your route to ESCI before the event.
-- Allow additional travel time during peak traffic hours.
-- Keep your conference participation details readily available.
-- Explore the technology, networking and industry opportunities available during the conclave.
+<ul>
+  <li>Plan your travel to Hyderabad in advance.</li>
+  <li>Book accommodation early.</li>
+  <li>Check your route to ESCI before the event.</li>
+  <li>Allow additional travel time during peak traffic hours.</li>
+  <li>Keep your conclave participation details readily available.</li>
+  <li>Explore the technology, networking and industry opportunities available during the conclave.</li>
+</ul>
+
+{{< /featureCard >}}
+
+---
 
 ## Connect · Collaborate · Innovate
 
-We look forward to welcoming students, researchers, academicians, industry professionals and innovators to **IEEE IES Industrial Innovation Conclave 2026** in Hyderabad.
+{{< featureCard title="Welcome to I4C 2026" >}}
+
+We look forward to welcoming students, researchers, academicians, industry professionals and innovators to <strong>IEEE IES Industrial Innovation Conclave 2026</strong> in Hyderabad.
+
+{{< /featureCard >}}

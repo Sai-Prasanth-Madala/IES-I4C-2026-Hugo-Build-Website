@@ -4,26 +4,8 @@ title = "IEEE IES Industrial Innovation Conclave (I4C) 2026"
 description = "A two-day forum bringing together industry leaders, researchers, experts, innovators, and students to explore emerging technologies and foster meaningful collaboration across electrification, automation, AI, renewable energy, and smart mobility."
 +++
 
-{{< popup
-    id="i4c-2026-registration"
-    title="Registration is Open!"
-    showOnce="false"
-    delay="1800"
->}}
-Join the **IEEE IES Industrial Innovation Conclave (I4C) 2026** and be part of two days of ideas, innovation, technology, and collaboration.
-
-- Conclave dates: **22–23 September 2026**
-- Venue: **Engineering Staff College of India (ESCI), Gachibowli, Hyderabad**
-- Format: **Talks · Workshops · Expo**
-
-[Register now →](/register/) &nbsp;·&nbsp; [View event details →](/about/)
-{{< /popup >}}
-
-{{< slideshow
-    path="images/slideshow"
-    largeText="Engineering Staff College of India, Hyderabad"
-    smallText="22–23 September 2026"
->}}
+{{< registrationMarquee >}}
+{{< pageHero >}}
 
 ## Advancing Industrial Innovation Through Technology
 
@@ -78,12 +60,46 @@ We look forward to welcoming you to **Hyderabad for I4C 2026**.
 
 ### Event Details
 
-**IEEE IES Industrial Innovation Conclave (I4C) 2026**
+{{< card >}}
 
-**Date:** 22–23 September 2026  
-**Venue:** Engineering Staff College of India (ESCI), Gachibowli, Hyderabad, Telangana, India  
-**Format:** Talks · Workshops · Expo  
-**Organized by:** IEEE Industrial Electronics Society Hyderabad Hubs & Nodes
+<div class="i4c-event-details">
+
+  <div class="i4c-event-poster">
+    <img
+      src="/images/Event-Poster.jpeg"
+      alt="IEEE IES Industrial Innovation Conclave 2026 poster"
+    >
+  </div>
+
+  <div class="i4c-event-info">
+
+    <h3>IEEE IES Industrial Innovation Conclave (I4C) 2026</h3>
+
+    <div class="i4c-event-item">
+      <strong>Date:</strong>
+      <span>22–23 September 2026</span>
+    </div>
+
+    <div class="i4c-event-item">
+      <strong>Venue:</strong>
+      <span>Engineering Staff College of India (ESCI), Gachibowli, Hyderabad, Telangana, India</span>
+    </div>
+
+    <div class="i4c-event-item">
+      <strong>Format:</strong>
+      <span>Talks · Workshops · Expo</span>
+    </div>
+
+    <div class="i4c-event-item">
+      <strong>Organized by:</strong>
+      <span>IEEE Industrial Electronics Society Hyderabad Hubs &amp; Nodes</span>
+    </div>
+
+  </div>
+
+</div>
+
+{{< /card >}}
 
 See you at **I4C 2026**!
 

@@ -111,7 +111,7 @@ defaultContentLanguage = "en"
   [languages.en]
     # `title` falls back to the top-level title above — no need to duplicate it.
     weight = 1
-    languageName = "English"
+    label = "English"
     [languages.en.params]
       landingPageName = "Home"
 

@@ -12,12 +12,6 @@ Stay updated with the latest announcements, programme updates, participation
 information, and important news related to **IEEE IES Industrial Innovation
 Conclave (I4C) 2026**.
 
-{{< newsItem date="2026-09-02" type="announcement" title="I4C 2026 — Registration is Open" >}}
-Participation for **IEEE IES Industrial Innovation Conclave 2026** is now open. Registration is **completely free** for participants.
-
-The **Willingness / Expression of Interest Form** serves as the final participation form. **No spot registrations will be accepted**, so participants are requested to complete the form in advance.
-[Register / Express Your Interest](../registration/)
-{{< /newsItem >}}
 
 {{< newsItem date="2026-09-02" type="announcement" title="I4C 2026 Programme Announced" >}}
 The two-day programme for **22–23 September 2026** features expert talks,
@@ -25,8 +19,15 @@ industry sessions, a keynote address, panel discussion, hands-on workshop,
 networking and speed mentoring, along with the **Technology Exhibition &
 Industry Expo**.
 
-[View the Conference Programme](../program/)
+[View the Conclave Programme](../program/)
 {{< /newsItem >}}
+
+{{< newsItem date="2026-09-02" type="announcement" title="I4C 2026 — Registration is Open" >}}
+Participation for **IEEE IES Industrial Innovation Conclave 2026** is now open. Registration is **completely free** for participants.
+
+The **Willingness / Expression of Interest Form** serves as the final participation form. **No spot registrations will be accepted**, so participants are requested to complete the form in advance.
+{{< /newsItem >}}
+
 
 {{< newsItem date="2026-09-02" type="update" title="Industry Talks & Expert Sessions" >}}
 I4C 2026 brings together experts from industry, academia and research to
@@ -66,14 +67,22 @@ research connections.
 We look forward to welcoming you to **Hyderabad** for I4C 2026.
 {{< /newsItem >}}
 
+{{< newsItem date="2026-09-08" type="announcement" title="I4C 2026 — Registration Closed" >}}
+
+Registration for the **IEEE IES Industrial Innovation Conclave 2026** is now officially **closed**.
+
+Thank you to everyone who expressed their interest and registered for **I4C 2026**. We look forward to welcoming the registered participants to the conclave on **22–23 September 2026** at the **Engineering Staff College of India (ESCI), Gachibowli, Hyderabad**.
+
+**Please note:** No further registrations or spot registrations will be accepted.
+
+{{< /newsItem >}}
+
 ---
 
 ### Stay Updated
 
-For participation-related questions and other conference enquiries, please
+For participation-related questions and other conclave enquiries, please
 contact:
 
 **ieshubsandnodes.hyd@gmail.com**
 
-Follow the official conference channels for further announcements and
-programme updates.

@@ -1,49 +1,9 @@
-{{- /*
+{{/*
   I4C 2026 — Animated Page Hero
 
-  The hero automatically uses all JPG/JPEG/PNG images found in:
-
-    static/images/slideshow/
-
-  Current I4C 2026 images:
-
-    buddha-statue-hyd.jpg
-    Charminar.jpeg
-    Birla Mandir.jpg
-    Nehru-Zoological-Park.jpg
-
-  Usage:
-
-    {{< pageHero
-      title="IEEE IES Industrial Innovation Conclave 2026"
-      subtitle="Advancing Electrification, Automation, AI, Renewable Energy & Smart Mobility"
-      cta="Willingness Form"
-      cta_url="https://docs.google.com/forms/d/e/1FAIpQLScF8Q1hEmqXrXALNGPCnLkEq8-RKQP8jCcERgl6EToDsxq9Ag/viewform"
-      align="center"
-    >}}
-
-  Parameters:
-
-    title
-      — main hero heading
-
-    subtitle
-      — supporting description
-
-    cta
-      — optional button text
-
-    cta_url
-      — optional button URL
-
-    align
-      — "left" or "center"
-      — defaults to "center"
-
-  Background images are automatically discovered from
-  static/images/slideshow/.
-*/ -}}
-
+  Automatically loads JPG/JPEG/PNG images from:
+  static/images/slideshow/
+*/}}
 
 {{- $title := .Get "title" }}
 {{- $subtitle := .Get "subtitle" }}
@@ -55,33 +15,25 @@
 {{- $validExtensions := slice ".jpg" ".jpeg" ".png" }}
 
 {{- $files := readDir (printf "static/%s" $imagePath) }}
-
 {{- $images := slice }}
 
 {{- range $files }}
-
   {{- $ext := lower (path.Ext .Name) }}
-
   {{- if in $validExtensions $ext }}
-
     {{- $images = $images | append . }}
-
   {{- end }}
-
 {{- end }}
-
 
 <section
   class="i4c-page-hero i4c-page-hero--{{ $align }}"
   data-hero
 >
 
-
   <!-- ==========================================================
        HERO BACKGROUND SLIDES
        ========================================================== -->
 
-  <div class="i4c-hero-background" aria-hidden="true">
+  <div class="i4c-hero-background">
 
     {{- range $index, $image := $images }}
 
@@ -89,7 +41,6 @@
         class="i4c-hero-background-slide{{ if eq $index 0 }} is-active{{ end }}"
         data-hero-slide
       >
-
         <img
           src="{{ printf "/%s/%s" $imagePath $image.Name | relURL }}"
           alt=""
@@ -99,16 +50,50 @@
             loading="lazy"
           {{ end }}
         >
-
       </div>
 
     {{- end }}
+
+    <!-- Location + Date -->
+    <div class="i4c-page-hero-meta">
+
+      <div class="i4c-page-hero-location">
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 2.5C7.3 2.5 3.5 6.3 3.5 11C3.5 16.8 12 22 12 22S20.5 16.8 20.5 11C20.5 6.3 16.7 2.5 12 2.5Z"
+            fill="#EF4444"
+          />
+          <circle
+            cx="12"
+            cy="11"
+            r="3.5"
+            fill="white"
+          />
+        </svg>
+
+        <span>Hyderabad, India</span>
+
+      </div>
+
+      <div class="i4c-page-hero-date">
+        <span>22-23 September 2026</span>
+      </div>
+
+    </div>
 
   </div>
 
 
   <!-- ==========================================================
-       HERO OVERLAY
+       LIGHT IMAGE OVERLAY
        ========================================================== -->
 
   <div class="i4c-hero-overlay"></div>
@@ -128,7 +113,6 @@
 
     {{- end }}
 
-
     {{- with $subtitle }}
 
       <p class="i4c-page-hero-subtitle">
@@ -136,7 +120,6 @@
       </p>
 
     {{- end }}
-
 
     {{- if and $cta $ctaUrl }}
 
@@ -149,9 +132,7 @@
           class="i4c-page-hero-cta-button"
         >
           {{ $cta }}
-
           <span aria-hidden="true">↗</span>
-
         </a>
 
       </div>
@@ -162,7 +143,7 @@
 
 
   <!-- ==========================================================
-       BACKGROUND SLIDE INDICATORS
+       SLIDE INDICATORS
        ========================================================== -->
 
   {{- if gt (len $images) 1 }}
@@ -185,606 +166,572 @@
 
   {{- end }}
 
-
 </section>
 
 
 <style>
 
-  /* ============================================================
-     I4C 2026 — HERO
-     ============================================================ */
+/* ============================================================
+   HERO CONTAINER
+   ============================================================ */
+
+article .i4c-page-hero {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+
+  margin: 0 0 2rem;
+  padding: 3rem 2rem;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #0f172a;
+  color: #fff;
+
+  isolation: isolate;
+}
+
+
+/* ============================================================
+   SLIDESHOW BACKGROUND
+   ============================================================ */
+
+article .i4c-hero-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+}
+
+
+/* Individual slide */
+
+article .i4c-hero-background-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+
+/* Active slide */
+
+article .i4c-hero-background-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+
+  z-index: 1;
+}
+
+
+/* Image */
+
+article .i4c-hero-background-slide img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ============================================================
+   LIGHT OVERLAY
+   ============================================================ */
+
+article .i4c-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  background: rgba(15, 23, 42, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   LOCATION + DATE
+   ============================================================ */
+
+article .i4c-page-hero-meta {
+  position: absolute !important;
+
+  top: 1.5rem !important;
+  left: 1.5rem !important;
+
+  z-index: 20 !important;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+  padding: 0.7rem 0.95rem;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  border-radius: 6px;
+
+  color: #0f172a;
+
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.15);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  pointer-events: none;
+}
+
+
+article .i4c-page-hero-location {
+  display: flex;
+  align-items: center;
+
+  gap: 0.45rem;
+
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+
+article .i4c-page-hero-location svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+
+article .i4c-page-hero-date {
+  font-size: 0.92rem;
+  font-weight: 550;
+}
+
+
+/* ============================================================
+   HERO CONTENT
+   ============================================================ */
+
+article .i4c-page-hero-inner {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 900px;
+}
+
+
+article .i4c-page-hero--center {
+  text-align: center;
+}
+
+
+article .i4c-page-hero--center
+.i4c-page-hero-inner {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+article .i4c-page-hero--left {
+  text-align: left;
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+article .i4c-page-hero-title {
+  margin: 0 0 1rem;
+
+  color: #fff;
+
+  font-size: clamp(
+    2rem,
+    5vw,
+    3.5rem
+  );
+
+  font-weight: 750;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.025em;
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ============================================================
+   SUBTITLE
+   ============================================================ */
+
+article .i4c-page-hero-subtitle {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.94);
+
+  font-size: clamp(
+    0.95rem,
+    2vw,
+    1.15rem
+  );
+
+  line-height: 1.6;
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+
+article .i4c-page-hero--left
+.i4c-page-hero-subtitle {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/* ============================================================
+   CTA
+   ============================================================ */
+
+article .i4c-page-hero-cta {
+  margin-top: 1.6rem;
+}
+
+
+article .i4c-page-hero-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding: 0.7rem 1.3rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 5px;
+
+  background:
+    var(
+      --SITE-BRAND-ORANGE,
+      #ec8c00
+    );
+
+  color: #fff;
+
+  font-size: 0.92rem;
+
+  font-weight: 650;
+
+  line-height: 1.3;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 12px
+    rgba(15, 23, 42, 0.2);
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+article .i4c-page-hero-cta-button:hover {
+  background: #d97b00;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 16px
+    rgba(15, 23, 42, 0.25);
+}
+
+
+article .i4c-page-hero-cta-button:focus-visible {
+  outline: 2px solid #fff;
+
+  outline-offset: 3px;
+}
+
+
+/* ============================================================
+   INDICATORS
+   ============================================================ */
+
+article .i4c-hero-indicators {
+  position: absolute;
+
+  left: 50%;
+  bottom: 1rem;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.35rem;
+
+  transform: translateX(-50%);
+
+  padding: 0.3rem 0.45rem;
+
+  border-radius: 999px;
+
+  background:
+    rgba(15, 23, 42, 0.25);
+
+  backdrop-filter: blur(3px);
+
+  -webkit-backdrop-filter: blur(3px);
+}
+
+
+article .i4c-hero-indicator {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.5);
+
+  transition:
+    width 0.2s ease,
+    background 0.2s ease;
+}
+
+
+article .i4c-hero-indicator.is-active {
+  width: 22px;
+
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
 
   article .i4c-page-hero {
+    min-height: 390px;
 
-    position: relative;
+    margin:
+      -0.5rem
+      -1rem
+      1.5rem;
 
-    width: 100%;
+    padding:
+      3rem
+      1.25rem;
 
-    min-height: 440px;
-
-    margin: 0 0 2rem;
-
-    padding: 4rem 2rem;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 8px;
-
-    background: #0f172a;
-
-    color: #fff;
-
-    isolation: isolate;
-
+    border-radius: 0;
   }
-
-
-  /* ============================================================
-     BACKGROUND
-     ============================================================ */
-
-  article .i4c-hero-background {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -3;
-
-  }
-
-
-  article .i4c-hero-background-slide {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-      opacity 1s ease,
-      visibility 1s ease;
-
-  }
-
-
-  article .i4c-hero-background-slide.is-active {
-
-    opacity: 1;
-
-    visibility: visible;
-
-  }
-
-
-  article .i4c-hero-background-slide img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center;
-
-  }
-
-
-  /* ============================================================
-     DARK OVERLAY
-     ============================================================ */
-
-  article .i4c-hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -2;
-
-    background:
-      linear-gradient(
-        120deg,
-        rgba(15, 23, 42, 0.86) 0%,
-        rgba(15, 23, 42, 0.68) 45%,
-        rgba(15, 23, 42, 0.48) 100%
-      );
-
-  }
-
-
-  /* ============================================================
-     SUBTLE BOTTOM GRADIENT
-     ============================================================ */
-
-  article .i4c-page-hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 35%;
-
-    z-index: -1;
-
-    background:
-      linear-gradient(
-        to top,
-        rgba(15, 23, 42, 0.42),
-        transparent
-      );
-
-    pointer-events: none;
-
-  }
-
-
-  /* ============================================================
-     CONTENT
-     ============================================================ */
-
-  article .i4c-page-hero-inner {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-
-    max-width: 900px;
-
-  }
-
-
-  article .i4c-page-hero--center {
-
-    text-align: center;
-
-  }
-
-
-  article .i4c-page-hero--center
-  .i4c-page-hero-inner {
-
-    margin-left: auto;
-
-    margin-right: auto;
-
-  }
-
-
-  article .i4c-page-hero--left {
-
-    text-align: left;
-
-  }
-
-
-  /* ============================================================
-     TITLE
-     ============================================================ */
 
   article .i4c-page-hero-title {
-
-    margin: 0 0 1rem;
-
-    color: #fff;
-
-    font-size: clamp(
-      2rem,
-      5vw,
-      3.5rem
-    );
-
-    font-weight: 750;
-
-    line-height: 1.08;
-
-    letter-spacing: -0.025em;
-
-    text-shadow:
-      0 2px 5px rgba(0, 0, 0, 0.28);
-
+    font-size: 2rem;
   }
-
-
-  /* ============================================================
-     SUBTITLE
-     ============================================================ */
 
   article .i4c-page-hero-subtitle {
-
-    max-width: 760px;
-
-    margin: 0 auto;
-
-    color: rgba(255, 255, 255, 0.94);
-
-    font-size: clamp(
-      0.95rem,
-      2vw,
-      1.15rem
-    );
-
-    line-height: 1.6;
-
-    text-shadow:
-      0 1px 3px rgba(0, 0, 0, 0.25);
-
+    font-size: 0.92rem;
   }
-
-
-  article .i4c-page-hero--left
-  .i4c-page-hero-subtitle {
-
-    margin-left: 0;
-    margin-right: 0;
-
-  }
-
-
-  /* ============================================================
-     CTA
-     ============================================================ */
 
   article .i4c-page-hero-cta {
-
-    margin-top: 1.6rem;
-
+    margin-top: 1.25rem;
   }
 
+  article .i4c-page-hero-meta {
+    top: 1rem !important;
+    left: 1rem !important;
 
-  article .i4c-page-hero-cta-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 0.4rem;
-
-    padding: 0.7rem 1.3rem;
-
-    border: 1px solid
-      rgba(255, 255, 255, 0.15);
-
-    border-radius: 5px;
-
-    background:
-      var(
-        --SITE-BRAND-ORANGE,
-        #ec8c00
-      );
-
-    color: #fff;
-
-    font-size: 0.92rem;
-
-    font-weight: 650;
-
-    line-height: 1.3;
-
-    text-decoration: none;
-
-    box-shadow:
-      0 4px 12px
-      rgba(15, 23, 42, 0.2);
-
-    transition:
-      background 0.15s ease,
-      transform 0.15s ease,
-      box-shadow 0.15s ease;
-
+    padding:
+      0.6rem
+      0.8rem;
   }
 
-
-  article .i4c-page-hero-cta-button:hover {
-
-    background: #d97b00;
-
-    color: #fff;
-
-    text-decoration: none;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-      0 7px 16px
-      rgba(15, 23, 42, 0.25);
-
+  article .i4c-page-hero-location {
+    font-size: 0.9rem;
   }
 
-
-  article .i4c-page-hero-cta-button:focus-visible {
-
-    outline: 2px solid #fff;
-
-    outline-offset: 3px;
-
+  article .i4c-page-hero-date {
+    font-size: 0.82rem;
   }
 
+}
 
-  /* ============================================================
-     INDICATORS
-     ============================================================ */
+
+@media (max-width: 480px) {
+
+  article .i4c-page-hero {
+    min-height: 360px;
+
+    padding:
+      2.5rem
+      1rem;
+  }
+
+  article .i4c-page-hero-title {
+    font-size: 1.7rem;
+  }
+
+  article .i4c-page-hero-subtitle {
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+  }
 
   article .i4c-hero-indicators {
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 1rem;
-
-    z-index: 3;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 0.35rem;
-
-    transform: translateX(-50%);
-
-    padding: 0.3rem 0.45rem;
-
-    border-radius: 999px;
-
-    background:
-      rgba(15, 23, 42, 0.25);
-
-    backdrop-filter: blur(3px);
-
-    -webkit-backdrop-filter: blur(3px);
-
+    bottom: 0.7rem;
   }
 
+}
 
-  article .i4c-hero-indicator {
 
-    width: 7px;
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 
-    height: 7px;
+@media (prefers-reduced-motion: reduce) {
 
-    border-radius: 50%;
-
-    background:
-      rgba(255, 255, 255, 0.5);
-
-    transition:
-      width 0.2s ease,
-      background 0.2s ease;
-
+  article .i4c-hero-background-slide {
+    transition: none;
   }
 
-
-  article .i4c-hero-indicator.is-active {
-
-    width: 22px;
-
-    border-radius: 4px;
-
-    background: #fff;
-
+  article .i4c-page-hero-cta-button {
+    transition: none;
   }
 
-
-  /* ============================================================
-     MOBILE
-     ============================================================ */
-
-  @media (max-width: 768px) {
-
-    article .i4c-page-hero {
-
-      min-height: 390px;
-
-      margin:
-        -0.5rem
-        -1rem
-        1.5rem;
-
-      padding:
-        3rem
-        1.25rem;
-
-      border-radius: 0;
-
-    }
-
-
-    article .i4c-page-hero-title {
-
-      font-size: 2rem;
-
-    }
-
-
-    article .i4c-page-hero-subtitle {
-
-      font-size: 0.92rem;
-
-    }
-
-
-    article .i4c-page-hero-cta {
-
-      margin-top: 1.25rem;
-
-    }
-
-
-  }
-
-
-  @media (max-width: 480px) {
-
-    article .i4c-page-hero {
-
-      min-height: 360px;
-
-      padding:
-        2.5rem
-        1rem;
-
-    }
-
-
-    article .i4c-page-hero-title {
-
-      font-size: 1.7rem;
-
-    }
-
-
-    article .i4c-page-hero-subtitle {
-
-      font-size: 0.85rem;
-
-      line-height: 1.5;
-
-    }
-
-
-    article .i4c-hero-indicators {
-
-      bottom: 0.7rem;
-
-    }
-
-  }
-
-
-  /* ============================================================
-     REDUCED MOTION
-     ============================================================ */
-
-  @media (prefers-reduced-motion: reduce) {
-
-    article .i4c-hero-background-slide {
-
-      transition: none;
-
-    }
-
-    article .i4c-page-hero-cta-button {
-
-      transition: none;
-
-    }
-
-  }
+}
 
 </style>
 
 
 <script>
 
-  (() => {
+(() => {
 
-    const hero =
-      document.querySelector(
-        "[data-hero]"
-      );
+  const hero =
+    document.querySelector(
+      "[data-hero]"
+    );
 
-    if (!hero) {
-      return;
-    }
-
-
-    const slides =
-      Array.from(
-        hero.querySelectorAll(
-          "[data-hero-slide]"
-        )
-      );
+  if (!hero) {
+    return;
+  }
 
 
-    const indicators =
-      Array.from(
-        hero.querySelectorAll(
-          "[data-hero-indicator]"
-        )
-      );
+  const slides =
+    Array.from(
+      hero.querySelectorAll(
+        "[data-hero-slide]"
+      )
+    );
 
 
-    if (slides.length <= 1) {
-      return;
-    }
+  const indicators =
+    Array.from(
+      hero.querySelectorAll(
+        "[data-hero-indicator]"
+      )
+    );
 
 
-    let currentIndex = 0;
+  if (slides.length <= 1) {
+    return;
+  }
 
 
-    const changeSlide = () => {
+  let currentIndex = 0;
 
-      slides[
+
+  const changeSlide = () => {
+
+    slides[
+      currentIndex
+    ].classList.remove(
+      "is-active"
+    );
+
+
+    if (indicators.length) {
+
+      indicators[
         currentIndex
       ].classList.remove(
         "is-active"
       );
 
-
-      if (indicators.length) {
-
-        indicators[
-          currentIndex
-        ].classList.remove(
-          "is-active"
-        );
-
-      }
+    }
 
 
-      currentIndex =
-        (currentIndex + 1)
-        % slides.length;
+    currentIndex =
+      (currentIndex + 1)
+      % slides.length;
 
 
-      slides[
+    slides[
+      currentIndex
+    ].classList.add(
+      "is-active"
+    );
+
+
+    if (indicators.length) {
+
+      indicators[
         currentIndex
       ].classList.add(
         "is-active"
       );
 
+    }
 
-      if (indicators.length) {
-
-        indicators[
-          currentIndex
-        ].classList.add(
-          "is-active"
-        );
-
-      }
-
-    };
+  };
 
 
-    setInterval(
-      changeSlide,
-      4000
-    );
+  setInterval(
+    changeSlide,
+    4000
+  );
 
-  })();
+})();
 
 </script>

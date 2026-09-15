@@ -1,44 +1,31 @@
 {{- /*
   I4C 2026 — Slideshow Shortcode
 
-  Displays the selected images from:
-
-    static/images/slideshow/
-
-  I4C 2026 slideshow order:
-
-    1. Esci-Top-View.jpg
-    2. Conclave-Venue.png
-    3. Esci-Auditorium.jpg
-    4. Techno-Hub.jpg
-
   Usage:
 
-    {{< slideshow
-      path="images/slideshow"
-      largeText="I4C 2026"
-      smallText="Engineering Staff College of India, Hyderabad"
-    >}}
-
-  The image order is intentionally fixed so it does not depend
-  on filesystem/alphabetical ordering.
+  {{< slideshow
+    path="images/slideshow"
+    largeText="I4C 2026"
+    smallText="Engineering Staff College of India, Hyderabad"
+  >}}
 */ -}}
 
-{{- $path := .Get "path" | default "images/slideshow" }}
-{{- $largeText := .Get "largeText" }}
-{{- $smallText := .Get "smallText" }}
+{{- $path := .Get "path" | default "images/slideshow" -}}
+{{- $largeText := .Get "largeText" -}}
+{{- $smallText := .Get "smallText" -}}
 
 {{- $images := slice
-    "Esci-Top-View.jpg"
-    "Conclave-Venue.png"
-    "Esci-Auditorium.jpg"
-    "Techno-Hub.jpg"
-}}
+  "buddha-statue-hyd.jpg"
+  "Charminar.jpeg"
+  "Birla_Mandir.jpg"
+  "Nehru-Zoological-Park.jpg"
+-}}
 
-<div
-  class="i4c-slideshow"
-  data-i4c-slideshow
->
+<div class="i4c-slideshow" data-i4c-slideshow>
+
+  <!-- =========================================================
+       SLIDES
+       ========================================================= -->
 
   <div class="i4c-slides-container">
 
@@ -58,6 +45,13 @@
             loading="lazy"
           {{ end }}
         >
+
+        <!-- Dark gradient over image -->
+        <div class="i4c-slide-gradient"></div>
+
+        <!-- =====================================================
+             SLIDE TEXT
+             ===================================================== -->
 
         {{- if or $largeText $smallText }}
 
@@ -86,29 +80,56 @@
   </div>
 
 
-  <!-- Previous -->
+  <!-- =========================================================
+       PREVIOUS BUTTON
+       ========================================================= -->
+
   <button
     type="button"
     class="i4c-slideshow-prev"
     data-i4c-prev
     aria-label="Previous slide"
   >
-    &#10094;
+
+    <svg
+      class="i4c-arrow-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M15 18L9 12L15 6"></path>
+    </svg>
+
   </button>
 
 
-  <!-- Next -->
+  <!-- =========================================================
+       NEXT BUTTON
+       ========================================================= -->
+
   <button
     type="button"
     class="i4c-slideshow-next"
     data-i4c-next
     aria-label="Next slide"
   >
-    &#10095;
+
+    <svg
+      class="i4c-arrow-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M9 18L15 12L9 6"></path>
+    </svg>
+
   </button>
 
 
-  <!-- Indicators -->
+  <!-- =========================================================
+       DOT NAVIGATION
+       ========================================================= -->
+
   <div
     class="i4c-slideshow-dots"
     aria-label="Slideshow navigation"
@@ -131,415 +152,562 @@
 
 
 <style>
-  /* ============================================================
-     I4C 2026 SLIDESHOW
-     ============================================================ */
+
+/* ============================================================
+   I4C 2026 SLIDESHOW
+   ============================================================ */
+
+article .i4c-slideshow {
+  position: relative;
+
+  width: 100%;
+  max-width: 1120px;
+
+  margin: 1.5rem auto;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background: #0a1e3d;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.08),
+    0 8px 20px rgba(15, 23, 42, 0.08);
+
+  isolation: isolate;
+}
+
+
+/* ============================================================
+   SLIDE CONTAINER
+   ============================================================ */
+
+article .i4c-slides-container {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1120 / 460;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   INDIVIDUAL SLIDE
+   ============================================================ */
+
+article .i4c-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+article .i4c-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+
+article .i4c-slide img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   DARK GRADIENT
+   ============================================================ */
+
+article .i4c-slide-gradient {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 30, 61, 0.05) 0%,
+      rgba(10, 30, 61, 0.08) 35%,
+      rgba(10, 30, 61, 0.72) 100%
+    );
+}
+
+
+/* ============================================================
+   TEXT PANEL
+   ============================================================ */
+
+article .i4c-slideshow-overlay {
+  position: absolute;
+
+  left: 4%;
+  bottom: 13%;
+
+  z-index: 5;
+
+  width: auto;
+  max-width: 75%;
+
+  padding: 1rem 1.4rem;
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  text-align: left;
+
+  background: rgba(10, 30, 61, 0.82);
+
+  border-left: 4px solid #f2a93b;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.32);
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================================
+   LARGE TEXT
+   ============================================================ */
+
+article .i4c-slideshow-large-text {
+  margin: 0;
+
+  color: #ffffff !important;
+
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* ============================================================
+   SMALL TEXT
+   ============================================================ */
+
+article .i4c-slideshow-small-text {
+  margin: 0.45rem 0 0;
+
+  color: #ffffff !important;
+
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  opacity: 1;
+}
+
+
+/* ============================================================
+   PREVIOUS / NEXT BUTTONS
+   ============================================================ */
+
+article .i4c-slideshow-prev,
+article .i4c-slideshow-next {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 20;
+
+  width: 48px !important;
+  height: 48px !important;
+
+  min-width: 48px !important;
+  min-height: 48px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+
+  border-radius: 50% !important;
+
+  background: rgba(10, 30, 61, 0.78) !important;
+
+  color: #ffffff !important;
+
+  cursor: pointer;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform: translateY(-50%);
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+/* ============================================================
+   BUTTON POSITIONS
+   ============================================================ */
+
+article .i4c-slideshow-prev {
+  left: 16px !important;
+  right: auto !important;
+}
+
+article .i4c-slideshow-next {
+  right: 16px !important;
+  left: auto !important;
+}
+
+
+/* ============================================================
+   ARROW ICON
+   ============================================================ */
+
+article .i4c-arrow-icon {
+  display: block !important;
+
+  width: 25px !important;
+  height: 25px !important;
+
+  min-width: 25px !important;
+  min-height: 25px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  fill: none !important;
+
+  stroke: #ffffff !important;
+
+  stroke-width: 2.5 !important;
+
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+
+  pointer-events: none !important;
+}
+
+article .i4c-arrow-icon path {
+  fill: none !important;
+
+  stroke: #ffffff !important;
+
+  stroke-width: 2.5 !important;
+
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+
+/* ============================================================
+   BUTTON HOVER
+   ============================================================ */
+
+article .i4c-slideshow-prev:hover,
+article .i4c-slideshow-next:hover {
+  background: rgba(10, 30, 61, 0.96) !important;
+
+  border-color: #ffffff !important;
+
+  transform:
+    translateY(-50%)
+    scale(1.07);
+}
+
+
+/* ============================================================
+   BUTTON FOCUS
+   ============================================================ */
+
+article .i4c-slideshow-prev:focus-visible,
+article .i4c-slideshow-next:focus-visible {
+  outline: 2px solid #f2a93b !important;
+
+  outline-offset: 3px;
+}
+
+
+/* ============================================================
+   DOT CONTAINER
+   ============================================================ */
+
+article .i4c-slideshow-dots {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0.8rem;
+
+  z-index: 21;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.35rem;
+
+  padding: 0.3rem 0.5rem;
+
+  border-radius: 999px;
+
+  background: rgba(10, 30, 61, 0.55);
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+
+  transform: translateX(-50%);
+}
+
+
+/* ============================================================
+   DOT BUTTON
+   ============================================================ */
+
+article .i4c-slideshow-dot {
+  width: 18px !important;
+  height: 18px !important;
+
+  min-width: 18px !important;
+  min-height: 18px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 0 !important;
+
+  background: transparent !important;
+
+  cursor: pointer;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+
+/* ============================================================
+   DOT
+   ============================================================ */
+
+article .i4c-slideshow-dot::before {
+  content: "";
+
+  display: block;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  transition:
+    width 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* ============================================================
+   DOT HOVER
+   ============================================================ */
+
+article .i4c-slideshow-dot:hover::before {
+  background: #ffffff;
+}
+
+
+/* ============================================================
+   ACTIVE DOT
+   ============================================================ */
+
+article .i4c-slideshow-dot.is-active::before {
+  width: 22px;
+
+  border-radius: 4px;
+
+  background: #f2a93b;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 768px) {
 
   article .i4c-slideshow {
-    position: relative;
+    margin: 1rem 0;
 
-    width: 100%;
-    max-width: 1120px;
-
-    margin: 1.5rem auto;
-
-    overflow: hidden;
-
-    border-radius: 8px;
-
-    background: #0f172a;
-
-    box-shadow:
-      0 2px 6px rgba(15, 23, 42, 0.08),
-      0 8px 20px rgba(15, 23, 42, 0.06);
+    border-radius: 6px;
   }
-
-
-  /* ------------------------------------------------------------
-     Slides container
-     ------------------------------------------------------------ */
-
-  article .i4c-slides-container {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 1120 / 460;
-
-    overflow: hidden;
-  }
-
-
-  /* ------------------------------------------------------------
-     Individual slide
-     ------------------------------------------------------------ */
-
-  article .i4c-slide {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-      opacity 0.8s ease,
-      visibility 0.8s ease;
-  }
-
-
-  article .i4c-slide.is-active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-
-  /* ------------------------------------------------------------
-     Image
-     ------------------------------------------------------------ */
-
-  article .i4c-slide img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-  }
-
-
-  /* ------------------------------------------------------------
-     Dark image overlay
-     ------------------------------------------------------------ */
-
-  article .i4c-slide::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-      linear-gradient(
-        180deg,
-        rgba(15, 23, 42, 0.12) 0%,
-        rgba(15, 23, 42, 0.12) 45%,
-        rgba(15, 23, 42, 0.58) 100%
-      );
-
-    pointer-events: none;
-  }
-
-
-  /* ------------------------------------------------------------
-     Text overlay
-     ------------------------------------------------------------ */
-
-  article .i4c-slideshow-overlay {
-    position: absolute;
-
-    left: 2.5%;
-    bottom: 12%;
-
-    z-index: 2;
-
-    color: #fff;
-
-    text-align: left;
-
-    text-shadow:
-      0 2px 5px rgba(0, 0, 0, 0.35);
-  }
-
-
-  article .i4c-slideshow-large-text {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-
-    font-weight: 700;
-
-    line-height: 1.2;
-  }
-
-
-  article .i4c-slideshow-small-text {
-    margin-top: 0.35rem;
-
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
-
-    line-height: 1.4;
-
-    opacity: 0.95;
-  }
-
-
-  /* ------------------------------------------------------------
-     Navigation buttons
-     ------------------------------------------------------------ */
 
   article .i4c-slideshow-prev,
   article .i4c-slideshow-next {
-    position: absolute;
+    width: 40px !important;
+    height: 40px !important;
 
-    top: 50%;
-
-    z-index: 4;
-
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background:
-      rgba(15, 23, 42, 0.42);
-
-    color: #fff;
-
-    font-size: 1.25rem;
-
-    cursor: pointer;
-
-    transform: translateY(-50%);
-
-    transition:
-      background 0.2s ease,
-      transform 0.15s ease;
+    min-width: 40px !important;
+    min-height: 40px !important;
   }
-
 
   article .i4c-slideshow-prev {
-    left: 0.75rem;
+    left: 10px !important;
   }
-
 
   article .i4c-slideshow-next {
-    right: 0.75rem;
+    right: 10px !important;
   }
 
-
-  article .i4c-slideshow-prev:hover,
-  article .i4c-slideshow-next:hover {
-    background:
-      rgba(15, 23, 42, 0.68);
-
-    transform:
-      translateY(-50%)
-      scale(1.05);
+  article .i4c-arrow-icon {
+    width: 21px !important;
+    height: 21px !important;
   }
 
+  article .i4c-slideshow-overlay {
+    left: 4%;
+    bottom: 14%;
 
-  article .i4c-slideshow-prev:focus-visible,
-  article .i4c-slideshow-next:focus-visible {
-    outline: 2px solid #fff;
+    max-width: 78%;
 
-    outline-offset: 3px;
+    padding: 0.8rem 1rem;
   }
 
+  article .i4c-slideshow-large-text {
+    font-size: 1.35rem;
+  }
 
-  /* ------------------------------------------------------------
-     Dots
-     ------------------------------------------------------------ */
+  article .i4c-slideshow-small-text {
+    font-size: 0.82rem;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  article .i4c-slides-container {
+    aspect-ratio: 1.7 / 1;
+  }
+
+  article .i4c-slideshow-prev,
+  article .i4c-slideshow-next {
+    width: 34px !important;
+    height: 34px !important;
+
+    min-width: 34px !important;
+    min-height: 34px !important;
+  }
+
+  article .i4c-slideshow-prev {
+    left: 7px !important;
+  }
+
+  article .i4c-slideshow-next {
+    right: 7px !important;
+  }
+
+  article .i4c-arrow-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  article .i4c-slideshow-overlay {
+    left: 5%;
+    bottom: 15%;
+
+    max-width: 78%;
+
+    padding: 0.65rem 0.8rem;
+
+    border-left-width: 3px;
+  }
+
+  article .i4c-slideshow-large-text {
+    font-size: 1rem;
+  }
+
+  article .i4c-slideshow-small-text {
+    margin-top: 0.25rem;
+
+    font-size: 0.7rem;
+
+    line-height: 1.35;
+  }
 
   article .i4c-slideshow-dots {
-    position: absolute;
-
-    left: 50%;
-    bottom: 0.85rem;
-
-    z-index: 5;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 0.35rem;
-
-    padding: 0.25rem 0.45rem;
-
-    border-radius: 999px;
-
-    background:
-      rgba(15, 23, 42, 0.28);
-
-    backdrop-filter: blur(3px);
-
-    -webkit-backdrop-filter: blur(3px);
-
-    transform: translateX(-50%);
+    bottom: 0.45rem;
   }
 
+}
 
-  article .i4c-slideshow-dot {
-    width: 16px;
-    height: 16px;
 
-    display: inline-flex;
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
 
-    align-items: center;
-    justify-content: center;
+@media (prefers-reduced-motion: reduce) {
 
-    padding: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    cursor: pointer;
+  article .i4c-slide {
+    transition: none;
   }
 
-
+  article .i4c-slideshow-prev,
+  article .i4c-slideshow-next,
   article .i4c-slideshow-dot::before {
-    content: "";
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background:
-      rgba(255, 255, 255, 0.55);
-
-    transition:
-      width 0.2s ease,
-      background 0.2s ease;
+    transition: none;
   }
 
-
-  article .i4c-slideshow-dot:hover::before {
-    background:
-      rgba(255, 255, 255, 0.9);
-  }
-
-
-  article .i4c-slideshow-dot.is-active::before {
-    width: 22px;
-
-    border-radius: 4px;
-
-    background: #fff;
-  }
-
-
-  article .i4c-slideshow-dot:focus-visible {
-    outline: 2px solid #fff;
-
-    outline-offset: 2px;
-
-    border-radius: 50%;
-  }
-
-
-  /* ------------------------------------------------------------
-     Tablet / mobile
-     ------------------------------------------------------------ */
-
-  @media (max-width: 768px) {
-
-    article .i4c-slideshow {
-      border-radius: 6px;
-
-      margin:
-        1rem
-        0;
-    }
-
-
-    article .i4c-slideshow-prev,
-    article .i4c-slideshow-next {
-      width: 38px;
-      height: 38px;
-
-      font-size: 1rem;
-    }
-
-
-    article .i4c-slideshow-prev {
-      left: 0.5rem;
-    }
-
-
-    article .i4c-slideshow-next {
-      right: 0.5rem;
-    }
-
-
-    article .i4c-slideshow-overlay {
-      left: 4%;
-      bottom: 13%;
-    }
-
-
-    article .i4c-slideshow-dots {
-      bottom: 0.55rem;
-    }
-
-  }
-
-
-  @media (max-width: 480px) {
-
-    article .i4c-slideshow-prev,
-    article .i4c-slideshow-next {
-      width: 32px;
-      height: 32px;
-
-      font-size: 0.85rem;
-    }
-
-
-    article .i4c-slideshow-overlay {
-      left: 5%;
-      bottom: 15%;
-    }
-
-
-    article .i4c-slideshow-large-text {
-      font-size: 1rem;
-    }
-
-
-    article .i4c-slideshow-small-text {
-      font-size: 0.72rem;
-    }
-
-
-    article .i4c-slideshow-dot {
-      width: 14px;
-      height: 14px;
-    }
-
-  }
-
-
-  /* ------------------------------------------------------------
-     Reduced motion
-     ------------------------------------------------------------ */
-
-  @media (prefers-reduced-motion: reduce) {
-
-    article .i4c-slide {
-      transition: none;
-    }
-
-    article .i4c-slideshow-prev,
-    article .i4c-slideshow-next,
-    article .i4c-slideshow-dot::before {
-      transition: none;
-    }
-
-  }
+}
 
 </style>
 
@@ -594,9 +762,9 @@
       let intervalId = null;
 
 
-      /* --------------------------------------------------------
-         Show slide
-         -------------------------------------------------------- */
+      /* ========================================================
+         SHOW SLIDE
+         ======================================================== */
 
       const showSlide = (index) => {
 
@@ -637,9 +805,9 @@
       };
 
 
-      /* --------------------------------------------------------
-         Next / Previous
-         -------------------------------------------------------- */
+      /* ========================================================
+         NEXT
+         ======================================================== */
 
       const nextSlide = () => {
 
@@ -650,6 +818,10 @@
       };
 
 
+      /* ========================================================
+         PREVIOUS
+         ======================================================== */
+
       const previousSlide = () => {
 
         showSlide(
@@ -659,9 +831,9 @@
       };
 
 
-      /* --------------------------------------------------------
-         Automatic slideshow
-         -------------------------------------------------------- */
+      /* ========================================================
+         START AUTOPLAY
+         ======================================================== */
 
       const startAutoPlay = () => {
 
@@ -680,6 +852,10 @@
       };
 
 
+      /* ========================================================
+         RESTART AUTOPLAY
+         ======================================================== */
+
       const restartAutoPlay = () => {
 
         clearInterval(intervalId);
@@ -689,9 +865,9 @@
       };
 
 
-      /* --------------------------------------------------------
-         Buttons
-         -------------------------------------------------------- */
+      /* ========================================================
+         PREVIOUS BUTTON
+         ======================================================== */
 
       if (previous) {
 
@@ -709,6 +885,10 @@
       }
 
 
+      /* ========================================================
+         NEXT BUTTON
+         ======================================================== */
+
       if (next) {
 
         next.addEventListener(
@@ -725,9 +905,9 @@
       }
 
 
-      /* --------------------------------------------------------
-         Dots
-         -------------------------------------------------------- */
+      /* ========================================================
+         DOT NAVIGATION
+         ======================================================== */
 
       dots.forEach(
         (dot) => {
@@ -752,9 +932,9 @@
       );
 
 
-      /* --------------------------------------------------------
-         Keyboard navigation
-         -------------------------------------------------------- */
+      /* ========================================================
+         KEYBOARD NAVIGATION
+         ======================================================== */
 
       slideshow.addEventListener(
         "keydown",
@@ -780,9 +960,9 @@
       );
 
 
-      /* --------------------------------------------------------
-         Pause while hovering
-         -------------------------------------------------------- */
+      /* ========================================================
+         PAUSE ON HOVER
+         ======================================================== */
 
       slideshow.addEventListener(
         "mouseenter",
@@ -794,6 +974,10 @@
       );
 
 
+      /* ========================================================
+         RESUME AFTER HOVER
+         ======================================================== */
+
       slideshow.addEventListener(
         "mouseleave",
         () => {
@@ -804,9 +988,9 @@
       );
 
 
-      /* --------------------------------------------------------
-         Initial state
-         -------------------------------------------------------- */
+      /* ========================================================
+         INITIALIZE
+         ======================================================== */
 
       showSlide(0);
 

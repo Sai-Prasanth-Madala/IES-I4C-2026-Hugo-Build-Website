@@ -1,0 +1,320 @@
+{{- /*
+  I4C 2026 — Feature Card
+
+  Supports both text icons and image icons.
+
+  Text icon:
+  {{< featureCard title="Example" icon="✓" >}}
+
+  Image icon:
+  {{< featureCard
+    title="Example"
+    icon="/images/icons/example.png"
+  >}}
+
+  The shortcode automatically detects image paths.
+*/ -}}
+
+{{- $title := .Get "title" | default "" -}}
+{{- $icon := .Get "icon" | default "" -}}
+
+{{- $isImage := false -}}
+
+{{- if or
+  (strings.HasPrefix $icon "/images/")
+  (strings.HasPrefix $icon "images/")
+  (strings.HasSuffix (lower $icon) ".png")
+  (strings.HasSuffix (lower $icon) ".jpg")
+  (strings.HasSuffix (lower $icon) ".jpeg")
+  (strings.HasSuffix (lower $icon) ".webp")
+  (strings.HasSuffix (lower $icon) ".svg")
+-}}
+  {{- $isImage = true -}}
+{{- end -}}
+
+<div class="i4c-feature-card">
+
+  <div class="i4c-feature-card-accent"></div>
+
+  <div class="i4c-feature-card-content">
+
+    {{- if $icon }}
+
+      {{- if $isImage }}
+
+        <div class="i4c-feature-card-icon i4c-feature-card-icon-image">
+          <img
+            src="{{ $icon | relURL }}"
+            alt=""
+            loading="lazy"
+          >
+        </div>
+
+      {{- else }}
+
+        <div class="i4c-feature-card-icon i4c-feature-card-icon-text">
+          {{ $icon }}
+        </div>
+
+      {{- end }}
+
+    {{- end }}
+
+    {{- if $title }}
+      <h3 class="i4c-feature-card-title">
+        {{ $title }}
+      </h3>
+    {{- end }}
+
+    <div class="i4c-feature-card-body">
+      {{ .Inner | .Page.RenderString }}
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+
+article .i4c-feature-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin: 1.5rem 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.05),
+    0 8px 24px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* Orange accent */
+
+article .i4c-feature-card-accent {
+  flex: 0 0 5px;
+  width: 5px;
+
+  background: #e88720;
+}
+
+
+/* Main content */
+
+article .i4c-feature-card-content {
+  flex: 1;
+  min-width: 0;
+
+  padding: 1.35rem 1.5rem 1.4rem;
+
+  box-sizing: border-box;
+}
+
+
+/* Shared icon container */
+
+article .i4c-feature-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  margin-bottom: 0.75rem;
+
+  border-radius: 9px;
+
+  background: #fff4e8;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* Text icon */
+
+article .i4c-feature-card-icon-text {
+  color: #e88720;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* Image icon */
+
+article .i4c-feature-card-icon-image {
+  padding: 7px;
+}
+
+
+article .i4c-feature-card-icon-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
+
+
+/* Title */
+
+article .i4c-feature-card-title {
+  margin: 0 0 0.55rem;
+
+  color: #0a1e3d;
+
+  font-size: 1.12rem;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* Body */
+
+article .i4c-feature-card-body {
+  color: #475569;
+
+  font-size: 0.92rem;
+  line-height: 1.65;
+
+  max-width: 900px;
+}
+
+
+article .i4c-feature-card-body p {
+  margin: 0 0 0.7rem;
+
+  text-align: left !important;
+}
+
+
+article .i4c-feature-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Strong text */
+
+article .i4c-feature-card-body strong {
+  color: #0a1e3d;
+
+  font-weight: 700;
+}
+
+
+/* Links */
+
+article .i4c-feature-card-body a {
+  color: #145da0 !important;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(20, 93, 160, 0.25);
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+article .i4c-feature-card-body a:hover {
+  color: #e88720 !important;
+
+  border-bottom-color: #e88720;
+}
+
+
+/* Lists */
+
+article .i4c-feature-card-body ul,
+article .i4c-feature-card-body ol {
+  margin: 0.7rem 0;
+
+  padding-left: 1.25rem;
+}
+
+
+article .i4c-feature-card-body li {
+  margin: 0.25rem 0;
+}
+
+
+/* Hover */
+
+article .i4c-feature-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #d7dee8;
+
+  box-shadow:
+    0 5px 12px rgba(15, 23, 42, 0.07),
+    0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  article .i4c-feature-card {
+    margin: 1.25rem 0;
+  }
+
+  article .i4c-feature-card-content {
+    padding: 1.15rem 1.15rem 1.2rem;
+  }
+
+  article .i4c-feature-card-title {
+    font-size: 1.02rem;
+  }
+
+  article .i4c-feature-card-body {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  article .i4c-feature-card {
+    transition: none;
+  }
+
+  article .i4c-feature-card-body a {
+    transition: none;
+  }
+
+}
+
+</style>
