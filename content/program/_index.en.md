@@ -26,7 +26,7 @@ The programme covers key areas including <strong>Artificial Intelligence, Power 
 | Time | Session | Speaker(s) |
 |---|---|---|
 | <strong>9:00 AM – 10:00 AM</strong> | <strong>Registration</strong> | — |
-| <strong>10:00 AM – 11:00 AM</strong> | <strong>Opening Ceremony</strong> | <strong>Dr. Tripura Pidikiti</strong> · <strong>Prof. Juan Jose Rodriguez Andina</strong> · <strong>Stamatis Karnouskos</strong> · <strong>Mr. Madhav Negi</strong> |
+| <strong>10:00 AM – 11:00 AM</strong> | <strong>Opening Ceremony</strong> |<strong>Prof. Juan Jose Rodriguez Andina</strong> · <strong>Dr. Stamatis Karnouskos</strong> · <strong>Mr. Madhav Negi</strong> · <strong>Dr. Tripura Pidikiti</strong>|
 | <strong>11:00 AM – 11:15 AM</strong> | <strong>Tea Break</strong> | — |
 | <strong>11:15 AM – 12:00 PM</strong> | <strong>Keynote Address 1: AI for Power Electronics</strong> | <strong>Prof. Juan Jose Rodriguez Andina</strong> |
 | <strong>12:00 PM – 12:45 PM</strong> | <strong>Industry Talk 1: Green Hydrogen and Industrial Electronics: Innovation for a NET-ZERO Industry</strong> | <strong>Dr. Sankara Rao Mutyala</strong> — Director & CTO, Nanosol Energy Private Limited, Hyderabad |
@@ -52,24 +52,20 @@ The programme covers key areas including <strong>Artificial Intelligence, Power 
 
 | Time | Session | Speaker(s) |
 |---|---|---|
-| <strong>9:30 AM – 11:00 AM</strong> | <strong>Hands-on Workshop: Rapid EV Prototyping: Accelerating Development Workflows with Simulink</strong> | <strong>Mrs. Ponnganti Chandana</strong> — Product Manager, MathWorks · ARKANCE IN Private Limited |
+| <strong>9:30 AM – 11:00 AM</strong> | <strong>Workshop: Rapid EV Prototyping: Accelerating Development Workflows with Simulink</strong> | <strong>Mrs. Ponnganti Chandana</strong> — Product Manager, MathWorks · ARKANCE IN Private Limited |
 | <strong>11:00 AM – 11:15 AM</strong> | <strong>Tea Break</strong> | — |
 | <strong>11:15 AM – 12:00 PM</strong> | <strong>Industry Talk 4: Navigating from Smart Grid to Digital Grid: Role of Digital Twin and Its Applications with a Case Study</strong> | <strong>Dr. P. Balakrishna</strong> — Senior Engineer, GE Energy |
 | <strong>12:00 PM – 12:45 PM</strong> | <strong>Industry Talk 5: Smart Manufacturing & Industry 5.0</strong> | <strong>Dr. Srinivasa Rao Perla</strong> — Ex-Director, Technical Training at Cyient |
 | <strong>12:45 PM – 1:30 PM</strong> | <strong>Industry Talk 6: Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up</strong> | <strong>Kavinga Upalanayake</strong> — Head of Hardware Engineering, ACCELR |
 | <strong>1:30 PM – 2:30 PM</strong> | <strong>Lunch</strong> | — |
+| <strong>2:30 PM – 3:00 PM</strong> | <strong>Session on IES Hubs and Nodes Initiative</strong> | <strong>Dr. Tripura Pidikiti</strong> — Hyderabad Hub Leader |
 
 ## Closing Ceremony
 
 | Time | Session | Details |
 |---|---|---|
-| <strong>2:30 PM – 3:00 PM</strong> | <strong>Closing Ceremony</strong> | Sponsor Recognition · Volunteer Appreciation · Certificates · Vote of Thanks |
+| <strong>3:00 PM – 4:00 PM</strong> | <strong>Closing Ceremony</strong> | Sponsor Recognition · Volunteer Appreciation · Certificates · Vote of Thanks |
 
-## IES Hubs & Nodes Session
-
-| Time | Session | Speaker |
-|---|---|---|
-| <strong>3:00 PM – 4:00 PM</strong> | <strong>Session on IES Hubs and Nodes Initiative</strong> | <strong>Dr. Tripura Pidikiti</strong> — Hyderabad Hub Leader |
 
 ---
 

@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Conclave Program :: IEEE IES INDUSTRIAL INNOVATION CONCLAVE(I4C)-2026</title><link>https://i4c2026.ieee-ies.org/program/index.html</link><description>Conclave ProgramTwo days of expert talks, industry insights, interactive sessions, networking and hands-on learning.Conclave ProgramTwo days of expert talks, industry insights, interactive sessions, networking and hands-on learning.Conclave ProgramTwo days of expert talks, industry insights, interactive sessions, networking and hands-on learning.Conclave ProgramTwo days of expert talks, industry insights, interactive sessions, networking and hands-on learning.IEEE IES Industrial Innovation Conclave 2026The IEEE IES Industrial Innovation Conclave (I4C) 2026 brings together industry leaders, researchers, academicians, technology experts and students for two days of technical sessions, industry interaction, networking and hands-on learning.</description><generator>Hugo</generator><language>en</language><atom:link href="https://i4c2026.ieee-ies.org/program/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conclave Program :: IEEE IES INDUSTRIAL INNOVATION CONCLAVE(I4C)-2026</title>
+    <link>http://localhost:1313/program/index.html</link>
+    <description>Conclave Program&#xD;Two days of expert talks, industry insights, interactive sessions, networking and hands-on learning.&#xD;Conclave Program&#xD;Two days of expert talks, industry insights, interactive sessions, networking and hands-on learning.&#xD;Conclave Program&#xD;Two days of expert talks, industry insights, interactive sessions, networking and hands-on learning.&#xD;Conclave Program&#xD;Two days of expert talks, industry insights, interactive sessions, networking and hands-on learning.&#xD;IEEE IES Industrial Innovation Conclave 2026&#xD;The IEEE IES Industrial Innovation Conclave (I4C) 2026 brings together industry leaders, researchers, academicians, technology experts and students for two days of technical sessions, industry interaction, networking and hands-on learning.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/program/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

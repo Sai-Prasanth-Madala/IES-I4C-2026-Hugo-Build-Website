@@ -17,13 +17,12 @@ The forum provides opportunities to learn directly from experts, understand emer
 
 {{< spacer lines=2 >}}
 
-# Global IES Speakers
+# Distinguished Speakers
 
 The Industry Forum features distinguished Global IES speakers who bring international perspectives on emerging technologies and the changing landscape of industrial engineering.
 
 {{< speaker
   name="Prof. Juan José Rodríguez-Andina"
-  category="Global IES Speaker"
   title="AI for Power Electronics"
   image="/images/Prof._Andina.jpg"
   when="22 September 2026, 11:15 AM – 12:00 PM"
@@ -38,7 +37,6 @@ Prof. Juan José Rodríguez-Andina will deliver a keynote on <strong>AI for Powe
 
 {{< speaker
   name="Prof. Stamatis Karnouskos"
-  category="Global IES Speaker"
   title="From Engineers to AI Supervisors? The Future of Industrial Engineering"
   image="/images/Prof._Stamatis.jpg"
   when="22 September 2026, 2:30 PM – 3:15 PM"
@@ -51,16 +49,10 @@ Prof. Stamatis Karnouskos will moderate the panel discussion <strong>“From Eng
 
 {{< /speaker >}}
 
-{{< spacer lines=2 >}}
-
-# Distinguished Speakers
-
-I4C 2026 brings together experts from industry and academia to share practical insights, technical knowledge and real-world perspectives across emerging areas of industrial innovation.
 
 {{< speaker
   name="Dr. Sankara Rao Mutyala"
   affiliation="Director and CTO, Nanosol Energy Private Limited, Hyderabad"
-  category="Distinguished Speaker"
   title="Green Hydrogen and Industrial Electronics: Innovation for a NET-ZERO Industry"
   image="/images/sankara_rao_mutyala.jpg"
   when="22 September 2026, 12:00 PM – 12:45 PM"
@@ -76,7 +68,6 @@ This session explores the role of <strong>Green Hydrogen and Industrial Electron
 {{< speaker
   name="Mr. Rajesh Sura"
   affiliation="CEO and Cofounder, Dynolt Technologies"
-  category="Distinguished Speaker"
   title="Advanced Power Conversion Systems and Architectures for EV Charging"
   image="/images/rajesh_sura.jpeg"
   when="22 September 2026, 12:45 PM – 1:30 PM"
@@ -92,7 +83,6 @@ This session focuses on advanced <strong>power conversion systems and architectu
 {{< speaker
   name="Dr. Deepak Ronanki"
   affiliation="IIT Madras"
-  category="Distinguished Speaker"
   title="Electric Vehicle Charging Infrastructure in the Indian Context: Overview and Challenges"
   image="/images/deepak_ronanki.jpg"
   when="22 September 2026, 3:15 PM – 4:00 PM"
@@ -108,7 +98,6 @@ This session provides an overview of <strong>electric vehicle charging infrastru
 {{< speaker
   name="Dr. Gowtham Vegireddy"
   affiliation="Manager R&D, IFB"
-  category="Distinguished Speaker"
   title="Advanced Electrical Motor Topologies for Electric Vehicle Applications"
   image="/images/gowtham_vegireddy.jpeg"
   when="22 September 2026, 4:15 PM – 5:00 PM"
@@ -124,7 +113,6 @@ The session explores advanced <strong>electrical motor topologies</strong> and t
 {{< speaker
   name="Mrs. Ponnganti Chandana"
   affiliation="Product Manager - MathWorks · ARKANCE IN Private Limited"
-  category="Distinguished Speaker"
   title="Rapid EV Prototyping: Accelerating Development Workflows with Simulink"
   image="/images/Chandana_Ponnganti.jpg"
   when="23 September 2026, 9:30 AM – 11:00 AM"
@@ -140,7 +128,6 @@ This hands-on workshop focuses on <strong>rapid EV prototyping</strong> and deve
 {{< speaker
   name="Dr. P. Balakrishna"
   affiliation="Senior Engineer, GE ENERGY"
-  category="Distinguished Speaker"
   title="Navigating from Smart Grid to Digital Grid: Role of Digital Twin and Its Applications with a Case Study"
   image="/images/p_balakrishna.jpg"
   when="23 September 2026, 11:15 AM – 12:00 PM"
@@ -156,7 +143,6 @@ This session examines the transition from <strong>Smart Grid to Digital Grid</st
 {{< speaker
   name="Dr. Srinivasa Rao Perla"
   affiliation="Ex-Director, Technical Training at Cyient"
-  category="Distinguished Speaker"
   title="Smart Manufacturing & Industry 5.0"
   image="/images/srinivasa_rao_perla.jpg"
   when="23 September 2026, 12:00 PM – 12:45 PM"
@@ -172,7 +158,6 @@ This session explores the evolution of <strong>Smart Manufacturing</strong> and 
 {{< speaker
   name="Kavinga Upul Ekanayake"
   affiliation="Head of Hardware Engineering at ACCELR"
-  category="Distinguished Speaker"
   title="Tightly Coupled RISC-V + FPGA Heterogeneous Cores: Designing Low-Power, On-Premise LLM Accelerators from the Ground Up"
   image="/images/kavinga_upul_Ekanayake.jpeg"
   when="23 September 2026, 12:45 PM – 1:30 PM"
@@ -182,6 +167,21 @@ This session explores the evolution of <strong>Smart Manufacturing</strong> and 
 <strong>Industry Talk</strong>
 
 This session explores <strong>RISC-V and FPGA-based heterogeneous computing architectures</strong> for developing low-power, on-premise Large Language Model accelerators.
+
+{{< /speaker >}}
+
+{{< speaker
+  name="Dr. Tripura Pidikiti"
+  affiliation="R.V.R. & J.C. College Of Engineering"
+  title="Session on IES Hubs and Nodes Initiative"
+  image="/images/footer/organizers/tripura_pidikiti.jpg"
+  when="23 September 2026, 02:30 PM – 03:00 PM"
+  where="I4C 2026"
+>}}
+
+<strong>Session on IES Hubs and Nodes Initiative</strong>
+
+This session introduces the <strong>IEEE IES Hubs and Nodes</strong> initiative, highlighting its role in connecting students, academia, industry, and professionals to foster collaboration, technical engagement, innovation, and leadership opportunities within the IEEE Industrial Electronics Society.
 
 {{< /speaker >}}
 

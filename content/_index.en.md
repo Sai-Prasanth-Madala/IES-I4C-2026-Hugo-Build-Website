@@ -7,7 +7,33 @@ description = "A two-day forum bringing together industry leaders, researchers, 
 {{< registrationMarquee >}}
 {{< slideshow >}}
 
-## Advancing Industrial Innovation Through Technology
+  <div style="
+    background: #F2A93B;
+    border-radius: 999px;
+    padding: 10px 10px;
+    margin : 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    "
+    onmouseover="
+      this.style.background='#16B8E5';
+      this.style.color='#FFFFFF';
+      this.style.transform='scale(1.03)';
+      this.style.boxShadow='0 8px 20px rgba(0,0,0,0.18)';
+    "
+    onmouseout="
+      this.style.background='#F2A93B';
+      this.style.color='#071A2F';
+      this.style.transform='scale(1)';
+      this.style.boxShadow='none';
+    "
+  >
+    ADVANCING ELECTRIFICATION, AUTOMATION, AI, RENEWABLE ENERGY AND SMART MOBILITY
+  </div>
 
 Welcome to the **IEEE IES Industrial Innovation Conclave (I4C) 2026**, a two-day technology and innovation forum organized by the **IEEE Industrial Electronics Society (IES) Hyderabad Hubs & Nodes**.
 

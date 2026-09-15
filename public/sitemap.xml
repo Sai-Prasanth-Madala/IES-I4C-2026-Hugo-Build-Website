@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://i4c2026.ieee-ies.org/news_and_updates/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/about/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/committee/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/for_attendees/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/program/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/sponsors/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/industry-forum/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/categories/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/index.html</loc></url><url><loc>https://i4c2026.ieee-ies.org/tags/index.html</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/news_and_updates/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/about/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/committee/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/for_attendees/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/program/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/sponsors/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/industry-forum/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+  </url>
+</urlset>
