@@ -4,9 +4,9 @@ linkTitle = "Industry Forum"
 weight = 8
 +++
 
-{{< pageHero
-  title="Industry Forum"
-  subtitle="Connecting industry expertise, emerging technologies and real-world innovation."
+{{< slideshow
+  largeText="Industry Forum"
+  smallText="Connecting industry expertise, emerging technologies and real-world innovation."
 >}}
 
 The <strong>Industry Forum at IEEE IES Industrial Innovation Conclave 2026 (I4C 2026)</strong> brings together global IES experts, industry leaders, technology specialists, researchers, academicians and students to explore emerging technologies and their real-world industrial applications.

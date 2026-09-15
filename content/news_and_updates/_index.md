@@ -3,9 +3,9 @@ title = "News and Updates"
 weight = 1
 +++
 
-{{< pageHero
-    title="News and Updates"
-    subtitle="Latest announcements and updates from IEEE IES Industrial Innovation Conclave 2026."
+{{< slideshow
+    largeText="News and Updates"
+    smallText="Latest announcements and updates from IEEE IES Industrial Innovation Conclave 2026."
 >}}
 
 Stay updated with the latest announcements, programme updates, participation

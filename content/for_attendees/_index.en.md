@@ -4,9 +4,9 @@ weight = 4
 linkTitle = "For Attendees"
 +++
 
-{{< pageHero
-  title="For Attendees"
-  subtitle="Plan your visit to IEEE IES Industrial Innovation Conclave 2026 in Hyderabad."
+{{< slideshow
+  largeText="For Attendees"
+  smallText="Plan your visit to IEEE IES Industrial Innovation Conclave 2026 in Hyderabad."
 >}}
 
 ## Travel Information

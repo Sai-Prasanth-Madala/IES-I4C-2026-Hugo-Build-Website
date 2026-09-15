@@ -4,9 +4,9 @@ weight = 7
 linkTitle = "Conclave Sponsors"
 +++
 
-{{< pageHero
-  title="Conclave Sponsor"
-  subtitle="Supported by the IEEE Industrial Electronics Society"
+{{< slideshow
+  largeText="Conclave Sponsor"
+  smallText="Supported by the IEEE Industrial Electronics Society"
 >}}
 
 {{< featureCard title="IEEE Industrial Electronics Society" >}}
@@ -62,7 +62,7 @@ The event brings together participants to:
   <li>Build professional networks</li>
 </ul>
 </div>
-<img style="width:300px" src="/images/HubsandNodes_Hyd.png">
+<img style="width:400px" src="/images/HubsandNodes_Hyd.png">
 </div>
 {{< /featureCard >}}
 

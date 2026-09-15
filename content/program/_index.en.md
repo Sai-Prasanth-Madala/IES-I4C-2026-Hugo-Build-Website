@@ -4,9 +4,9 @@ weight = 5
 linkTitle = "Conclave Program"
 +++
 
-{{< pageHero
-  title="Conclave Program"
-  subtitle="Two days of expert talks, industry insights, interactive sessions, networking and hands-on learning."
+{{< slideshow
+  largeText="Conclave Program"
+  smallText="Two days of expert talks, industry insights, interactive sessions, networking and hands-on learning."
 >}}
 
 {{< featureCard title="IEEE IES Industrial Innovation Conclave 2026" icon="/images/HubsandNodes_Hyd.png" >}}

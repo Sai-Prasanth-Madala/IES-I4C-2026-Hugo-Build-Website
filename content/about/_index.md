@@ -4,9 +4,9 @@ weight = 2
 linkTitle = "About"
 +++
 
-{{< pageHero
-  title="IEEE IES Industrial Innovation Conclave 2026"
-  subtitle="Advancing Electrification · Automation · AI · Renewable Energy · Smart Mobility"
+{{< slideshow
+  largeText="IEEE IES Industrial Innovation Conclave 2026"
+  smallText="Advancing Electrification · Automation · AI · Renewable Energy · Smart Mobility"
 >}}
 
 ## About I4C 2026

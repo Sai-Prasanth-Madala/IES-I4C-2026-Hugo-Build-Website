@@ -5,7 +5,7 @@ description = "A two-day forum bringing together industry leaders, researchers, 
 +++
 
 {{< registrationMarquee >}}
-{{< pageHero >}}
+{{< slideshow >}}
 
 ## Advancing Industrial Innovation Through Technology
 
