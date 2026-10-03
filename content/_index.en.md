@@ -50,7 +50,7 @@ The conclave features a combination of **expert talks, interactive workshops, te
     <li>Expert Talks and Keynotes</li>
     <li>Industry-Academia Interaction</li>
     <li>Technology Exhibition and Live Demonstrations</li>
-    <li>Hands-on Workshops</li>
+    <li>Workshops</li>
     <li>Speed Mentoring</li>
     <li>IES Connect</li>
     <li>Panel Discussions</li>

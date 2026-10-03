@@ -112,7 +112,7 @@ Industry experts will discuss <strong>Green Hydrogen, EV Charging, Digital Grids
 
 {{< /card >}}
 
-{{< card title="Hands-on Workshop" >}}
+{{< card title=" Workshop" >}}
 
 <h3>Rapid EV Prototyping</h3>
 

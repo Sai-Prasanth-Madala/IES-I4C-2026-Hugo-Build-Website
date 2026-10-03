@@ -71,7 +71,7 @@ Perspectives on real-world industrial applications, technologies and challenges.
 
 {{< /card >}}
 
-{{< card title="Hands-on Workshops" >}}
+{{< card title=" Workshops" >}}
 
 Practical exposure to contemporary engineering technologies and workflows.
 
