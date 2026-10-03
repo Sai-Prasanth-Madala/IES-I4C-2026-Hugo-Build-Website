@@ -1,0 +1,862 @@
+/*
+ * ============================================================================
+ * IEEE IES CONFERENCE / EVENT WEBSITE
+ * Custom Styles
+ * ============================================================================
+ *
+ * Purpose:
+ *   Project-level visual refinements for IEEE IES conference and event
+ *   websites built with Hugo Relearn.
+ *
+ * Loaded by:
+ *   layouts/partials/custom-header.html
+ *
+ * Design principles:
+ *   - Professional IEEE-style visual hierarchy
+ *   - Clean academic and technical presentation
+ *   - Consistent typography and spacing
+ *   - Responsive behaviour across desktop, tablet and mobile
+ *   - Minimal interference with Relearn's core functionality
+ *
+ * Relearn upgrade note:
+ *   Keep project-specific rules scoped to identifiable selectors and
+ *   re-check the theme cascade after major Relearn upgrades.
+ *
+ * ============================================================================
+ */
+
+
+/* ============================================================================
+ * TYPOGRAPHY
+ * ============================================================================
+ *
+ * The --SITE-FONT-STACK variable is defined by custom-header.html from
+ * params.fontFamily in hugo.toml.
+ *
+ * The selected font is applied consistently across the site interface,
+ * navigation, headings, forms and conference content.
+ * ========================================================================== */
+
+html,
+body,
+#R-body,
+#R-sidebar {
+  font-family: var(--SITE-FONT-STACK);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#R-topbar .topbar-breadcrumbs,
+#R-logo .logo-title,
+.btn,
+button,
+input,
+select,
+textarea {
+  font-family: var(--SITE-FONT-STACK);
+}
+
+
+/* ============================================================================
+ * COLOR SYSTEM
+ * ============================================================================
+ *
+ * A restrained slate-based neutral palette is paired with IEEE blue and
+ * IEEE IES orange for a professional technical-conference appearance.
+ *
+ * Neutral scale:
+ *
+ *   50   #f8fafc
+ *   100  #f1f5f9
+ *   200  #e2e8f0
+ *   300  #cbd5e1
+ *   400  #94a3b8
+ *   500  #64748b
+ *   600  #475569
+ *   700  #334155
+ *   800  #1e293b
+ *   900  #0f172a
+ * ========================================================================== */
+
+:root {
+  --SITE-TEXT:         #334155;
+  --SITE-TEXT-MUTED:   #64748b;
+  --SITE-HEADING:      #0f172a;
+  --SITE-BORDER:       #e2e8f0;
+  --SITE-SURFACE:      #f8fafc;
+
+  --SITE-BRAND-BLUE:   #0082ba;
+  --SITE-BRAND-ORANGE: #ec8c00;
+
+  --MAIN-TEXT-color:       var(--SITE-TEXT);
+  --MAIN-LINK-color:       var(--SITE-BRAND-BLUE);
+  --MAIN-LINK-HOVER-color: #005f8a;
+}
+
+body,
+main#R-body-inner article {
+  color: var(--SITE-TEXT);
+}
+
+main#R-body-inner article :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--SITE-HEADING);
+}
+
+main#R-body-inner article hr,
+#R-topbar {
+  border-color: var(--SITE-BORDER);
+}
+
+
+/* ============================================================================
+ * INTERACTION AND ACCESSIBILITY
+ * ============================================================================
+ *
+ * Provides subtle transitions for interactive elements and a visible
+ * keyboard focus indicator without affecting Relearn's internal overlays.
+ * ========================================================================== */
+
+#R-sidebar a,
+#R-sidebar label,
+#R-topbar a,
+.btn,
+button,
+.card,
+article a {
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+:focus-visible {
+  outline: 2px solid #0082ba;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+#R-body-inner:focus-visible,
+#R-body-overlay:focus-visible {
+  outline: none;
+}
+
+
+/* ============================================================================
+ * CONTENT CARDS
+ * ============================================================================
+ *
+ * Used by conference/event content cards and custom card shortcodes.
+ * The hover effect is intentionally subtle to maintain an academic,
+ * professional appearance.
+ * ========================================================================== */
+
+article .card {
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+article .card:hover {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.10),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+
+  transform: translateY(-1px);
+}
+
+
+/* ============================================================================
+ * HERO / SLIDESHOW
+ * ============================================================================
+ *
+ * Provides additional contrast behind text displayed over conference
+ * photography and event imagery.
+ * ========================================================================== */
+
+#slideshow .text-overlay {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.25) 50%,
+      rgba(0, 0, 0, 0.00) 100%
+    );
+
+  padding: 0.75rem 1rem 1.25rem;
+
+  border-radius: 4px;
+
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================================================
+ * TOPBAR / HEADER
+ * ============================================================================
+ *
+ * Provides a clean conference-site header with clear branding, navigation
+ * context and adequate spacing for IEEE / IEEE IES logos.
+ * ========================================================================== */
+
+#R-topbar {
+  min-height: 5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#R-topbar .topbar-wrapper {
+  box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  background-color: rgba(134, 134, 134, 0.04);
+}
+
+/* =========================================================
+   I4C 2026 — FULL-WIDTH TOPBAR
+   ========================================================= */
+
+#R-topbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+
+  width: 100vw !important;
+  max-width: none !important;
+  height : 5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  z-index: 1000 !important;
+}
+
+#R-topbar .topbar-wrapper {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* ============================================================================
+ * BREADCRUMBS / PAGE TITLE
+ * ============================================================================
+ *
+ * The breadcrumb area provides the primary page-context indicator in the
+ * topbar and uses the IEEE blue brand colour.
+ * ========================================================================== */
+
+#R-topbar .topbar-breadcrumbs {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+
+  color: var(--SITE-BRAND-BLUE);
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  #R-topbar .topbar-breadcrumbs {
+    font-size: 1.2rem;
+    padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #R-topbar .topbar-breadcrumbs {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+
+/* ============================================================================
+ * SIDEBAR / CONFERENCE LOGO
+ * ============================================================================
+ *
+ * Controls the conference/event logo displayed at the top of the sidebar.
+ * The actual image source is configured through params.logo.src.
+ * ========================================================================== */
+
+/* =========================================================
+   I4C 2026 — SIDEBAR BELOW FULL-WIDTH TOPBAR
+   ========================================================= */
+
+#R-sidebar {
+  top: 5rem;
+  height: calc(100vh - 5rem);
+}
+
+#R-sidebar #R-header-wrapper {
+  padding: 1.25rem 0.5rem 0.75rem;
+  text-align: center;
+}
+
+#R-logo.R-default {
+  min-height: 11rem;
+}
+
+#R-logo.R-default .logo-image.site-logo-wrap {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  text-align: center;
+
+  padding: 0.25rem 0;
+
+  overflow: visible;
+}
+
+#R-logo.R-default .logo-image.site-logo-wrap > * {
+  max-width: 80%;
+}
+
+#R-logo.R-default img.site-logo {
+  display: block;
+
+  margin: 0 auto;
+
+  max-width: 100%;
+  max-height: 11rem;
+
+  width: auto;
+  height: auto;
+}
+
+#R-logo.R-default .logo-title {
+  font-size: 1.35rem;
+  line-height: 1.2;
+
+  margin-top: 0.5rem;
+}
+
+
+/* ============================================================================
+ * SIDEBAR SEARCH
+ * ============================================================================
+ *
+ * Keeps the search interface visually separated from the conference logo
+ * and primary navigation.
+ * ========================================================================== */
+
+#R-sidebar #R-sidebar-search {
+  padding: 0.5rem 0.75rem 0.75rem;
+
+  border-top: 1px solid var(--SITE-BORDER);
+
+  margin-top: 0.5rem;
+}
+
+#R-sidebar #R-sidebar-search .searchbox {
+  margin: 0;
+}
+
+
+/* ============================================================================
+ * SIDEBAR NAVIGATION
+ * ============================================================================
+ *
+ * Provides a compact and readable navigation rhythm suitable for conference
+ * programmes, speakers, registration information, committees and resources.
+ * ========================================================================== */
+
+#R-sidebar ul.collapsible-menu > li {
+  margin-bottom: 0.1rem;
+}
+
+#R-sidebar ul.morespace.collapsible-menu > li {
+  margin-bottom: 0.1rem;
+}
+
+#R-sidebar ul.collapsible-menu > li > a.padding,
+#R-sidebar ul.collapsible-menu > li > span.padding {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  line-height: 1.3;
+}
+
+
+/* ============================================================================
+ * SIDEBAR EXPANSION CONTROLS
+ * ============================================================================
+ *
+ * Keeps Relearn's expandable-menu controls aligned with the customized
+ * compact navigation spacing.
+ * ========================================================================== */
+
+#R-sidebar ul.collapsible-menu > li {
+  position: relative;
+}
+
+#R-sidebar ul.collapsible-menu > li > input,
+#R-sidebar ul.collapsible-menu.enlarge > li > input,
+#R-sidebar ul.collapsible-menu > li > label,
+#R-sidebar ul.collapsible-menu.enlarge > li > label {
+  top: 0.25rem;
+
+  margin-top: 0;
+
+  height: calc(1rem * 1.3);
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* ============================================================================
+ * HOME NAVIGATION
+ * ============================================================================
+ *
+ * When Relearn renders Home through #R-homelinks, match its appearance
+ * with the regular conference navigation instead of using a separate
+ * dark menu-header treatment.
+ * ========================================================================== */
+
+#R-sidebar #R-homelinks,
+#R-sidebar div#R-homelinks.default-animation,
+#R-sidebar #R-homelinks.homelinks {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+#R-sidebar #R-homelinks,
+#R-sidebar #R-homelinks *,
+#R-sidebar #R-homelinks > .R-sidebarmenu,
+#R-sidebar #R-homelinks ul,
+#R-sidebar #R-homelinks li,
+#R-sidebar #R-homelinks li.active,
+#R-sidebar #R-homelinks li.active.visited,
+#R-sidebar #R-homelinks li > a,
+#R-sidebar #R-homelinks li.active > a,
+#R-sidebar #R-homelinks li.active.visited > a {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#R-sidebar #R-homelinks :is(a, span),
+#R-sidebar #R-homelinks li.active > a {
+  color: var(--INTERNAL-MENU-SECTIONS-LINK-color) !important;
+}
+
+#R-sidebar #R-homelinks a:hover {
+  color: var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color) !important;
+}
+
+
+/* ============================================================================
+ * HOME TYPOGRAPHY
+ * ============================================================================
+ *
+ * Matches the Home navigation item with the typography and spacing of the
+ * primary sidebar menu.
+ * ========================================================================== */
+
+#R-sidebar #R-homelinks ul.collapsible-menu > li > a.padding,
+#R-sidebar #R-homelinks ul.collapsible-menu > li > span.padding {
+  font-size: 1.0625rem;
+  line-height: 1.3;
+
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#R-sidebar #R-homelinks ul.collapsible-menu > li {
+  margin-bottom: 0.1rem;
+}
+
+#R-sidebar #R-homelinks :is(a, span),
+#R-sidebar #R-homelinks .collapsible-menu label,
+#R-sidebar #R-homelinks li.active > a,
+#R-sidebar #R-homelinks li.active > label {
+  color: var(--INTERNAL-MENU-SECTIONS-LINK-color);
+}
+
+#R-sidebar #R-homelinks a:hover,
+#R-sidebar #R-homelinks .collapsible-menu li:not(.active) > label:hover {
+  color: var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color);
+}
+
+#R-sidebar #R-homelinks ul.collapsible-menu > li.active > a {
+  background: transparent;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+
+/* ============================================================================
+ * ACTIVE SIDEBAR SECTION
+ * ============================================================================
+ *
+ * Gives an active expandable section a clear visual boundary while keeping
+ * its page-level navigation inside the active section.
+ * ========================================================================== */
+
+#R-sidebar ul.collapsible-menu > li.active.parent {
+  background-color: var(--INTERNAL-MAIN-BG-color);
+
+  border: 1px solid var(--INTERNAL-MENU-BORDER-color);
+
+  border-inline-end-color:
+    var(--INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-BORDER-color);
+
+  border-inline-end-width: 3px;
+
+  border-radius: 2px;
+
+  margin-block: 0.25rem;
+
+  padding-block: 0.1rem;
+
+  position: relative;
+}
+
+#R-sidebar ul.collapsible-menu > li.active.parent > a.padding {
+  border: none !important;
+
+  background: transparent !important;
+
+  width: 100% !important;
+
+  padding-left: 1.25rem;
+  padding-right: 1rem;
+}
+
+#R-sidebar ul.collapsible-menu > li.active.parent > input,
+#R-sidebar ul.collapsible-menu > li.active.parent > label {
+  margin-left: 0.25rem;
+}
+
+#R-sidebar ul.collapsible-menu > li.active.parent > ul.page-toc-menu {
+  margin: 0;
+  padding-bottom: 0.25rem;
+}
+
+
+/* ============================================================================
+ * PAGE SECTION NAVIGATION
+ * ============================================================================
+ *
+ * Styles the automatically generated H1 navigation displayed beneath
+ * applicable pages in the sidebar.
+ * ========================================================================== */
+
+#R-sidebar ul.page-toc-menu {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0 0 0.25rem 0;
+}
+
+#R-sidebar ul.page-toc-menu > li.page-toc-item {
+  margin-bottom: 0.05rem;
+}
+
+#R-sidebar ul.page-toc-menu > li.page-toc-item > a.padding {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+
+  padding-inline-start: 1.5rem;
+
+  font-size: 0.95rem;
+  line-height: 1.3;
+
+  display: block;
+  width: 100%;
+}
+
+
+/* ============================================================
+   SIDEBAR FOOTER — IEEE IES + IEEE LOGOS
+   ============================================================ */
+
+#R-sidebar .menu-footer-class {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 1rem !important;
+
+  padding: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Each logo takes one half of the row */
+#R-sidebar .menu-footer-class a {
+  flex: 1 1 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  text-decoration: none !important;
+}
+
+/* Logo images */
+#R-sidebar .menu-footer-class img {
+  display: block !important;
+
+  width: auto !important;
+  max-width: 100% !important;
+
+  height: 42px !important;
+
+  object-fit: contain !important;
+}
+
+/* ============================================================================
+ * TOPBAR ORGANIZATION LOGOS
+ * ============================================================================
+ *
+ * Controls the IEEE and IEEE IES logos rendered by:
+ *
+ *   layouts/partials/topbar/area/end.html
+ *
+ * The dimensions are intentionally restrained so the branding remains
+ * prominent without dominating the event navigation.
+ * ========================================================================== */
+
+#R-topbar .site-brand-logos {
+  gap: 1rem;
+  padding: 0 0.75rem;
+}
+
+#R-topbar .site-brand-logos img {
+  max-height: 2.25rem;
+
+  height: 2.25rem;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  #R-topbar .site-brand-logos {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  #R-topbar .site-brand-logos img {
+    max-height: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+ * Committee / Speaker Images
+ * Show the complete photo without cropping
+ * ========================================================================== */
+
+article .speaker img,
+article .card img,
+.speaker img,
+.card img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #f5f7fa;
+}
+
+/* ============================================================================
+ * MAIN CONFERENCE CONTENT
+ * ============================================================================
+ *
+ * Justifies standard body paragraphs for longer conference information,
+ * programme descriptions, speaker information and organizational content.
+ * ========================================================================== */
+
+main#R-body-inner article p {
+  text-align: justify;
+}
+
+/* ==========================================================================
+ * I4C 2026 — Main Content Layout Fix
+ *
+ * Prevent Relearn or inherited styles from flowing the article into
+ * multiple CSS columns. Conference pages such as the programme,
+ * committee and industry forum must use a normal single-column layout.
+ * ========================================================================== */
+
+#R-body-inner,
+#R-body-inner article,
+#R-body-inner .flex-block-wrapper {
+    column-count: 1 !important;
+    column-width: auto !important;
+    column-gap: normal !important;
+    columns: auto !important;
+}
+
+/* Keep normal block flow inside the article. */
+#R-body-inner article > * {
+    break-inside: auto;
+    page-break-inside: auto;
+}
+
+/* Prevent tables and wide content from forcing the article itself
+   into an unexpected layout. */
+#R-body-inner article table {
+    width: 100%;
+    max-width: 100%;
+}
+
+#R-body-inner article {
+    overflow-x: visible;
+}
+
+/* =========================================================
+   I4C 2026 — MOVE SLIDESHOW BELOW TOPBAR
+   ========================================================= */
+
+#R-body {
+  padding-top: 6.25rem !important;
+}
+
+/* =========================================================
+   I4C EVENT DETAILS CARD
+   ========================================================= */
+
+article .card .card-body .i4c-event-details {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 3rem !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ---------- Poster ---------- */
+
+article .card .card-body .i4c-event-poster {
+  flex: 0 0 280px !important;
+  width: 280px !important;
+  max-width: 280px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+article .card .card-body .i4c-event-poster img {
+  display: block !important;
+
+  width: 280px !important;
+  max-width: 280px !important;
+
+  height: auto !important;
+  max-height: 400px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border-radius: 6px;
+}
+
+/* ---------- Information ---------- */
+
+article .card .card-body .i4c-event-info {
+  flex: 1 1 auto !important;
+
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+}
+
+/* Event title */
+
+article .card .card-body .i4c-event-info h3 {
+  display: block !important;
+
+  margin: 0 0 1.25rem 0 !important;
+  padding: 0 !important;
+
+  font-size: 1.35rem !important;
+  line-height: 1.4 !important;
+
+  text-align: left !important;
+}
+
+/* Information paragraphs */
+
+article .card .card-body .i4c-event-info p {
+  display: block !important;
+
+  margin: 0 0 0.9rem 0 !important;
+  padding: 0 !important;
+
+  text-align: left !important;
+
+  line-height: 1.6 !important;
+}
+
+/* Remove final paragraph spacing */
+
+article .card .card-body .i4c-event-info p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+  article .card .card-body .i4c-event-details {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 1.5rem !important;
+  }
+
+  article .card .card-body .i4c-event-poster {
+    flex: none !important;
+
+    width: 240px !important;
+    max-width: 240px !important;
+  }
+
+  article .card .card-body .i4c-event-poster img {
+    width: 240px !important;
+    max-width: 240px !important;
+  }
+
+  article .card .card-body .i4c-event-info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ============================================================================
+ * END OF IEEE IES CONFERENCE / EVENT CUSTOM STYLES
+ * ============================================================================
+ */
